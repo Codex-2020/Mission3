@@ -1,0 +1,3 @@
+Mettre dans ce dossier les fichiers concernant votre version
+de programme
+( puis choisir en groupe la version finale qui sera déposée dans le dossier "a_rendre")
