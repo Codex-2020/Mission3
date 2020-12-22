@@ -21,6 +21,10 @@ a {
   color: rgb(50, 50, 50);
 }
 
+.bg-navbar {
+  background-color: #9fa8da;
+}
+
 header {
   background-color: #9fa8da;
   display: flex;
@@ -57,7 +61,7 @@ ul {
   height: 80vh;
 }
 
-#accueil{
+#accueil {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,13 +70,17 @@ ul {
   padding: 10px;
 }
 
-#bouton{
+#bouton {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#boutonAccueil{
+#boutonAccueil {
+  color: white;
+}
+
+#boutonAccueil {
   background-color: #9fa8da;
   width: 100px;
   height: 30px;
@@ -94,8 +102,9 @@ footer {
 
 .copyrights {
   margin-left: 10vw;
+  color: white;
 }
 .contact {
   margin-right: 10vw;
+  color: white;
 }
-
