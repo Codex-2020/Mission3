@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/gest_projets.css" />
+    <title>Gestion des projets</title>
+
+    <script src="./js/faker.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html" class="logo_img"
+          ><img src="img/logo.png" alt=""
+        /></a>
+        <a href="./index.html" class="logo_text"
+          >Active Bretagne Informatique</a
+        >
+      </div>
+
+      <nav class="liens">
+        <ul>
+          <li><a href="./gest_commerciale.html">Gestion Commerciale</a></li>
+          <li><a href="./gest_rh.html">Gestion RH</a></li>
+          <li><a href="./gest_projets.html">Gestion des projets</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Code dans cette balise -->
+    <div class="main">
+      <h1>Liste des projets</h1>
+      <!-- Lister les projets -->
+      <div id="projets">
+        <div id="listeProjets">
+          <a href="#projetGestion">Projet Gestion</a>
+          <a href="#projetRH">Projet RH</a>
+          <a href="#projetJeu">Projet Jeu</a>
+          <a href="#projetAlimentaire">Projet Alimentaire</a>
+        </div>
+
+        <!-- Contenu de la liste et références des docs -->
+        <div id="projetGestion" class="contenu">
+          <div class="headerContenu">
+            <h2>Projet Gestion</h2>
+            <a href="#" class="closebtn">×</a>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Accusantium velit quam voluptatibus possimus, nobis quod non
+            repellat voluptates labore corrupti nemo quos quia saepe deserunt,
+            ullam officiis esse laboriosam dolore. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Illum nam assumenda quia suscipit
+            dolorum aspernatur minus voluptas repellat voluptatem, provident
+            repudiandae quis fugit, minima veniam modi recusandae adipisci illo
+            ratione?
+          </p>
+          <div class="references">
+            <p>ID : 2300</p>
+            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Auteur : Leduc</p>
+            <p>Date de diffusion : 09/12/2020</p>
+          </div>
+        </div>
+
+        <div id="projetRH" class="contenu">
+          <div class="headerContenu">
+            <h2>Projet RH</h2>
+            <a href="#" class="closebtn">×</a>
+          </div>
+          <p>
+            labore corrupti nemo quos quia saepe deserunt, ullam officiis esse
+            laboriosam dolore. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Illum nam assumenda quia suscipit dolorum
+            aspernatur minus voluptas repellat voluptatem, provident repudiandae
+            quis fugit, minima veniam modi recusandae adipisci illo ratione?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Accusantium velit quam voluptatibus possimus, nobis quod non
+            repellat voluptates
+          </p>
+          <div class="references">
+            <p>ID : 5812</p>
+            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Auteur : Truand</p>
+            <p>Date de diffusion : 08/11/2019</p>
+          </div>
+        </div>
+
+        <div id="projetJeu" class="contenu">
+          <div class="headerContenu">
+            <h2>Projet Jeu</h2>
+            <a href="#" class="closebtn">×</a>
+          </div>
+          <p>
+            Dolor sit amet consectetur adipisicing elit. Illum nam assumenda
+            quia suscipit dolorum aspernatur, Lorem ipsum minus voluptas
+            repellat voluptatem, provident repudiandae quis fugit, minima veniam
+            modi recusandae adipisci illo ratione? Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Accusantium velit quam voluptatibus
+            possimus, nobis quod non repellat voluptates labore corrupti nemo
+            quos quia saepe deserunt, ullam officiis esse laboriosam dolore.
+          </p>
+          <div class="references">
+            <p>ID : 1320</p>
+            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Auteur : Lapelle</p>
+            <p>Date de diffusion : 06/10/2018</p>
+          </div>
+        </div>
+
+        <div id="projetAlimentaire" class="contenu">
+          <div class="headerContenu">
+            <h2>Projet Alimentaire</h2>
+            <a href="#" class="closebtn">×</a>
+          </div>
+          <p>
+            Nemo quos quia saepe deserunt, ullam officiis esse laboriosam dolore
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Accusantium velit quam voluptatibus possimus, nobis quod non
+            repellat voluptates labore corrupti. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Illum nam assumenda quia suscipit
+            dolorum aspernatur minus voluptas repellat voluptatem, provident
+            repudiandae quis fugit, minima veniam modi recusandae adipisci illo
+            ratione?
+          </p>
+          <div class="references">
+            <p>ID : 6300</p>
+            <p>ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Auteur : Lesouper</p>
+            <p>Date de diffusion : 03/05/2017</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partie création de projets -->
+      <div>
+        <button id="createProject">Créer un projet</button>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="formCreateProject" name="formCreateProject">
+              <p id="formTitle" class="textMiddle">Créer un projet</p>
+              <div>
+                <label for="nomProjet">Nom : </label>
+                <input
+                  type="text"
+                  name="projectName"
+                  class="formField"
+                  placeholder="Nom"
+                  required
+                />
+              </div>
+              <div>
+                <label for="codeProjet">Code : </label>
+                <input
+                  type="number"
+                  name="codeProjet"
+                  class="formField"
+                  placeholder="Code du projet"
+                  required
+                />
+              </div>
+              <div>
+                <label for="typeProjet">Type : </label>
+                <select name="typeProjet" class="formField">
+                  <option value="forfait">Forfait</option>
+                  <option value="assistance">Assistance</option>
+                  <option value="regie">Régie</option>
+                </select>
+              </div>
+              <div>
+                <label for="chargeEstimee">Charge Estimée : </label>
+                <input
+                  type="number"
+                  name="chargeEstimee"
+                  class="formField"
+                  placeholder="Temps en jours estimé"
+                  required
+                />
+              </div>
+              <div>
+                <label for="commercialChoice">Commercial : </label>
+                <select name="commercialChoice" class="formField"></select>
+              </div>
+              <div>
+                <label for="clientChoice">Client : </label>
+                <select name="clientChoice" class="formField"></select>
+              </div>
+              <div>
+                <label for="dateDebut">Date de début : </label>
+                <input
+                  type="date"
+                  name="dateDebut"
+                  class="formField"
+                  required
+                />
+              </div>
+              <div>
+                <label for="dateFin">Date de fin : </label>
+                <input type="date" name="dateFin" class="formField" required />
+              </div>
+
+              <div>
+                <button type="submit" id="submitProject">Créer</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Fin partie création de projets -->
+    </div>
+    <!-- Code dans cette balise -->
+    <footer>
+      <p class="copyrights">TeamGeek 2020 Copyrights©</p>
+      <a href="" class="contact">Contact</a>
+    </footer>
+
+    <script src="./js/gest_projets.js"></script>
+  </body>
+</html>
