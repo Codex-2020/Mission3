@@ -18,11 +18,11 @@ ul li {
 
 a {
   text-decoration: none;
-  color: rgb(50, 50, 50);
+  color: rgb(0, 0, 0);
 }
 
 header {
-  background-color: #9fa8da;
+  background-color: #b9c4ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,21 +30,21 @@ header {
 }
 
 .logo {
-  float: left;
+  float: right;
   display: flex;
   align-items: center;
 }
 
 .logo img {
-  height: 8vh;
+  height: 7vh;
 }
 
 .logo_img {
-  margin-left: 1vw;
+  margin-left: 3vw;
 }
 
 .logo_text {
-  margin-left: 5vw;
+  margin-left: 1vw;
 }
 
 ul {
@@ -57,7 +57,7 @@ ul {
   height: 80vh;
 }
 
-#accueil{
+#accueil {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,13 +66,13 @@ ul {
   padding: 10px;
 }
 
-#bouton{
+#bouton {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#boutonAccueil{
+#boutonAccueil {
   background-color: #9fa8da;
   width: 100px;
   height: 30px;
@@ -83,7 +83,7 @@ ul {
 }
 
 footer {
-  background-color: #9fa8da;
+  background-color: #b9c4ff;
   /*   border-top: 2px solid black; */
   height: 8vh;
   display: flex;
@@ -98,4 +98,3 @@ footer {
 .contact {
   margin-right: 10vw;
 }
-
