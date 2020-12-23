@@ -31,6 +31,10 @@ tbody tr:nth-child(even) {
   background-color: #fff;
 }
 
+h1 {
+  text-align: center;
+}
+
 .bg-modal {
   width: 100%;
   height: 100%;
@@ -51,6 +55,8 @@ tbody tr:nth-child(even) {
   position: relative;
   text-align: center;
   padding: 50px;
+  margin-left: 70%;
+  margin-top: 60%;
 }
 
 .close {
@@ -76,16 +82,17 @@ tbody tr:nth-child(even) {
 }
 
 .modal-contente {
+  margin-top: 10%;
   margin-right: auto;
   margin-left: auto;
-  width: 100px;
-  height: 600px;
+  width: 20%;
+  height: auto;
   font-size: 20px;
   background-color: #ddd;
   border-radius: 5px;
   position: relative;
   text-align: center;
-  padding: 100px;
+  padding: 2%;
 }
 
 .closed {
@@ -104,4 +111,45 @@ tbody tr:nth-child(even) {
 }
 #formTitle {
   margin-bottom: 30px;
+}
+
+.popover-body {
+  display: flex;
+  width: 10vw;
+}
+
+@media all and (max-width: 1024px) {
+  .modal-contente {
+    font-size: 12px;
+  }
+  .popover-body {
+    width: 13vw;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .modal-contente {
+    font-size: 10px;
+  }
+  .popover-body {
+    width: 16vw;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .modal-contente {
+    width: 40%;
+  }
+  .popover-body {
+    width: 25vw;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .modal-contente {
+    width: 40%;
+  }
+  .popover-body {
+    width: 40vw;
+  }
 }

@@ -1,10 +1,10 @@
-document.getElementById("clientDetails").addEventListener("click", function () {
-  document.querySelector(".bg-modal").style.display = "flex";
-});
+// document.getElementById("clientDetails").addEventListener("click", function () {
+//   document.querySelector(".bg-modal").style.display = "flex";
+// });
 
-document.getElementById("closed").addEventListener("click", function () {
-  document.querySelector(".bg-modal").style.display = "none";
-});
+// document.getElementById("closed").addEventListener("click", function () {
+//   document.querySelector(".bg-modal").style.display = "none";
+// });
 
 let modal = document.getElementById("myModal");
 let btn = document.getElementById("addAcustomer");

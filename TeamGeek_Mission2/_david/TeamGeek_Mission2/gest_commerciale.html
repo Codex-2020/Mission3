@@ -3,156 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/gest_commerciale.css" />
-    <title>Document</title>
+
+    
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="./index.html" class="logo_img"><img src="img/logo.png" alt=""></a>
-        <a href="./index.html" class="logo_text">Active Bretagne Informatique</a>
+    <div class="bg-navbar">
+      <div class="container">
+          <div class="row">
+              <nav class="col navbar navbar-expand-lg navbar-dark ">
+                  <a class="navbar-brand" href="./index.html"><img src="img/logo.png" width="50" height="50" alt=""></a>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div id="navbarContent" class="collapse navbar-collapse">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="./gest_commerciale.html">Gestion Commerciale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gest_rh.html">Gestion RH</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./gest_projets.html">Gestion des projets</a>
+                        </li>
+                      </ul>
+
+                  </div>
+
+                </nav>
+          </div>
+      </div>
+  </div>
+    
+  
+<h1>Liste des clients</h1>
+    <div class="container">
+      <div class="row">
+          <div class="col">
+              <div class="table-responsive main">
+                 
+                  <table class="table styleTab">
+                      <thead>
+                          <tr>
+                              <th scope="col">Id client</th>
+                              <th scope="col">Raison sociale</th>
+                              <th scope="col">Domaine</th>
+                              <th scope="col">Type</th>
+                              <th scope="col">Détails</th>
+                            </tr>
+                      </thead>
+                      <tbody>
+                            <tr>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">
+                                  <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content=" id Client : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Type : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Domaine : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Adresse : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Téléphone : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Nature : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Chiffre d'affaire : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Effectif : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Contact client : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                  Commentaires : &nbsp&nbsp&nbsp&nbsp">
+                                    Détails
+                                  </button>
+                                  
+                                 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                                <td scope="row">data</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        <div>
+                          <div class="ajoutButton text-center" >
+                            <button id="addAcustomer">Ajouter un client</button>
+                          </div>
+                          <div id="myModal" class="modal">
+                              <div class="modal-contente">
+                                  <span class="closed">&times;</span>
+                                        <form action="">
+                                          <p id="formTitle" class="textMiddle">Ajouter un client</p>
+                                          <div>
+                                            <label for="name">Nom :</label>
+                                            <input type="text" id="name" />
+                                          </div>
+                                          <div>
+                                            <label for="legal form">Forme juridique :</label>
+                                            <input type="text" id="legal form" />
+                                          </div>
+                                          <div>
+                                            <label for="siret">Siret :</label>
+                                            <input type="text" id="siret" />
+                                          </div>
+                                          <div>
+                                            <label for="email">E-mail :</label>
+                                            <input type="text" id="email" />
+                                          </div>
+                                          <div>
+                                            <label for="adress">Adresse :</label>
+                                            <input type="text" id="adress" />
+                                          </div>
+                                          <div>
+                                            <label for="post code">Code postal :</label>
+                                            <input type="text" id="post code" />
+                                          </div>
+                                          <div>
+                                            <label for="city">&nbsp Ville : &nbsp   </label>
+                                            <input type="text" id="city" />
+                                          </div>
+                                          <div>
+                                            <label for="country">Pays :</label>
+                                            <input type="text" id="country" />
+                                          </div>
+            <br />
+                                          <div>
+                                            <button type="Cancel">Annuler</button>
+                                          </div>
+            <br />
+                                          <div>
+                                            <button type="Add">Ajouter</button>
+                                          </div>
+                                        </form>
+                                        
+                              </div>
+                          </div>
+                     </div> 
+    </div>
+  </div>
+</div>
+</div>
+   
+  <div class="container"><div class="row"><div class="col"><span>&nbsp&nbsp&nbsp    </span></div ></div ></div>
+   
+
+    <div class="bg-navbar">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                <p class="copyrights">TeamGeek 2020 Copyrights©</p>
+              </div>
+              <div class="col">
+                <a href="" class="contact">Contact</a>
+              </div>
+          </div>
       </div>
 
-      <nav class="liens">
-        <ul>
-          <li><a href="./gest_commerciale.html">Gestion Commerciale</a></li>
-          <li><a href="./gest_rh.html">Gestion RH</a></li>
-          <li><a href="./gest_projets.html">Gestion des projets</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- Code dans cette balise -->
-    <div class="bg-modal">
-      <div class="modal-content">
-        <div id="closed" class="close">+</div>
-        <h1>Raison sociale :</h1>
-        <p>
-          id Client : <br />
-          Type : <br />
-          Domaine : <br />
-          Adresse : <br />
-          Téléphone : <br />
-          Nature : <br />
-          Chiffre d'affaire : <br />
-          Effectif : <br />
-          Contact client : <br />
-          Commentaires : <br />
-        </p>
-      </div>
-    </div>
-    <div class="main">
-      <h1>Liste des clients</h1>
-      <table class="styleTab">
-        <thead>
-          <tr>
-            <th>Id client</th>
-            <th>Raison sociale</th>
-            <th>Domaine</th>
-            <th>Type</th>
-            <th>Détails</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>
-              <button id="clientDetails">détails</button>
-            </td>
-          </tr>
-          <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-          </tr>
-          <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
 
-    <!-- Formulaire pour ajouter des clients -->
-    <div>
-      <button id="addAcustomer">Ajouter un client</button>
-      <div id="myModal" class="modal">
-        <div class="modal-contente">
-          <span class="closed">&times;</span>
-          <form action="">
-            <p id="formTitle" class="textMiddle">Ajouter un client</p>
-            <div>
-              <label for="name">Nom :</label>
-              <input type="text" id="name" />
-            </div>
-            <div>
-              <label for="legal form">Forme juridique :</label>
-              <input type="text" id="legal form" />
-            </div>
-            <div>
-              <label for="siret">Siret :</label>
-              <input type="text" id="siret" />
-            </div>
-            <div>
-              <label for="email">E-mail :</label>
-              <input type="text" id="email" />
-            </div>
-            <div>
-              <label for="adress">Adresse :</label>
-              <input type="text" id="adress" />
-            </div>
-            <div>
-              <label for="post code">Code postal :</label>
-              <input type="text" id="post code" />
-            </div>
-            <div>
-              <label for="city">Ville :</label>
-              <input type="text" id="city" />
-            </div>
-            <div>
-              <label for="country">Pays :</label>
-              <input type="text" id="country" />
-            </div>
 
-            <div>
-              <button type="Cancel">Annuler</button>
-            </div>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-            <div>
-              <button type="Add">Ajouter</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- Formulaire pour ajouter des clients -->
-
-    <footer>
-      <p class="copyrights">TeamGeek 2020 Copyrights©</p>
-      <a href="" class="contact">Contact</a>
-    </footer>
-    <script src="./js/gest_commerciale.js"></script>
+<script src="./js/gest_commerciale.js"></script>
+    <script src="./js/popovers.js"></script>
   </body>
 </html>
