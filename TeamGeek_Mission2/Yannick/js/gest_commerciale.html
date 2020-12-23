@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/gest_commerciale.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html" class="logo_img"><img src="img/logo.png" alt=""></a>
+        <a href="./index.html" class="logo_text">Active Bretagne Informatique</a>
+      </div>
+
+      <div class="liens">
+        <a href="./gest_commerciale.html">Gestion Commerciale</a>
+        <a href="./gest_rh.html">Gestion RH</a>
+        <a href="./gest_projets.html">Gestion des projets</a>
+      
+    
+    </header>
+    <!-- Code dans cette balise -->
+    <div class="bg-modal">
+      <div class="modal-content">
+        <div id="closed" class="close">+</div>
+        <h1>Raison sociale :</h1>
+        <p>
+          id Client : <br />
+          Type : <br />
+          Domaine : <br />
+          Adresse : <br />
+          Téléphone : <br />
+          Nature : <br />
+          Chiffre d'affaire : <br />
+          Effectif : <br />
+          Contact client : <br />
+          Commentaires : <br />
+        </p>
+      </div>
+    </div>
+    <div class="main">
+      <h1>Liste des clients</h1>
+      <table class="styleTab">
+        <thead>
+          <tr>
+            <th>Id client</th>
+            <th>Raison sociale</th>
+            <th>Domaine</th>
+            <th>Type</th>
+            <th>Détails</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>
+              <button id="clientDetails">détails</button>
+            </td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+          </tr>
+          <tr>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+            <td>data</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Formulaire pour ajouter des clients -->
+    <div>
+      <button id="addAcustomer">Ajouter un client</button>
+      <div id="myModal" class="modal">
+        <div class="modal-contente">
+          <span class="closed">&times;</span>
+          <form action="">
+            <p id="formTitle" class="textMiddle">Ajouter un client</p>
+            <div>
+              <label for="name">Nom :</label>
+              <input type="text" id="name" />
+            </div>
+            <div>
+              <label for="legal form">Forme juridique :</label>
+              <input type="text" id="legal form" />
+            </div>
+            <div>
+              <label for="siret">Siret :</label>
+              <input type="text" id="siret" />
+            </div>
+            <div>
+              <label for="email">E-mail :</label>
+              <input type="text" id="email" />
+            </div>
+            <div>
+              <label for="adress">Adresse :</label>
+              <input type="text" id="adress" />
+            </div>
+            <div>
+              <label for="post code">Code postal :</label>
+              <input type="text" id="post code" />
+            </div>
+            <div>
+              <label for="city">Ville :</label>
+              <input type="text" id="city" />
+            </div>
+            <div>
+              <label for="country">Pays :</label>
+              <input type="text" id="country" />
+            </div>
+
+            <div>
+              <button type="Cancel">Annuler</button>
+            </div>
+
+            <div>
+              <button type="Add">Ajouter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Formulaire pour ajouter des clients -->
+
+    <footer>
+      <p class="copyrights">TeamGeek 2020 Copyrights©</p>
+      <a href="" class="contact">Contact</a>
+    </footer>
+    <script src="./js/gest_commerciale.js"></script>
+  </body>
+</html>
