@@ -13,22 +13,23 @@
 #projets {
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: auto;
   width: 50%;
   margin-bottom: 50px;
-  border: 2px solid black;
+  border: 2px solid #232488;
   padding: 5px;
 }
 
 #listeProjets {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 #listeProjets a {
-  border: solid orange 1px;
-  padding: 10px;
-  margin-right: 20px;
+  border: solid #9fa8da 1px;
+  padding: 0.5em;
+  margin: 0.5em;
+  text-align: center;
 }
 
 .contenu {
@@ -128,7 +129,9 @@ select {
 }
 
 #createProject {
-  width: 10vw;
+  width: auto;
+  margin: 0.2em;
+  padding: 0.2em;
   height: 4vh;
   background-color: #9fa8da;
 }
@@ -166,5 +169,10 @@ select {
   }
   .liens {
     float: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .logo_text {
+    display: none;
   }
 }
