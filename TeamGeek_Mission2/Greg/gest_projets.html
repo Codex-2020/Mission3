@@ -3,32 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/gest_projets.css" />
-    <title>Gestion des projets</title>
+    <title>Document</title>
+    <style>
+      @media(max-width: 500px){
+        
+        #container {
+          padding-top: 5px;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: ;
+        }
 
-    <script src="./js/faker.js" type="text/javascript"></script>
+        #container2 {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+            
+        #container div {
+          background-color: ;
+        }
+
+        .baseline {
+          margin-top: 15px;
+          text-align: center;
+          color: darkblue;
+          font-weight: bold;
+          text-decoration: none;
+          }
+
+        
+        .menu  {
+          margin-top: 10px;
+          margin-right: 0px;
+        }
+    
+        .menu a {
+          font-size: 14px;
+        }
+             
+        #listeProjets {
+          background-color: ;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          text-decoration: none;
+          height: auto;
+          width: auto; 
+        }
+
+        #listeProjets a {
+          background-color:;
+          border: solid orange 1px;
+          padding: 10px;
+          margin-bottom: 10px;
+        }
+        .main {
+          background-color: ;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: auto;
+        }
+
+        h1 {
+          margin-top: 30px;
+          margin-bottom: 50px;
+          text-align: center;
+        }
+
+        #createProject {
+          width: 10vw;
+          height: 4vh;
+          background-color: #9fa8da;
+          margin-bottom: 30px;
+          width: auto;
+          padding: 5px
+        }
+
+      }
+
+    </style>
+    
   </head>
+  
   <body>
+    
     <header>
-      <div class="logo">
-        <a href="./index.html" class="logo_img"
-          ><img src="img/logo.png" alt=""
-        /></a>
-        <a href="./index.html" class="logo_text"
-          >Active Bretagne Informatique</a
-        >
-      </div>
 
-      <nav class="liens">
-        <ul>
-          <li><a href="./gest_commerciale.html">Gestion Commerciale</a></li>
-          <li><a href="./gest_rh.html">Gestion RH</a></li>
-          <li><a href="./gest_projets.html">Gestion des projets</a></li>
-        </ul>
-      </nav>
+      <div id="container">
+        <div id="container2">
+          <a class="newLogo" href="./index.html"><img src="img/logo.png" alt=""></a>
+          <a class="baseline" href="./index.html">Active Bretagne Informatique</a>
+        </div> 
+      
+        <div class="menu"> 
+          <a href="./gest_commerciale.html">Gestion Commerciale |</a>
+          <a href="./gest_rh.html">Gestion RH |</a>
+          <a href="./gest_projets.html">Gestion des projets</a>
+        </div>
+      </div>
+    
     </header>
+
     <!-- Code dans cette balise -->
+
+    
     <div class="main">
       <h1>Liste des projets</h1>
       <!-- Lister les projets -->
@@ -216,6 +301,5 @@
       <a href="" class="contact">Contact</a>
     </footer>
 
-    <script src="./js/gest_projets.js"></script>
   </body>
 </html>
