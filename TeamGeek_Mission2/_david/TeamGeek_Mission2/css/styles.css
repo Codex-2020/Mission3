@@ -108,3 +108,8 @@ footer {
   margin-right: 10vw;
   color: white;
 }
+@media all and (max-width: 280px) {
+  body {
+    width: 100%;
+  }
+}
