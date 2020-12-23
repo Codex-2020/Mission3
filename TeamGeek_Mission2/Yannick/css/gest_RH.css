@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+footer {
+  padding-bottom: 20px;
+}
+/* CSS Responsive Header (Yannick) */
+.liens {
+  float: right;
+}
+.liens a {
+  font-weight: bold;
+  float: left;
+  color: #232488;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+.liens a:hover {
+  color: rgb(80, 68, 99);
+}
+
+@media screen and (max-width: 850px) {
+  .liens a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .liens {
+    float: none;
+  }
+}
