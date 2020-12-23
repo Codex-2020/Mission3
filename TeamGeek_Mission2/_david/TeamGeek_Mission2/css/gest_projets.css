@@ -147,12 +147,18 @@ select {
 }
 
 @media all and (max-width: 768px) {
-  projets {
+  #projets {
     width: 60%;
+    height: 60%;
   }
   #projetGestion {
     font-size: 0.7em;
     width:auto:
+  }
+
+  #createProject{
+    width: 90%;
+    font-size:0.7em;
   }
 }
 
@@ -160,25 +166,56 @@ select {
   #projets {
     display: flex;
     flex-direction: column;
-    height: 50%;
+    height: 60%;
     width: 75%;
     margin-bottom: 50px;
     border: 2px solid black;
     padding-left: 20px;
     font-size: 0.7em;
   }
+  #createProject{
+    width: 100%;
+    font-size:0.6em;
+  }
   
   }
 
-@media all and (max-width: 400px) {
+@media all and (max-width: 414px) {
   #projets {
     display: flex;
     flex-direction: column;
-    height: 50%;
-    width: 85%;
+    height: 60%;
+    width: 80%;
     margin-bottom: 50px;
     border: 2px solid black;
     padding-left: 20px;
-    font-size: 0.7em;
+    font-size: 0.5em;
   }
+  #createProject{
+    width: 80%;
+    font-size:0.5em;
+  }
+}
+
+@media all and (max-width: 320px) {
+  #projets {
+    
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    padding-left: 20px;
+    font-size: 0.4em;
+  }
+
+  #listeProjets {
+    width: 100%;
+  }
+
+  #createProject{
+    width: 80%;
+    font-size:0.5em;
+  }
+
 }
