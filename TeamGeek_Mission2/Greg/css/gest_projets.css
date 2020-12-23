@@ -1,34 +1,109 @@
+#container {
+  background-color: #9fa8da;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#container2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.newLogo {
+  background-color: ;
+}
+
+.newLogo img {
+  height: 25vh;
+}
+
+.baseline {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 25px;
+  color: ;
+
+  color: darkblue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu {
+  margin-top: auto;
+  margin-bottom: 8px;
+  margin-right: 20px;
+}
+
+.menu a {
+  background-color: ;
+  font-size: 20px;
+  color: darkblue;
+  font-weight: ;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20 px;
+}
+
+body {
+  background-color: #e3e2e1;
+  display: flex;
+  flex-direction: column;
+  color: rgb(50, 50, 50);
+}
+
 /* CSS projets */
 .main {
+  background-color: ;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vw;
 }
 
-.main h1 {
-  margin-bottom: 50px;
+ h1 {
+  margin-bottom: 100px;
+  text-align: center;
 }
 
 #projets {
   display: flex;
   flex-direction: column;
-  height: 50%;
-  width: 50%;
-  margin-bottom: 50px;
-  border: 2px solid black;
-  padding: 5px;
+  height: auto;
+  width: auto;
+  margin-bottom: 100px;
+  border: 0px solid red;
+  padding: 0px;
+  align-items: center;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 #listeProjets {
   display: flex;
-  justify-content: center;
+  margin-top: 0px;
+}
+
+#listeProjets a:hover {
+  background-color: white;
 }
 
 #listeProjets a {
   border: solid orange 1px;
   padding: 10px;
-  margin-right: 20px;
+  margin: 5px;
+  text-decoration: none;
 }
 
 .contenu {
@@ -72,7 +147,7 @@ p {
   justify-content: space-between;
 }
 
-footer{
+footer {
   padding-bottom: 20px;
 }
 /* CSS bouton Créer un projet */
@@ -137,4 +212,21 @@ select {
   width: 10vw;
   height: 4vh;
   background-color: #9fa8da;
+}
+
+footer {
+  background-color: #9fa8da;
+  /*   border-top: 2px solid black; */
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+}
+
+.copyrights {
+  margin-left: 10vw;
+}
+.contact {
+  margin-right: 10vw;
 }
