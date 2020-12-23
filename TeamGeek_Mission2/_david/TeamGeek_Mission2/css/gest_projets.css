@@ -153,12 +153,12 @@ select {
   }
   #projetGestion {
     font-size: 0.7em;
-    width:auto:
+    width: auto;
   }
 
-  #createProject{
+  #createProject {
     width: 90%;
-    font-size:0.7em;
+    font-size: 0.7em;
   }
 }
 
@@ -173,12 +173,11 @@ select {
     padding-left: 20px;
     font-size: 0.7em;
   }
-  #createProject{
+  #createProject {
     width: 100%;
-    font-size:0.6em;
+    font-size: 0.6em;
   }
-  
-  }
+}
 
 @media all and (max-width: 414px) {
   #projets {
@@ -191,15 +190,14 @@ select {
     padding-left: 20px;
     font-size: 0.5em;
   }
-  #createProject{
+  #createProject {
     width: 80%;
-    font-size:0.5em;
+    font-size: 0.5em;
   }
 }
 
 @media all and (max-width: 320px) {
   #projets {
-    
     flex-direction: column;
     height: 50%;
     width: 100%;
@@ -213,9 +211,8 @@ select {
     width: 100%;
   }
 
-  #createProject{
+  #createProject {
     width: 80%;
-    font-size:0.5em;
+    font-size: 0.5em;
   }
-
 }
