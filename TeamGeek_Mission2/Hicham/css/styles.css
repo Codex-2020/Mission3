@@ -22,7 +22,7 @@ a {
 }
 
 header {
-  background-color: #9fa8da;
+  background-color: #b9c4ff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,11 +36,11 @@ header {
 }
 
 .logo img {
-  height: 8vh;
+  height: 7vh;
 }
 
 .logo_img {
-  margin-left: 5vw;
+  margin-left: 3vw;
 }
 
 .logo_text {
@@ -83,7 +83,7 @@ ul {
 }
 
 footer {
-  background-color: #9fa8da;
+  background-color: #b9c4ff;
   /*   border-top: 2px solid black; */
   height: 8vh;
   display: flex;
