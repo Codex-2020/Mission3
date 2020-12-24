@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #e3e2e1;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   color: rgb(50, 50, 50);
@@ -13,16 +13,16 @@ body {
 
 ul li {
   margin-left: 30px;
-  color: rgb(50, 50, 50);
+  color: rgb(255, 255, 255);
 }
 
 a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 header {
-  background-color: #b9c4ff;
+  background-color: #00a6cf;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,7 +44,7 @@ header {
 }
 
 .logo_text {
-  margin-left: 1vw;
+  margin-left: 0vw;
 }
 
 ul {
@@ -54,7 +54,7 @@ ul {
 }
 
 .main {
-  height: 80vh;
+  height: 70vh;
 }
 
 #accueil {
@@ -63,7 +63,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   height: 50%;
-  padding: 10px;
+  padding: 20px;
 }
 
 #bouton {
@@ -73,7 +73,7 @@ ul {
 }
 
 #boutonAccueil {
-  background-color: #9fa8da;
+  background-color: #00a6cf;
   width: 100px;
   height: 30px;
 }
@@ -83,7 +83,7 @@ ul {
 }
 
 footer {
-  background-color: #b9c4ff;
+  background-color: #00a6cf;
   /*   border-top: 2px solid black; */
   height: 8vh;
   display: flex;
@@ -93,8 +93,17 @@ footer {
 }
 
 .copyrights {
-  margin-left: 10vw;
+  margin-left: 3vw;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  align-items: right;
 }
 .contact {
   margin-right: 10vw;
+}
+
+@media all and (max-width: 280px) {
+  body {
+    width: 100%;
+  }
 }
