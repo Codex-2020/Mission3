@@ -1,0 +1,60 @@
+body {
+  background-color: #313030;
+  margin: 0.2em;
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+  border-radius: 1em 1em 0em 0em;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 75%;
+    height: 100%;
+  }
+
+  .navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+    transition: left 300ms ease-in-out;
+    background-color: white;
+    width: auto;
+    height: auto;
+    margin: 0.2em;
+    padding: 2em;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: left 500ms ease-in-out;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav {
+    display: none !important;
+  }
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+.form-control {
+  border: 1px solid #313030;
+}
+.btn-outline-info {
+  color: #313030;
+  border-color: #313030;
+}
