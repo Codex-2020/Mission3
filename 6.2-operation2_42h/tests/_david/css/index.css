@@ -4,15 +4,16 @@ body {
 }
 
 .bg-light {
-  background-color: white;
+  background-color: white !important;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
 
 .search {
-  width: 85%;
+  width: 85%; */
   border-radius: 5px;
   margin-left: 8%;
+  padding: 1%;
 }
 /*Transition menu*/
 .navbar-collapse {
@@ -44,9 +45,12 @@ body {
 /*Fin transition Menu*/
 
 @media (min-width: 992px) {
-  .bg-light {
-    height: 25vh;
+
+  .navbar-collapse.show{
+    margin:0 2%  -5% 0 !important;
+    
   }
+
   ul li {
     background-color: #313030;
     margin-left: 20px;
@@ -54,13 +58,17 @@ body {
     border-top-right-radius: 10px;
     padding-left: 25px;
     padding-right: 25px;
-    margin-bottom: -100px;
-    margin-top: 140px;
+   
   }
 
-  .navbar-nav {
-    padding-left: 15%;
+  .navbar-collapse{
+    position:static;
+    justify-content: flex-end;
+    
+    
   }
+
+  
 
   .navbar-light .navbar-nav .nav-link {
     color: white;
@@ -76,10 +84,11 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0 !important;
   }
 
   .navbar-brand img {
-    margin-left: 12%;
+    /* margin-left: 12%; */
     height: 100px;
     width: 400px;
   }
@@ -90,25 +99,92 @@ body {
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 300px) {
   .navbar-brand img {
-    height: 40px;
-    width: 100px;
+    height: 30px;
+    width: 80px;
     margin-left: 8px;
     margin-top: 0;
   }
 
   .navbar-toggler,
   .navbar-toggler-icon {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
   }
 
   .navbar-toggler-icon {
-    margin-left: -12px;
-    margin-top: -8px;
+    margin-left: -8px;
+    margin-top: -20px;
   }
   .navbar-basket img {
     margin-left: 0%;
+    width: 30px;
+    height: 30px;
   }
 }
+
+@media (max-width: 200px) {
+.navbar-brand img {
+  height: 15px;
+  width: 40px;
+  margin-left: 8px;
+  margin-top: 0;
+}
+
+.navbar-toggler,
+.navbar-toggler-icon {
+  width: 5px;
+  height: 5px;
+  margin-top:20px;
+}
+
+.navbar-toggler-icon {
+  margin-left: -8px;
+  margin-top: -20px;
+}
+.navbar-basket img {
+  margin-left: 0%;
+  width: 10px;
+  height: 10px;
+}
+
+
+}
+
+@media (max-width: 150px) {
+  .navbar-brand img {
+    height: 15px;
+    width: 30px;
+    margin-left: 8px;
+    margin-top: 0;
+  }
+  
+ 
+  
+  .navbar-toggler-icon {
+    margin-left: -3px;
+    margin-top: -20px;
+  }
+  .navbar-basket img {
+    margin-left: 0%;
+    width: 10px;
+    height: 10px;
+  }
+
+  .navbar-collapse {
+  
+   font-size: 0.75em;
+   
+  }
+
+  .search{
+    font-size:0.75em ;
+  }
+
+  .navbar-toggler{
+   font-size:0.9em;
+   padding:0.25em 0.25em;
+  }
+ 
+  }
