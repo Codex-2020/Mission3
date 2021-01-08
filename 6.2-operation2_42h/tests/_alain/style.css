@@ -1,3 +1,42 @@
-#logo {
+body {
+    background-color: #313030;
+}
+
+#logo_site0 {
     height: 50px;
 }
+
+#logo_site {
+    height: 50px;
+}
+
+.nav-link{
+    background-color: #313030;
+    color: white !important;
+    text-align: center;  
+}
+
+a:hover {
+    color: red !important;
+} 
+
+#recherche {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-collapse {
+     justify-content: center;
+ }
+
+@media all and (max-width: 380px){
+    #logo_site {
+        display: none;
+    }
+}
+
+@media all and (min-width: 380px) {
+    #logo_site0 {
+        display: none;
+    }
+} 
