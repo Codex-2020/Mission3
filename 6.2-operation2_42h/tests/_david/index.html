@@ -8,13 +8,13 @@
     <title>Page d'accueil BD Place</title>
 
 </head>
-<body>
+<body class="bg-dark">
 
     <!--Header-->
     <div class="bg-light">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row ">
-                <nav class="col navbar navbar-expand-lg navbar-light " >
+                <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap" >
                     
                     <div class=menu>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
@@ -23,19 +23,26 @@
                     </div>
 
                                     
-                    <div>
-                    <a class="navbar-brand" href="./index.html"><img src="./pictures/logo_m3.jpg" width="150px" height="50px" alt=""></a>
+                    <div class="brand  col-md-4">
+                    <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="50%" height="25%" alt=""></a>
                 </div>
 
-                   <div>
-                    <a class="navbar-basket" href="./index.html"><img src="./pictures/logo_panier.png" width="35px" height="45px" alt=""></a>
+                <div class="search   col-md-5 col-sm-3 col-">
+                    <form>
+                        <input type="text"  id="search" name="key_word"  placeholder="Recherche" />
+                        <button class='btn-search'>RECHERCHE</button>
+                    </form>
                 </div>
 
-                    <div class="search ">
-                        <form>
-                            <input type="text" class="search" id="search" name="key_word"  placeholder="Recherche" />
-                        </form>
+                <div class="right  col-md-3 d-flex  flex-column">
+                    <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
+                    <div class="basket d-flex border  align-items-end justify-content-between rounded border-dark mt-1">
+                    <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="80%" height="80%" alt=""></a>
+                    <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
                     </div>
+                </div>
+
+                    
 
                     <div id="navbarContent" class="collapse navbar-collapse" >
                         <ul class="navbar-nav">
@@ -56,6 +63,8 @@
                             </li>
                         </ul>
                     </div>
+
+                   
                 </nav>
 
             
