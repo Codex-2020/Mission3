@@ -21,7 +21,8 @@ body {
 }
 
 .btn-search,
-.btn-connection {
+.btn-connection,
+.btn-smally {
   background-color: #313030;
   color: white;
   border-radius: 5px;
