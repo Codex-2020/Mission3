@@ -9,7 +9,27 @@ body {
   border-radius: 1em 1em 0em 0em;
 }
 
+#searchInput {
+  background: #ffffff;
+  border: 1px solid #e0e0d0;
+  border-radius: 1em;
+  width: 200px;
+  height: 40px;
+  font-size: 2ch;
+  border-color: rgb(0, 0, 0);
+  color: #595949;
+}
+
 .bg-white {
   background-color: #ffffff;
   border-radius: 0em 0em 1em 1em;
+}
+
+.panier {
+  margin-bottom: 5px;
+}
+
+.formControl {
+  position: center;
+  border-radius: 1em 1em 1em 1em;
 }
