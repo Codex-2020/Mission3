@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(44, 49, 54);
+  margin: 1em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.bg-light {
+  background-color: #ffffff;
+  border-radius: 1em 1em 0em 0em;
+}
+
+.bg-white {
+  background-color: #ffffff;
+  border-radius: 0em 0em 1em 1em;
+}
