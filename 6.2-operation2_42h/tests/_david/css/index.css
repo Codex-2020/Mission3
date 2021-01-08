@@ -26,6 +26,8 @@ body {
 .navbar-collapse {
   position: fixed;
   top: 70px;
+  z-index: 10;
+  width: 250px;
 }
 
 .navbar-collapse.collapsing {
@@ -108,12 +110,14 @@ body {
   }
 }
 
-@media (max-width: 280px) {
+@media (max-width: 320px) {
   .navbar-brand img {
     width: 100px;
     height: 50px;
   }
 }
+
+/*Main*/
 
 /*Footer*/
 .footer {
