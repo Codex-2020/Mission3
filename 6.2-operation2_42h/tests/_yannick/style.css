@@ -1,0 +1,150 @@
+body {
+  background-color: #313030;
+  margin: 0.2em;
+  font-family: "Oswald";
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+  border-radius: 1em 1em 0em 0em;
+  width: 100%;
+}
+
+a {
+  color: #313030;
+}
+a:hover {
+  color: red;
+}
+
+.content {
+  background: #ffffff;
+  margin-top: 0.3em;
+}
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  /* Menu Slide */
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    z-index: 100;
+  }
+
+  .navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+    transition: left 300ms ease-in-out;
+    background-color: white;
+    margin: 0.2em;
+    padding: 2em;
+    top: 100%;
+    position: absolute;
+    border-color: black;
+    border-style: solid;
+    border-width: 0.1em;
+  }
+
+  .legal {
+    display: flex;
+    flex-direction: column;
+  }
+  .legal a {
+    padding: 0.1em;
+  }
+}
+@media (min-width: 992px) {
+  .copyright {
+    font-size: 1.5em;
+  }
+  .legal a {
+    padding: 1em;
+  }
+}
+
+.navbar-toggler.collapsed ~ .navbar-collapse {
+  transition: left 500ms ease-in-out;
+}
+
+/* Bouton Connection*/
+
+.btn {
+  color: #313030;
+  border: #313030;
+  border-radius: 0.2em;
+  border-style: solid;
+  border-width: 0.1em;
+  width: max-content;
+}
+.basket {
+  text-align: center;
+}
+.fa-shopping-basket {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: x-large;
+}
+
+.navbar-light .navbar-brand {
+  margin: 0;
+}
+
+h5.menu-text {
+  margin: 0;
+  font-size: smaller;
+}
+/* Slider */
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.carousel {
+  position: relative;
+  margin-top: 0.5em;
+}
+/* new product block*/
+.container-fluid.newproductblock {
+  background: #ffffff;
+  margin-top: 0.5em;
+}
+.title-block {
+  padding-top: 0.5em;
+}
+.newproduct-group {
+  margin: 0.1em;
+}
+.newproduct {
+  margin: 0.3em;
+  border: #313030;
+  border-style: solid;
+  border-width: 0.1em;
+}
+.newproduct-price {
+  font-size: 1.5em;
+}
+button.btn-addcart {
+  background: #313030;
+  color: #ffffff;
+  border-style: none;
+  width: 100%;
+}
+
+.footer {
+  background: #ffffff;
+  border-radius: 0em 0em 1em 1em;
+  margin-top: 0.3em;
+  position: sticky;
+  width: 100%;
+  height: auto;
+}
