@@ -7,13 +7,13 @@ body {
 }
 
 #logo_site {
-    height: 50px;
+    height: 80px;
 }
 
 .nav-link{
     background-color: #313030;
     color: white !important;
-    text-align: center;  
+    text-align: center;
 }
 
 a:hover {
@@ -29,13 +29,36 @@ a:hover {
      justify-content: center;
  }
 
-@media all and (max-width: 380px){
+@media all and (min-width: 956px) {
+    #navbarSupportedContent {
+        margin-right: 100px;
+    }
+}
+ 
+@media all and (max-width: 925px) {
     #logo_site {
-        display: none;
+        height: 50px;
     }
 }
 
-@media all and (min-width: 380px) {
+@media all and (max-width: 767px) {
+    #logo_site {
+        margin-left: 90px;
+        height: 70px;
+    }
+}
+
+@media all and (max-width: 530px){
+    #logo_site {
+        display: none;
+    }
+    
+    #logo_site0 {
+        height: 80px;
+    }
+}
+
+@media all and (min-width: 530px) {
     #logo_site0 {
         display: none;
     }
