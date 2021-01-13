@@ -1,5 +1,5 @@
 //comportement du panier au survol pour affichage de son contenu
-var timeout;
+let timeout;
 
 $("#cart").on({
   mouseEnter: function () {
@@ -43,11 +43,11 @@ function saveCart(inCartItemsNum, cartArticles) {
 
 //getCookie
 function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(";");
+  let name = cname + "=";
+  let ca = document.cookie.split(";");
 
   for (let i = 0; i < ca.length; i++) {
-    var c = ca[i];
+    let c = ca[i];
     while (c[0] == " ") {
       c = c.substring(1);
     }
@@ -56,12 +56,12 @@ function getCookie(cname) {
       if ("btoa" in window) return atob(c.substring(name.length, c.length));
     } else return c.substring(name.length, c.length);
   }
+  return false;
 }
-return false;
 
 //variables pour stocker le nombre d'articles et leurs noms
-var inCartItemsNum;
-var cartArticles;
+let inCartItemsNum;
+let cartArticles;
 
 //affiche/cache les éléments du panier selon s'il contient des produits
 function cartEmptyToggle() {
@@ -88,7 +88,7 @@ cartEmptyToggle();
 $("#in-cart-items-num").html(inCartItemsNum);
 
 //hydrate le panier
-var items = "";
+let items = "";
 cartArticles.forEach(function (v) {
   items +=
     '<li id="' +
@@ -107,18 +107,18 @@ $("#cart-dropdown").prepend(items);
 //click bouton ajouter au panier
 $(".add-to-cart").click(function () {
   //récupération des infos du produit
-  var $this = $(this);
-  var id = $this.attr("data-id");
-  var name = $this.attr("data-name");
-  var price = $this.attr("data-price");
-  var url = $this.attr("data-url");
-  var qt = parseInt($("#qt").val());
+  let $this = $(this);
+  let id = $this.attr("data-id");
+  let name = $this.attr("data-name");
+  let price = $this.attr("data-price");
+  let url = $this.attr("data-url");
+  let qt = parseInt($("#qt").val());
   inCartItemsNum += qt;
 
   //mise à jour du nombre de produit dans le widget
   $("#in-cart-items-num").html(inCartItemsNum);
 
-  var newArticles = true;
+  let newArticles = true;
 
   //vérifie si l'article est pas déja dans le panier
   cartArticles.forEach(function (v) {
@@ -168,25 +168,81 @@ $(".add-to-cart").click(function () {
   cartEmptyToggle();
 });
 
-//si on est sur la page ayant pour url ./panier.html
-if (window.location.pathname == "panier.html") {
-  var items = "";
-  var total;
+//si on est sur la page ayant pour url add-a-cart.html
+if (window.location.pathname == "/add-a-cart/.html/") {
+  let items = "";
+  let subTotal = 0;
+  let total;
 
-  /*on parcourt notre array et on crée les lignes du tableau pour nos articles : 
-  * - le nom de l'article (lien cliquable qui mène à la fiche produit)
-  * - son prix
-  * - la dernière colonne permet de modifier la quantité et de supprimer l'article
-  *  
-  * on met aussi à jour le total de la commande
-  */
+  /*on parcourt notre array et on crée les lignes du tableau pour nos articles :
+   * - le nom de l'article (lien cliquable qui mène à la fiche produit)
+   * - son prix
+   * - la dernière colonne permet de modifier la quantité et de supprimer l'article
+   *
+   * on met aussi à jour le total de la commande
+   */
 
-  cartArticles.forEach(function(v){
+  cartArticles.forEach(function (v) {
     //opération sur un entier pour éviter les problèmes d'arrondis
-    var itemPrice = v.price.replace(',','.') * 1000;
-    items += '<tr data-id="'+ v.id +'">\
-    <td><a href="'+ v.url +'">'+ v.name +'</a></td>\
-    <td>'+ v.price +'€</td>\
-    
-  })
+    let itemPrice = v.price.replace(",", ".") * 1000;
+    items +=
+      '<tr data-id="' +
+      v.id +
+      '">\
+    <td><a href="' +
+      v.url +
+      '">' +
+      v.name +
+      "</a></td>\
+    <td>" +
+      v.price +
+      '€</td>\
+    <td><span class="qt">' +
+      v.qt +
+      '</span> <span class="qt-minus">–</span> <span class="qt-plus">+</span> \
+    <a class="delete-item">Supprimer</a></td></tr>';
+  });
+
+  //on reconverti notre résultat en décimal
+  subTotal = subTotal / 1000;
+
+  //on insère le contenu du tableau et le sous total
+  $("#cart-tablebody").empty().html(items);
+  $(".subtotal").html(subTotal.toFixed(2).replace(".", ","));
+
+  //lorsqu'on clique sur le "+" du panier
+  $(".qt-plus").on("click", function () {
+    let $this = $(this);
+
+    //on récupère la quantité actuelle et l'id de l'article
+    let qt = parseInt($this.prevAll(".qt").html());
+    let id = $this.parent().parent().attr("data-id");
+
+    //met à jour la quantité
+    inCartItemsNum += 1;
+    $this.prevAll(".qt").html(qt + 1);
+    $("#in-cart-items-num").html(inCartItemsNum);
+    $("#" + id + " .qt").html(qt + 1);
+
+    //met à jour cartArticles
+    cartArticles.forEach(function (v) {
+      // on incrémente la qt
+      if (v.id == id) {
+        v.qt += 1;
+
+        //récupération du prix
+        //on effectue tous les calculs sur des derniers
+        subTotal =
+          (subTotal * 1000 + parseFloat(v.price.replace(",", ".")) * 1000) /
+          1000;
+      }
+    });
+
+    //met à jour la quantité du widget et sauvegarde le panier
+    $(".subtotal").html(subTotal.toFixed(2).replace(".", ","));
+    saveCart(inCartItemsNum, cartArticles);
+  });
+
+  //quantité -
+  $(".qt-minus");
 }
