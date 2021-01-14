@@ -2,153 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" href="./index.css">
-    <title>Accueil BD Place</title>
-
+    <title>BD Place</title>
 </head>
+
 <body>
-
-    <!--Header-->
-    <div class="bg-white header">
+    <!-- Header -->
+    <div class="bg-light">
         <div class="container-fluid">
-            <div class="row ">
-                <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
-                    <div class="menu ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    </div>
-                
-                    <div class="brand col-7 order-lg-1 col-lg-3">
-                        <a class="navbar-brand" href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
-                    </div>
-
-                    <div class="right   d-flex  flex-column col-2 order-lg-3 col-lg-2 ">
-                        <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
-                        <div class="basket d-flex border  justify-content-center align-center rounded border-dark mt-1">
-                            <a class="navbar-basket " href="add-a-cart.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
-                                <!-- Le widget panier -->
-                                <div class="dropdown">
-                                    <div id="cart">
-                                        <p class="basket-p align-middle p-3"><span id="in-cart-items-num"> 0 </span>articles</p>
-                                    </div>
-                                    <ul id="cart-dropdown" hidden>
-                                        <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
-                                        <li class="go-to-cart hidden"><a href="add-a-cart.html">Voir le panier</a></li>
+            <div class="row">
+                <nav class="col navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="col navbar-brand" href="index.html">
+                        <img src="./images/Logo.jpg/" width="160" height="50" alt="">
+                    </a>
+                    <input class="form-control" id="searchInput" type="text" placeholder="Rechercher">    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div id="navbarContent" class="collapse navbar-collapse">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Accueil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Nouveautés</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Promotions</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Catalogue</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Contact</a>
+                                        </li>
                                     </ul>
+                                    <hr>
+                                    <button type="create a count/log in" class="btn btn-secondary">Créer un compte/Se connecter</button>
                                 </div>
-                                <!-- Le widget panier -->
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="search order-lg-2 col-lg-7 d-flex justify-content-center">
-                        <form>
-                        <input class="rounded" type="text"  id="search" name="key_word"  placeholder="Recherche" />
-                        <button class='btn-search'>RECHERCHE</button>
-                        </form>
-                    </div>
-
-                    <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
-                        <ul class="navbar-nav col-md-12 justify-content-center">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#home">ACCUEIL</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">NOUVEAUTES</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">PROMOTIONS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">CATALOGUE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">CONTACT</a>
-                            </li>
-                        </ul>
-
-                        <hr>
-                        <div class="smally">
-                            <button class="btn-smally" type="button">S'inscrire/Se connecter</button>
-                        </div>
-                    </div>
+                    </div>    
                 </nav>
             </div>
         </div>
     </div>
+    <!-- Header -->
 
-     <!--Main-->
-
-        <div class="container-fluid bg-white mt-1 mb-5 mt-5 pt-2">
+    <!-- Carousel -->
+    <div class="container">
         <div class="row">
             <div class="col">
-
-                <div  id="carouselControls" class="carousel slide " data-ride="carousel">
+                <div id="carouselControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                             <img src="./pictures/banniere_asterix.jfif" class="d-block w-100" width="800px" height="200px" alt="...">
+                        <div class="carousel-item">
+                            <img src="./images/CÇdric-21-On ràvasse.jpg" width="50" height="50" class="d-block w-100" alt="Image1">
                         </div>
                         <div class="carousel-item">
-                            <img src="./pictures/banniere_bd.jfif" class="d-block w-100" width="800px" height="200px" alt="...">
-                         </div>
-                         <div class="carousel-item">
-                            <img src="./pictures/banniere_dcm.jfif" class="d-block w-100" width="800px" height="200px" alt="...">
-                       </div>
-                         <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+                            <img src="./images/Blueberry-05-Le spectre aux balles dor.jpg" class="d-block w-100" alt="Image2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/Blake et Mortimer-06-La marque jaune.jpg" class="d-block w-100" alt="Image3">
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Précédent</span>
-                         </a>
-                         <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                        </a>
+                        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Suivant</span>
-                         </a>
+                        </a>
                     </div>
-                </div>
-
-                <div class=nouveautés>
-                    <p>Test</p>
                 </div>
             </div>
         </div>
     </div>
-
-     <!--Footer-->
-    <div class="container-fluid bg-white footer d-flex justify-content-center mt-4">
-        <footer class="footer">
-        
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="copyright col-12 col-md-6 text-center mt-1 align-self-center">
-                    <p>© BD Place™ 2021</p>
-                </div>
-
-                <div class="social col-12 col-md-6 text-center mt-1">
-                    <i class="fab fa-2x fa-facebook-square"></i>
-                    <i class="fab fa-2x fa-twitter-square"></i>
-                    <i class="fab fa-2x fa-instagram"></i>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="legal col text-center">
-                    <a href="">Mentions Légales</a>
-                    <a href="">Conditions Générales de Vente</a>
-                    <a href="">Nous Contacter</a>
+    <!-- Carousel -->
+    
+    <!-- Footer -->
+    <div class="bg-white">
+        <div class="container">
+            <div class="row pt-4 pb-3">
+                <div class="col">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">BD Place</li>
+                        <li class="list-inline-item">&middot;</li>
+                        <li class="list-inline-item">Tous droits réservés</li>
+                        <li class="list-inline-item">&middot;</li>
+                        <li class="list-inline-item">Mentions légales</li>
+                        <li class="list-inline-item">&middot;</li>
+                        <li class="list-inline-item">CGV</li>
+                        <li class="list-inline-item">&middot;</li>
+                    </ul>
                 </div>
             </div>
-            </div>
-        </footer>
+        </div>
     </div>
+    <!-- Footer -->
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script src="add-a-cart.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <script>
+        $(document).ready(function(){
+            $("#searchInput").on("keyup", function(){
+                let value =$(this).val().toLowerCase();
+                $("#").filter(function(){
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)  
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>
