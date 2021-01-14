@@ -11,6 +11,7 @@ $("#cart").on({
     }, 200);
   },
 });
+
 //laisse le contenu ouvert à son survol
 //le cache quand la sourit sort
 $("#cart-dropdown").on({
@@ -22,10 +23,8 @@ $("#cart-dropdown").on({
   },
 });
 
-console.log(let timeout);
-
 //setCookie
-function setCookie(name, cvalue, exdays) {
+function setCookie(cname, cvalue, exdays) {
   let d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
@@ -289,5 +288,29 @@ if (window.location.pathname == "/add-a-cart/.html/") {
     $("#in-cart-items-num").html(inCartItemsNum);
 
     //supprime l'item du DOM
+    $("#in-cart-items-num").html(inCartItemsNum);
+
+    //supprime l'item du DOM
+    $this.parent().parent().hide(600);
+    $("#" + id).remove();
+
+    cartArticles.forEach(function (v) {
+      //on récupère l'id de l'article dans l'array
+      if (v.id == id) {
+        //on met à jour le sous total er retire l'article de l'array
+        //calcul sur des entiers
+        let itemPrice = v.price.replace(",", ".") * 1000;
+        subTotal -= (itemPrice * qt) / 1000;
+        cartArticles.splice(arrayId, 1);
+
+        return false;
+      }
+
+      arrayId++;
+    });
+
+    $("subtotal").html(subTotal.toFixed(2).replace(".", ","));
+    saveCart(inCartItemsNum, cartArticles);
+    cartEmptyToggle();
   });
 }
