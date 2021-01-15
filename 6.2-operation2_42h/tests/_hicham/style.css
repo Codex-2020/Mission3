@@ -31,6 +31,14 @@ body {
   margin: 4px;
 }
 
+#in-cart-items-num {
+  margin: 19px;
+}
+
+.dropdown:hover > #cart-dropdown {
+  display: block;
+}
+
 #carouselControls {
   height: 200px;
 }
