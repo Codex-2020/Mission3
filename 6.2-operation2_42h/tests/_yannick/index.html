@@ -14,13 +14,13 @@
   <div class="container-fluid">
     <div class="row">
     <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap">
-      <!--Bouton Menu Mini-->
+      <!--Boutons Menu Mini-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <h5 class="menu-text">Menu</h5>
         <span class="navbar-toggler-icon"></span>
       </button>
       <!--Logo-->
-    <a class="navbar-brand col col-sm-2 col-lg-3 text-center" href="#"><img src="./images/Logo.jpg"  class="img-fluid" alt=""></a>
+    <a class="navbar-brand col col-sm-2 col-lg-3 text-center" href="./index.html"><img src="./images/Logo.jpg"  class="img-fluid" alt=""></a>
     <!--Menu-->
     
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,8 +57,13 @@
         </div>
         <hr>
         <!--Bouton Connexion-->
-        <div class="connect-button text-center col">
-          <button type="button" class="btn btn-connection">Se Connecter</button>
+        <div id="connectButton" class="connect-button text-center col">
+          <!--<button  id="connect-button" class="btn btn-connection" type="button" href="./login.html">Se Connecter</button>-->
+          <a class="btn" href="./login.html" role="button">Se Connecter</a>
+        </div>
+        <div id="userMsg" style="display:none">
+          <!--Message si utilisateur Connecté-->
+          <a class="btn" href="./account.html" role="button">Mon Compte</a>
         </div>
       </div>
       <!-- Panier-->
