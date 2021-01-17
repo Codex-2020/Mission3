@@ -26,6 +26,7 @@ body {
   color: white;
   border-radius: 5px;
 }
+
 /*Transition menu*/
 .navbar-collapse {
   position: fixed;
@@ -127,4 +128,23 @@ body {
 .footer {
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
+}
+
+/*Page panier*/
+.purchase-infos {
+  text-align: center;
+}
+.purchase-infos a {
+  color: #000000;
+  display: inline-block;
+  margin: 5px 0 23px;
+}
+.purchase-infos a:hover {
+  text-decoration: none;
+}
+.purchase-infos .glyphicon {
+  font-size: 150%;
+}
+.purchase-infos .glyphicon-plane {
+  transform: rotate(45deg);
 }
