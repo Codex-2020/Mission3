@@ -1,17 +1,18 @@
 import albums from "../data/albums.js";
 import series from "../data/series.js";
 import auteurs from "../data/auteurs.js";
-// console.log(albums); // test
-// console.log(series); // test
-// console.log(auteurs); // test
-// console.log(albums.get("2"));
-// console.log(albums.get("2").titre);
+console.log(albums); // test
+console.log(series); // test
+console.log(auteurs); // test
+console.log(albums.get("2"));
+console.log(albums.get("2").titre);
 
 let serieAlbum = "";
 let numeroAlbum = "";
 let titreAlbum = "";
 let auteurAlbum = "";
 let prixAlbum = "";
+let cheminImageAlbum = "";
 
 
 // Permet de lire l'url à partir du ?
@@ -35,7 +36,7 @@ function getAlbum(num) {
     // let auteurAlbum = document.getElementById("auteur");
     // let prixAlbum = document.getElementById("prix");
     // let imageAlbum = document.getElementById("albumBd");
-    // const srcImageAlbum = "albums/"; // emplacement des images des albums en grand
+    const srcImageAlbum = "albums/"; // emplacement des images des albums en grand
 
     let ligneAlbum = albums.get(num); // ID ALBUM
     console.log(ligneAlbum);
@@ -43,7 +44,7 @@ function getAlbum(num) {
     let ligneSerie = series.get(ligneAlbum.idSerie);
     let ligneAuteur = auteurs.get(ligneAlbum.idAuteur);
     console.log(ligneSerie);
-    // console.log(ligneSerie.nom)
+    console.log(ligneSerie.nom)
 
     serieAlbum = ligneSerie.nom;
     console.log(serieAlbum);
@@ -56,16 +57,14 @@ function getAlbum(num) {
     prixAlbum = ligneAlbum.prix;
     console.log(prixAlbum);
 
-    // let nomAlbum = ligneSerie.nom + "-" + ligneAlbum.numero + "-" + ligneAlbum.titre; // Concaténation du nom de l'image
-    // nomAlbum = nomAlbum.replace(/'|!|\?|\.|"|:|\$/g, "");
-    // let cheminImageAlbum = srcImageAlbum + nomAlbum + ".jpg";
+    let nomAlbum = ligneSerie.nom + "-" + ligneAlbum.numero + "-" + ligneAlbum.titre; // Concaténation du nom de l'image
+    nomAlbum = nomAlbum.replace(/'|!|\?|\.|"|:|\$/g, "");
+    console.log(nomAlbum);
+    cheminImageAlbum = "./" + srcImageAlbum + nomAlbum + ".jpg";
+    console.log(cheminImageAlbum);
     // imageAlbum.src = cheminImageAlbum;
 };
 
-// Appel de la fonction GetAlbum avec l'envoi de l'id en paramètre 
-
-
-// getAlbum(id)
 
 let test = "";
 let testu = [];
@@ -73,20 +72,30 @@ let testu = [];
 
 function teste() {
 
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 629; i++) {
+
         let j = `${i}`;
-        console.log(typeof j);
+        let k = albums.get(j);
 
+        let searchId = albums.has(j);
+        console.log(searchId);
 
-        getAlbum(j);
-        test = ` Nom Album: ${titreAlbum}
-         Numéro Album:  ${numeroAlbum}
-         Auteur:  ${auteurAlbum}
-         Prix Album  ${prixAlbum}
-         <br />`;
-        testu.push(test);
-        console.log(testu);
+        if (searchId) {
+            getAlbum(j);
 
+            test = `<div class="card-body text-center">
+            <img src="${cheminImageAlbum}" alt="" width="200px" height="300px" />
+         <h5 class="card-title">Nom Album: ${titreAlbum}</h5>
+        <h6 class="card-subtitle auteur">Auteur:  ${auteurAlbum}</h6>
+        <h6 class="card-subtitle serie mt-2">Série</h6>
+        <h6 class="card-title mt-2">Prix Album  ${prixAlbum} €</h6>
+        <a href="#" class="btn btn-dark">Ajouter au panier</a>
+    </div>`
+            testu.push(test);
+            console.log(testu);
+        } else {
+            console.log('c\'est pas grave');
+        }
 
     }
 
@@ -94,10 +103,6 @@ function teste() {
 teste();
 console.log(testu[1]);
 
-// for (let i = 1; i <= testu[i].lenght; i++) {
-
-//     localStorage.setItem("catalogue", testu);
-
-// }
 
 document.getElementById('test2').insertAdjacentHTML('afterbegin', testu);
+
