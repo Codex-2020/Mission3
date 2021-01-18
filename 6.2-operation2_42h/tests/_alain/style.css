@@ -1,65 +1,190 @@
+/*font-family: 'Roboto', sans-serif;*/
 body {
     background-color: #313030;
+    font-family: 'Roboto', sans-serif;
+    margin: 0.2em;
 }
 
-#logo_site0 {
-    height: 50px;
+/******************************* HEADER DAVID *******************************/
+.header {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 }
 
-#logo_site {
-    height: 80px;
+.search input {
+    font-style: italic;
+    width: 60vw;
 }
 
-.nav-link{
+.search {
+    z-index: 12;
+}
+
+.btn-search,
+.btn-connection,
+.btn-smally {
     background-color: #313030;
-    color: white !important;
-    text-align: center;
+    color: white;
+    border-radius: 5px;
 }
 
-a:hover {
-    color: red !important;
-} 
-
-#recherche {
-    display: flex;
-    justify-content: center;
-}
-
+/*Transition menu*/
 .navbar-collapse {
-     justify-content: center;
- }
+    position: fixed;
+    top: 70px;
+    z-index: 10;
+    width: 250px;
+}
 
-@media all and (min-width: 956px) {
-    #navbarSupportedContent {
-        margin-right: 100px;
+.navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+}
+
+.navbar-collapse.show {
+    left: 0;
+    transition: left 300ms ease-in-out;
+    background-color: white;
+    margin: 0.2em;
+    padding: 2em;
+}
+
+.navbar-toggler.collapsed~.navbar-collapse {
+    transition: left 500ms ease-in-out;
+}
+
+/*Fin transition Menu*/
+
+@media (min-width: 992px) {
+    ul li {
+        background-color: #313030;
+        margin-left: 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .navbar-collapse {
+        position: static;
+        margin-bottom: -20px;
+    }
+
+    .navbar-light .navbar-nav .nav-link {
+        color: white;
+    }
+
+    .navbar-light .navbar-nav .active>.nav-link,
+    .navbar-light .navbar-nav .nav-link:hover {
+        color: white;
+        font-weight: bold;
+    }
+
+    .smally {
+        display: none;
+    }
+
+    .search input {
+        width: 30vw;
     }
 }
- 
-@media all and (max-width: 925px) {
-    #logo_site {
+
+@media (max-width: 991px) {
+
+    .btn-connection,
+    .basket-p {
+        display: none;
+    }
+
+    .basket {
+        border: none !important;
+    }
+
+    .navbar-brand img {
+        width: 150px;
         height: 50px;
     }
 }
 
-@media all and (max-width: 767px) {
-    #logo_site {
-        margin-left: 90px;
-        height: 70px;
+@media (max-width: 576px) {
+    .btn-search {
+        font-size: 0.5em;
+    }
+
+    .search input {
+        font-size: 0.5em;
+        width: 40vw;
     }
 }
 
-@media all and (max-width: 530px){
-    #logo_site {
-        display: none;
-    }
-    
-    #logo_site0 {
-        height: 80px;
+@media (max-width: 320px) {
+    .navbar-brand img {
+        width: 100px;
+        height: 50px;
     }
 }
 
-@media all and (min-width: 530px) {
-    #logo_site0 {
-        display: none;
+/******************************* CONTENT ALAIN *******************************/
+
+/* .couverture {
+    width: 100%;
+} */
+
+
+ @media all and (min-width: 576px){
+    #contentTitre {
+        display: flex;
+        justify-content: center;
     }
-} 
+    #achat {
+       margin-top: 10%;
+        
+    } 
+}
+
+/******************************* FOOTER YANNICK *******************************/
+.footer {
+    background: #ffffff;
+    border-radius: 0em 0em 1em 1em;
+    margin-top: 0.3em;
+    position: sticky;
+    width: 100%;
+    height: auto;
+}
+
+hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+a {
+    color: #313030;
+}
+
+a:hover {
+    color: red;
+}
+
+@media (max-width: 992px) {
+
+    .legal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .legal a {
+        padding: 0.1em;
+    }
+}
+
+@media (min-width: 992px) {
+    .copyright {
+        font-size: 1.em;
+    }
+
+    .legal a {
+        padding: 1em;
+    }
+}

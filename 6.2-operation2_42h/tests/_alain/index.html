@@ -5,44 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <title>test bootstrap</title>
 </head>
 
-<body>  
-  <header class="container-fluid bg-light">
-    <div class="row justify-content-center">
-      <a class="navbar-brand" href="#"><img id="logo_site0" src="./images/Logo.jpg" alt="logo du site"></a>
-    </div>
-    <div class="row">
-      <nav class="col navbar navbar-expand-md navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#"><img id="logo_site" src="./images/Logo.jpg" alt="logo du site"></a>
-        <div class="order-md-12">
-          <button type="button" class="btn"><img class="logo" src="./images/Logo_user.png" alt="bouton user"></button>
-          <button type="button" class="btn"><img class="logo" src="./images/Logo_panier.png" alt="bouton panier"></button> 
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link m-1 rounded" href="#">Nouveautés</a></li>
-              <li class="nav-item"><a class="nav-link m-1 rounded" href="#">Promotions</a></li>
-              <li class="nav-item"><a class="nav-link m-1 rounded" href="#">Catalogue</a></li>
-              <li class="nav-item"><a class="nav-link m-1 rounded" href="#">Nous contacter</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    <div class="row justify-content-center">
-      <form id="recherche" class="w-100 form-inline mb-4">
-        <input class="w-50 form-control" type="search" placeholder="Rechercher une BD" aria-label="Search">
-        <button class="btn btn-outline-dark my-2 my-sm-0 ml-2" type="submit">Rechercher</button>
-      </form>
-    </div>
-  </header>
+<body class="p-1">  
+    <!-- <a class="bg-white" href="list_bd.html">liste des bd</a> -->
+<!--Header-->
+    <div class="bg-white header">
+        <div class="container-fluid">
+            <div class="row ">
+                <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
+                    <div class="menu ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                
+                    <div class="brand col-7 order-lg-1 col-lg-3">
+                        <a class="navbar-brand" href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
+                    </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                    <div class="right   d-flex  flex-column col-2 order-lg-3 col-lg-2 ">
+                        <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
+                        <div class="basket d-flex border  justify-content-center align-center rounded border-dark mt-1">
+                            <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
+                            <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
+                        </div>
+                    </div>
+
+                    <div class="search order-lg-2 col-lg-7 d-flex justify-content-center">
+                        <form>
+                        <input class="rounded" type="text"  id="search" name="key_word"  placeholder="Recherche" />
+                        <button class='btn-search'>RECHERCHE</button>
+                        </form>
+                    </div>
+
+                    <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+                        <ul class="navbar-nav col-md-12 justify-content-center">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#home">ACCUEIL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">NOUVEAUTES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">PROMOTIONS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">CATALOGUE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">CONTACT</a>
+                            </li>
+                        </ul>
+
+                        <hr>
+                        <div class="smally">
+                            <button class="btn-smally" type="button">S'inscrire/Se connecter</button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+<!--Carousel-->
+    <div class="container-fluid bg-white mt-1 mb-5 mt-5 pt-2">
+        <div class="row">
+            <div class="col">
+
+                <div  id="carouselControls" class="carousel slide " data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                             <img src="./pictures/banniere_asterix.jfif" class="d-block w-100" width="800px" height="200px" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./pictures/banniere_bd.jfif" class="d-block w-100" width="800px" height="200px" alt="...">
+                         </div>
+                         <div class="carousel-item">
+                            <img src="./pictures/banniere_dcm.jfif" class="d-block w-100" width="800px" height="200px" alt="...">
+                       </div>
+                         <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Précédent</span>
+                         </a>
+                         <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Suivant</span>
+                         </a>
+                    </div>
+                </div>
+
+                <div class=nouveautés>
+                    <p>Test</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Content-->
+  <section id="content" class="container-fluid mt-2">
+    <div id="contentTitre" class="row bg-white align-items-center">
+      <div class="col-12 col-sm-8 col-md-5 col-lg-3 mt-2 mb-2">
+        <img id="albumBd" class="couverture w-100" src="./albums/Blacksad-01-Quelque part entre les ombres.jpg" alt="image de couverture">
+      </div>
+      <div class="col-sm-5 col-md-5 col-lg-5 text-center mb-4"> 
+        <div class="row justify-content-center mt-md-4 pl-xl-5">
+            <h2 id="serie" class="mr-2 font-weight-bold">Blacksad</h2>
+            <p id="numero">100</p>
+        </div>    
+        
+        <h4 id="titre" class="font-weight-light">Quelque part entre les ombres</h4>
+        <hr>
+        <h6>RÉSUMÉ</h6>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid officia sequi quos quas ullam dicta ex quis quaerat sint, 
+          repellat reprehenderit aliquam harum deserunt sapiente provident. Deleniti esse odit possimus.
+        </p>
+        <hr>
+        <div id="achat">
+          <p class="font-weight-bold h2"><span id="prix">12.90</span>€</p>
+          <button type="button" class="btn btn-dark mb-2">Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row bg-white mt-2">
+      <div class="col text-center mt-2 mb-4">
+        <h2 class="font-weight-bold mt-2 mb-2">DÉTAILS PRODUITS</h1>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>EAN : </strong>1</li>
+          <li class="list-group-item"><strong>Nombre de pages : </strong>56</li>
+          <li class="list-group-item"><strong>Disponibilité : </strong>Disponible</li>
+          <li class="list-group-item"><strong>Genre : </strong>Policier / Thriller</li>
+          <li class="list-group-item"><strong>Édition : </strong>Dargaud - 20 juillet 2000</li>
+          <li class="list-group-item"><strong>Auteur : </strong><span id="auteur">Juan Diaz Canales</span></li>
+          <li class="list-group-item"><strong>Dessinateur : </strong>Juanjo Guarnido</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row bg-white mt-2 text-center">
+
+        <div class="col-12 mt-2">
+          <h2 class="font-weight-bold">AVIS</h2>
+        </div>
+        <div class="col-12 mt-2">
+          <h5 class="font-weight-bold">Juliette</h5>
+          <p class="font-italic">Très intéressant</p>
+        </div>
+        <div class="col-12 mt-2">
+          <h5 class="font-weight-bold">Ryan</h5>
+          <p class="font-italic">Lecture sympathique</p>
+        </div>
+
+        <div class="col-12 mt-2 mb-4">
+          <h5 class="font-weight-bold">Mathieu</h5>
+          <p class="font-italic">Manque d'action</p>
+        </div>
+        
+    </div>
+
+  </section>
+
+<!--Footer-->
+ <div class="container-fluid bg-white footer d-flex justify-content-center mt-4">
+        <footer class="footer">
+        
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="copyright col-12 col-md-6 text-center mt-1 align-self-center">
+                    <p>© BD Place™ 2021</p>
+                </div>
+
+                <div class="social col-12 col-md-6 text-center mt-1">
+                    <i class="fab fa-2x fa-facebook-square"></i>
+                    <i class="fab fa-2x fa-twitter-square"></i>
+                    <i class="fab fa-2x fa-instagram"></i>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="legal col text-center">
+                    <a href="">Mentions Légales</a>
+                    <a href="">Conditions Générales de Vente</a>
+                    <a href="">Nous Contacter</a>
+                </div>
+            </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    <script type="module" src="./image.js"></script>
+    <script src="data/albums.js"></script>
+    <script src="data/series.js"></script>
+    <script src="data/auteurs.js"></script>
 </body>
 </html>
