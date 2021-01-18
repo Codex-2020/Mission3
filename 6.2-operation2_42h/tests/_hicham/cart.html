@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
-    <script src="add-a-cart.js"></script>
 
     <title>Page d'accueil BD Place</title>
 
@@ -35,7 +34,7 @@
                                 <div id="cart">
                                     <p><span id="in-cart-items-num"> 0 </span>articles</p>
                                 </div>  
-                                <ul id="cart-dropdown" hidden>
+                                <ul id="cart-dropdown"hidden>
                                     <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
                                     <li class="go-to-cart hidden"><a href="cart.html">Voir le panier</a></li>
                                 </ul>
@@ -90,28 +89,28 @@
                     <table class="table table-stripped">
                         <tbody id="cart-tablebody" class="cart-tablebody"></tbody>
                     </table>
-
                     <p>Sous-total: <span class="subtotal"></span>€</p>
                     <p>Total: <span id="totalFrance"></span>€</p>
+                    <button type="button" class="btn btn-dark">Finaliser la commande</button>
                 </main>
             </div>
             <hr>
             <div class="raw">
-                <div class="purchase-infos justify-content-center mt-4">
+                <div class="purchase-infos md-4">
                     <p>
-                        <a href="../informations-achat/index.html#paiement"><span class="glyphicon glyphicon-lock"></span><br>Paiement sécurisé</a>
+                        <a href="../informations-achat/index.html#paiement"><br>Paiement sécurisé</a>
                     </p>
                 </div>
 
-                <div class="purchase-infos col-xs-4">
+                <div class="purchase-infos md-4">
                     <p>
-                        <a href="../informations-achat/index.html#livraison"><span class="glyphicon glyphicon-plane"></span><br>Livraison colissimo internationale</a>
+                        <a href="../informations-achat/index.html#livraison"><br>Livraison colissimo internationale</a>
                     </p>
                 </div>
 
-                <div class="purchase-infos col-xs-4">
+                <div class="purchase-infos md-4">
                     <p>
-                        <a href="../informations-achat/index.html#satisfait"><span class="glyphicon glyphicon-certificate"></span><br>Satisfait ou remboursé</a>
+                        <a href="../informations-achat/index.html#satisfait"><br>Satisfait ou remboursé</a>
                     </p>
                 </div>
             </div>
@@ -147,10 +146,10 @@
         </div>
         </div>
     </div>
-    <!-- Panier -->
+    <!-- Modal -->
     
     <!--Footer-->
-    <div class="container-fluid bg-white footer d-flex  justify-content-center mt-4">
+    <div class="container-fluid bg-white footer d-flex justify-content-center mt-4">
         <div class="row">
             <div class="col">
                 <div class="copyright">
@@ -164,7 +163,9 @@
     <!-- Footer -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    
+    <script src="add-a-cart.js"></script>
+
 </body>
 </html>

@@ -133,6 +133,7 @@ body {
 /*Page panier*/
 .purchase-infos {
   text-align: center;
+  display: block;
 }
 .purchase-infos a {
   color: #000000;
@@ -142,9 +143,7 @@ body {
 .purchase-infos a:hover {
   text-decoration: none;
 }
-.purchase-infos .glyphicon {
-  font-size: 150%;
-}
+
 .purchase-infos .glyphicon-plane {
   transform: rotate(45deg);
 }

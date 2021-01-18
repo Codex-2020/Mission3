@@ -1,6 +1,5 @@
 //comportement du panier au survol pour affichage de son contenu
 let timeout;
-
 $("#cart").on({
   mouseEnter: function () {
     $("#cart-dropdown").show();
@@ -63,14 +62,15 @@ function getCookie(cname) {
 //variables pour stocker le nombre d'articles et leurs noms
 let inCartItemsNum;
 let cartArticles;
+let orderId = [];
 
 //affiche/cache les éléments du panier selon s'il contient des produits
 function cartEmptyToggle() {
   if (inCartItemsNum > 0) {
     $("#cart-dropdown .hidden").removeClass("hidden");
-    $("#emplty-cart-msg").hide();
+    $("#empty-cart-msg").hide();
   } else {
-    $("#cart-dropdown .go-to-cart").addClass("hidden");
+    $("#cart-dropdown .divider,#cart-dropdown .go-to-cart").addClass("hidden");
     $("#empty-cart-msg").show();
   }
 }
@@ -82,6 +82,7 @@ inCartItemsNum = parseInt(
 cartArticles = getCookie("cartArticles")
   ? JSON.parse(getCookie("cartArticles"))
   : [];
+orderId[0] = getCookie("orderId") ? getCookie("orderId") : 0;
 
 cartEmptyToggle();
 
@@ -116,11 +117,16 @@ $(".add-to-cart").click(function () {
   let qt = parseInt($("#qt").val());
   inCartItemsNum += qt;
 
+  function showCart() {
+    $("#cart-dropdown").show(function () {
+      setTimeout(function () {
+        $("#cart-dropdown").hide();
+      }, 5000);
+    });
+  }
+
   //mise à jour du nombre de produit dans le widget
   $("#in-cart-items-num").html(inCartItemsNum);
-
-  let newArticles = true;
-
   //vérifie si l'article est pas déja dans le panier
   cartArticles.forEach(function (v) {
     //si l'article est déjà présent, on incrémente la quantité
@@ -169,11 +175,12 @@ $(".add-to-cart").click(function () {
   cartEmptyToggle();
 });
 
-//si on est sur la page ayant pour url add-a-cart.html
-if (window.location.pathname == "/add-a-cart/.html/") {
-  let items = "";
+//si on est sur la page ayant pour url cart.html
+if (window.location.pathname.indexOf("/cart/") !== -1) {
   let subTotal = 0;
+  let shippingFrance = 5;
   let total;
+  let items = "";
 
   /*on parcourt notre array et on crée les lignes du tableau pour nos articles :
    * - le nom de l'article (lien cliquable qui mène à la fiche produit)
@@ -190,18 +197,18 @@ if (window.location.pathname == "/add-a-cart/.html/") {
       '<tr data-id="' +
       v.id +
       '">\
-    <td><a href="' +
+      <td><a href="' +
       v.url +
       '">' +
       v.name +
-      "</a></td>\
-    <td>" +
+      "</a></td><td>" +
       v.price +
       '€</td>\
-    <td><span class="qt">' +
+      <td><span class="qt">' +
       v.qt +
       '</span> <span class="qt-minus">–</span> <span class="qt-plus">+</span> \
-    <a class="delete-item">Supprimer</a></td></tr>';
+    <a class="delete-item pull-right">Supprimer</a></td></tr>';
+    subTotal += itemPrice * v.qt;
   });
 
   //on reconverti notre résultat en décimal
@@ -210,6 +217,9 @@ if (window.location.pathname == "/add-a-cart/.html/") {
   //on insère le contenu du tableau et le sous total
   $("#cart-tablebody").empty().html(items);
   $(".subtotal").html(subTotal.toFixed(2).replace(".", ","));
+  $("#totalFrance").html(
+    (subTotal + shippingFrance).toFixed(2).replace(".", ",")
+  );
 
   //lorsqu'on clique sur le "+" du panier
   $(".qt-plus").on("click", function () {
@@ -271,6 +281,9 @@ if (window.location.pathname == "/add-a-cart/.html/") {
       });
 
       $("subTotal").html(subTotal.toFixed(2).replace(".", ","));
+      $("#totalFrance").html(
+        (subTotal + shippingFrance).toFixed(2).replaced(".", ",")
+      );
       saveCart(inCartItemsNum, cartArticles);
     }
   });
@@ -278,8 +291,8 @@ if (window.location.pathname == "/add-a-cart/.html/") {
   //suppression d'un article
   $(".delete-item").click(function () {
     let $this = $(this);
-    let qt = parseInt($this.prevAll(".qt").html());
     let id = $this.parent().parent().attr("data-id");
+    let qt = parseInt($this.prevAll(".qt").html());
     let arrayId = 0;
     let price;
 
