@@ -1,0 +1,53 @@
+.container-fluid.account {
+  padding: 1em;
+}
+
+.card.account-cards {
+  background-color: #313030;
+  margin: 0.5em;
+  border-radius: 0.2em;
+}
+.card-header {
+  padding: 0.1em;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  background: #ffffff;
+}
+
+button.btn.btn-link {
+  color: #fd5e5e;
+}
+
+button.btn.btn-link.collapsed {
+  color: #ffffff;
+}
+.btn-link:hover {
+  color: #fd5e5e;
+  text-decoration: underline;
+}
+.form-group {
+  background: #ffffff;
+  margin: 0;
+}
+input#userAddress {
+  width: 90%;
+  margin: 0 auto;
+}
+#userCityZip {
+  width: 90%;
+  margin: 0 auto;
+}
+form.accountAddressBlock {
+  background: #ffffff;
+  padding: 1em;
+  border-style: solid;
+  border-width: thin;
+  margin: 0.5em;
+}
