@@ -124,8 +124,16 @@ for (let i = 0; i < tableau.length; i++) {
     newDiv.classList.add("card-body", "text-center");
 
     let newPicture = document.createElement("p");
-    newPicture.classList.add("card-title");
-    newPicture.innerHTML = `<img src="${cheminImageAlbum}" alt="" class="card-img-top" />`;
+    newPicture.classList.add("card-title", "card-img-top");
+    newPicture.innerHTML = `<div class="col mb-4">
+     
+    <form class=" justify-content-center" method="get" action="./description.html">
+    <input type="hidden" name="id" value="${tableau[i].id}"/>
+    <input class="card  p-2 filterDiv" type="image" src="${cheminImageAlbum}" width="200px" height="300px">
+</form>
+</div>
+
+`;
 
     let newTitle = document.createElement("h5");
     newTitle.classList.add("card-title");
@@ -242,21 +250,7 @@ for (var i = 0; i < btns.length; i++) {
 }
 
 
-for (let i = 0; i < tableau.length; i++) {
-  let newDiv = document.createElement("div");
-  newDiv.classList.add("Bd");
 
-  let newCardBody = document.createElement("div");
-  newCardBody.classList.add("card-body");
-  newCardBody.innerText = `ID : ${tableau[i].id}
-    Titre : ${tableau[i].titre}
-    Numéro : ${tableau[i].numéro}
-    ID Série : ${tableau[i].idSerie}`;
-
-  newDiv.append(newCardBody);
-
-  body.append(newDiv);
-}
 
 
 
