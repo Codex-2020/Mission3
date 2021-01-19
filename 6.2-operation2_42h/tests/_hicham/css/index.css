@@ -143,7 +143,23 @@ body {
 .purchase-infos a:hover {
   text-decoration: none;
 }
-
-.purchase-infos .glyphicon-plane {
-  transform: rotate(45deg);
+.cart-tablebody {
+  background: #fff;
+}
+.qt-plus,
+.qt-minus {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.qt-plus:hover,
+.qt-minus:hover {
+  background-color: #828181;
+}
+.delete-item {
+  cursor: pointer;
 }

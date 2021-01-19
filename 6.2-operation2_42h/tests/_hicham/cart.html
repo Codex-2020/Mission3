@@ -28,15 +28,16 @@
                         <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
                         <div class="basket d-flex border  justify-content-center align-center rounded border-dark mt-1">
                             <a class="navbar-basket" type="button" data-toggle="modal" data-target="#exampleModalLong" href="cart.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
+                            <p class="basket-p align-middle p-1"></p>
                             <!-- Le widget panier -->
                             <div class="dropdown">
-                                <p class="basket-p align-middle p-0"></p>
-                                <div id="cart">
-                                    <p><span id="in-cart-items-num"> 0 </span>articles</p>
+                                <div id="cart" class="cart">
+                                    <p><span id="in-cart-items-num">0</span></span class="cart"></span></p>
                                 </div>  
-                                <ul id="cart-dropdown"hidden>
+                                <ul id="cart-dropdown" class="cart-dropdown dropdown-menu">
                                     <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
-                                    <li class="go-to-cart hidden"><a href="cart.html">Voir le panier</a></li>
+                                    <li class="divider hidden"></li>
+                                    <li class="go-to-cart"><button class="btn btn-dark" id="boutonpagepanier">Voir le panier</button></li>
                                 </ul>
                             </div>
                             <!-- Le widget panier -->
@@ -86,8 +87,11 @@
                     <h1>Panier d'achat</h1>
 
                     <!-- Ici le markup du panier -->
-                    <table class="table table-stripped">
-                        <tbody id="cart-tablebody" class="cart-tablebody"></tbody>
+                    <table class="table">
+                        <thead>
+                            <tr><th>Article</th><th>Prix</th><th>Quantité</th></tr>
+                        </thead>
+                        <tbody id="cart-tablebody"></tbody>
                     </table>
                     <p>Sous-total: <span class="subtotal"></span>€</p>
                     <p>Total: <span id="totalFrance"></span>€</p>

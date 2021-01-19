@@ -1,10 +1,10 @@
 //comportement du panier au survol pour affichage de son contenu
 let timeout;
 $("#cart").on({
-  mouseEnter: function () {
+  mouseenter: function () {
     $("#cart-dropdown").show();
   },
-  mouseLeave: function () {
+  mouseleave: function () {
     timeout = setTimeout(function () {
       $("#cart-dropdown").hide();
     }, 200);
@@ -14,10 +14,10 @@ $("#cart").on({
 //laisse le contenu ouvert à son survol
 //le cache quand la sourit sort
 $("#cart-dropdown").on({
-  mouseEnter: function () {
+  mouseenter: function () {
     clearTimeout(timeout);
   },
-  mouseLeave: function () {
+  mouseleave: function () {
     $("#cart-dropdown").hide();
   },
 });
@@ -70,7 +70,7 @@ function cartEmptyToggle() {
     $("#cart-dropdown .hidden").removeClass("hidden");
     $("#empty-cart-msg").hide();
   } else {
-    $("#cart-dropdown .divider,#cart-dropdown .go-to-cart").addClass("hidden");
+    $("#cart-dropdown .go-to-cart").addClass("hidden");
     $("#empty-cart-msg").show();
   }
 }
@@ -117,16 +117,11 @@ $(".add-to-cart").click(function () {
   let qt = parseInt($("#qt").val());
   inCartItemsNum += qt;
 
-  function showCart() {
-    $("#cart-dropdown").show(function () {
-      setTimeout(function () {
-        $("#cart-dropdown").hide();
-      }, 5000);
-    });
-  }
-
   //mise à jour du nombre de produit dans le widget
   $("#in-cart-items-num").html(inCartItemsNum);
+
+  let newArticle = true;
+
   //vérifie si l'article est pas déja dans le panier
   cartArticles.forEach(function (v) {
     //si l'article est déjà présent, on incrémente la quantité
@@ -175,12 +170,27 @@ $(".add-to-cart").click(function () {
   cartEmptyToggle();
 });
 
+// Transition panier > page panier
+// $("#boutonQuiAjouteAuPanier").click(function () {
+//   let findPrice = $(".table").find("tr td:nth-child(2)");
+
+//   let totalPrice = null;
+
+//   findPrice.each(function (i) {
+//     let strPrice = $(this).text().replace("€", "");
+//     let valuePrice = parseFloat(strPrice);
+//     totalPrice += valuePrice;
+//   });
+
+//   $("#totalFrance").text(totalPrice.toFixed(2) + "€");
+// });
+
 //si on est sur la page ayant pour url cart.html
-if (window.location.pathname.indexOf("/cart/") !== -1) {
+if (window.location.pathname == "/cart.html/") {
+  let items = "";
   let subTotal = 0;
   let shippingFrance = 5;
   let total;
-  let items = "";
 
   /*on parcourt notre array et on crée les lignes du tableau pour nos articles :
    * - le nom de l'article (lien cliquable qui mène à la fiche produit)
@@ -326,4 +336,30 @@ if (window.location.pathname.indexOf("/cart/") !== -1) {
     saveCart(inCartItemsNum, cartArticles);
     cartEmptyToggle();
   });
+}
+
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+  const titre = "tintin";
+  const prix = 20;
+  const quantite = 2;
+
+  //query parameters
+  const url = `../cart.html?titre=${titre}&prix=${prix}&quantite=${quantite}`;
+  location.replace(url);
+});
+
+const qparameters = location.href.split("?")[1];
+
+// iterate - key value pairs
+for (let pair of qparameters.split("&")) {
+  const [key, value] = pair.split("=");
+  console.log(key); //titre
+  console.log(value); // tintin
+
+  const tbody = document.querySelector("#cart-tablebody");
+
+  const td = document.createElement("td");
+  td.textContent = value;
+  tbody.appendChild(td);
 }
