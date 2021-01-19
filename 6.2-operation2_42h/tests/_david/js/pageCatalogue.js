@@ -127,7 +127,7 @@ for (let i = 0; i < tableau.length; i++) {
     newPicture.classList.add("card-title", "card-img-top");
     newPicture.innerHTML = `<div class="col mb-4">
      
-    <form class=" justify-content-center" method="get" action="./description.html">
+    <form class=" d-flex justify-content-center" method="get" action="./description.html">
     <input type="hidden" name="id" value="${tableau[i].id}"/>
     <input class="card  p-2 filterDiv" type="image" src="${cheminImageAlbum}" width="200px" height="300px">
 </form>
