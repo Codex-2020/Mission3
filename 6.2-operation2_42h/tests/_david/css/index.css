@@ -497,3 +497,7 @@ hr {
   background-color: #1ca347;
   border-color: #1ca347;
 }
+
+.testcard {
+  border-radius: 10px;
+}

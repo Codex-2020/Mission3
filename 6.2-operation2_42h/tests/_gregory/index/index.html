@@ -83,13 +83,6 @@
             <div class="col">
                 <div id="carouselControls" class="carousel slide" data-ride="carousel">
                     
-                    <ol class="carousel-indicators mb-0">
-                        <li data-target="#carouselControls" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselControls" data-slide-to="1"></li>
-                        <li data-target="#carouselControls" data-slide-to="2"></li>
-                    </ol>
-                    
-                    
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="pictures/slideHome/leChantDesStryges.jpg" class="d-block w-100" alt="Le chant">
@@ -112,8 +105,13 @@
                                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                             </div>
                         </div>
- 
                     </div>
+
+                    <ol class="carousel-indicators mb-0">
+                        <li data-target="#carouselControls" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselControls" data-slide-to="1"></li>
+                        <li data-target="#carouselControls" data-slide-to="2"></li>
+                    </ol>
 
                     <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -155,14 +153,17 @@
                 
                     <div class="row row-cols-2 row-cols-md-4 px-3">
 
-                        <div class="col mb-4">
+                        <div class="col card-deck mb-4">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/AstÇrix-06-AstÇrix et ClÇopatre.jpg" class="card-img-top" alt="...">
+                                <form method="get" action="#">
+                                <input type="hidden" name="id" value="XXXX"></input>
+                                <input class="card-img-top" alt="..." type="image" src="./pictures/bdHome/AstÇrix-06-AstÇrix et ClÇopatre.jpg"></input>
+                                </form>
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Astérix et Cléopatre</h5>
+                                    <h6 class="card-subtitle auteur">Goscinny, Uderzo</h6>
+                                    <h6 class="card-subtitle serie mt-2">Astérix</h6>
+                                    <h6 class="card-title mt-2">14,23 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -171,14 +172,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col card-deck mb-4">
                             <div class="card p-2">
                                 <img src="./pictures/bdHome/Blacksad-01-Quelque part entre les ombres.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Quelque part entre les ombres</h5>
+                                    <h6 class="card-subtitle auteur">Diaz canales, Guarnido</h6>
+                                    <h6 class="card-subtitle serie mt-2">Blacksad</h6>
+                                    <h6 class="card-title mt-2">10,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -187,14 +188,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col card-deck mb-4">
                             <div class="card p-2">
                                 <img src="./pictures/bdHome/Blueberry-02-Lhomme Ö lÇtoile dargent.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">L'homme à l'étoile d'argent</h5>
+                                    <h6 class="card-subtitle auteur">Charlier, Giraud</h6>
+                                    <h6 class="card-subtitle serie mt-2">Blueberry</h6>
+                                    <h6 class="card-title mt-2">9,99 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -203,14 +204,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col card-deck mb-4">
                             <div class="card p-2">
                                 <img src="./pictures/bdHome/Cristal-01-Venu dailleurs.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Venu d'ailleurs</h5>
+                                    <h6 class="card-subtitle auteur">Marcello, Maric</h6>
+                                    <h6 class="card-subtitle serie mt-2">Cristal</h6>
+                                    <h6 class="card-title mt-2">11,28 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -219,22 +220,7 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
-                            <div class="card p-2">
-                                <img src="./pictures/bdHome/AstÇrix-06-AstÇrix et ClÇopatre.jpg" class="card-img-top" alt="...">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
-                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
-                                </div>
-                                <div class="card-footer bg-success text-white text-center">
-                                    En stock
-                                </div>
-                            </div>
-                        </div>
-
+                        
                     </div>
                 </div>        
                   
@@ -247,14 +233,14 @@
                     </div>
 
                     <div class="row row-cols-2 row-cols-md-4 px-3">
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/AstÇrix-06-AstÇrix et ClÇopatre.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/XIII-21-Lappat.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">L'appat</h5>
+                                    <h6 class="card-subtitle auteur">Jigounov, Sente</h6>
+                                    <h6 class="card-subtitle serie mt-2">XIII</h6>
+                                    <h6 class="card-title mt-2">11,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -263,14 +249,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/Blacksad-01-Quelque part entre les ombres.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Blake et Mortimer-22-londe septimus.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">L'onde septimus</h5>
+                                    <h6 class="card-subtitle auteur">Dufaux, Aubin, Schréder</h6>
+                                    <h6 class="card-subtitle serie mt-2">Blake et Mortimer</h6>
+                                    <h6 class="card-title mt-2">14,52 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -279,14 +265,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/Blueberry-02-Lhomme Ö lÇtoile dargent.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Trolls de Troy-16-Poils de trolls (II).jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Poils de trolls (II)</h5>
+                                    <h6 class="card-subtitle auteur">Arleston, Mourier</h6>
+                                    <h6 class="card-subtitle serie mt-2">Trolls de Troy</h6>
+                                    <h6 class="card-title mt-2">11,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -295,14 +281,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/Cristal-01-Venu dailleurs.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Titeuf-14-Bienvenue en adolescence.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Bienvenue en adolescence</h5>
+                                    <h6 class="card-subtitle auteur">Zep</h6>
+                                    <h6 class="card-subtitle serie mt-2">Titeuf</h6>
+                                    <h6 class="card-title mt-2">12,65 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -320,14 +306,14 @@
                     </div>
 
                     <div class="row row-cols-2 row-cols-md-4 px-3">
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/AstÇrix-06-AstÇrix et ClÇopatre.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Peter Pan-05-Crochet.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Crochet</h5>
+                                    <h6 class="card-subtitle auteur">Loisel</h6>
+                                    <h6 class="card-subtitle serie mt-2">Peter Pan</h6>
+                                    <h6 class="card-title mt-2">10,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -336,14 +322,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/Blacksad-01-Quelque part entre les ombres.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Marlysa-15-La cité des Rinults.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">La cité des Rinults</h5>
+                                    <h6 class="card-subtitle auteur">Gaudin, Danard</h6>
+                                    <h6 class="card-subtitle serie mt-2">Marlysa</h6>
+                                    <h6 class="card-title mt-2">15,20 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -352,14 +338,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/Blueberry-02-Lhomme Ö lÇtoile dargent.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Les légendaires-18-La fin de lhistoire.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">La fin de l'histoire</h5>
+                                    <h6 class="card-subtitle auteur">Sobral</h6>
+                                    <h6 class="card-subtitle serie mt-2">Les légendaires</h6>
+                                    <h6 class="card-title mt-2">10,26 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">
@@ -368,14 +354,14 @@
                             </div>
                         </div>
 
-                        <div class="col mb-4">
+                        <div class="col mb-4 card-deck">
                             <div class="card p-2">
-                                <img src="./pictures/bdHome/Cristal-01-Venu dailleurs.jpg" class="card-img-top" alt="...">
+                                <img src="./pictures/bdHome/Spirou et Fantasio-20-Le faiseur dor.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
-                                    <h5 class="card-title">Titre de la BD</h5>
-                                    <h6 class="card-subtitle auteur">Auteur</h6>
-                                    <h6 class="card-subtitle serie mt-2">Série</h6>
-                                    <h6 class="card-title mt-2">Prix</h6>
+                                    <h5 class="card-title">Le faiseur d'or</h5>
+                                    <h6 class="card-subtitle auteur">Fournier</h6>
+                                    <h6 class="card-subtitle serie mt-2">Spirou et Fantasio</h6>
+                                    <h6 class="card-title mt-2">11.50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
                                 <div class="card-footer bg-success text-white text-center">

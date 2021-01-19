@@ -176,22 +176,24 @@ body {
     }
 }
 
-  @media (max-width: 500px) {
+  @media (max-width: 375px) {
     .bg-Categories {
     border-bottom-right-radius: 100px;
     border-top-left-radius: 0px;
     }
 
     .carousel-caption {
-      height: 30%;
+      
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .carousel-caption h4 {
-      font-size:large
+      font-size:small;
+      margin-bottom:0px
     }
 
     .carousel-caption p {
-      font-size:small
+      font-size:10px
     }
 
    .carousel-indicators {
@@ -236,7 +238,7 @@ body {
     padding-bottom:10px;
   }
 
-  .carousel-caption h5 {
+  .carousel-caption h4 {
     margin-top:0px;
     margin-bottom:0px;
     margin-right: 0px;
