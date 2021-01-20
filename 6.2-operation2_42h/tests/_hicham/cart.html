@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" href="./style.css">
 
     <title>Page d'accueil BD Place</title>
 
@@ -37,7 +37,7 @@
                                 <ul id="cart-dropdown" class="cart-dropdown dropdown-menu">
                                     <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
                                     <li class="divider hidden"></li>
-                                    <li class="go-to-cart"><button class="btn btn-dark" id="boutonpagepanier">Voir le panier</button></li>
+                                    <li class="go-to-cart hidden"><form method="get" action="cart.html"><button class="btn btn-dark">Voir le panier</button></form></li>
                                 </ul>
                             </div>
                             <!-- Le widget panier -->
@@ -84,14 +84,14 @@
                 <div class="hidden-xs hidden-sm col-md-3">
                 </div>
                 <main class="col-lg-12 col-md-10">
-                    <h1>Panier d'achat</h1>
+                    <h1>Panier</h1>
 
                     <!-- Ici le markup du panier -->
-                    <table class="table">
+                    <table class="table table-stripped">
                         <thead>
                             <tr><th>Article</th><th>Prix</th><th>Quantité</th></tr>
                         </thead>
-                        <tbody id="cart-tablebody"></tbody>
+                        <tbody id="cart-tablebody" class="cart-tablebody"></tbody>
                     </table>
                     <p>Sous-total: <span class="subtotal"></span>€</p>
                     <p>Total: <span id="totalFrance"></span>€</p>
