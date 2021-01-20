@@ -1,6 +1,6 @@
-import albums from "./data/albums.js";
-import series from "./data/series.js";
-import auteurs from "./data/auteurs.js";
+import albums from "../data/albums.js";
+import series from "../data/series.js";
+import auteurs from "../data/auteurs.js";
 console.log(albums); // test
 console.log(series); // test
 console.log(auteurs); // test
