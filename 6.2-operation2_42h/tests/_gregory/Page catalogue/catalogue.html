@@ -12,46 +12,159 @@
 
 
     <link rel="stylesheet" href="./pageCatalogue.css">
-    <title>Les BDS</title>
+    <title>Page catalogue OK</title>
 </head>
 
 <body>
+
+
+  <!--Header-->
+  <div class="bg-white header mb-3">
+    <div class="container-fluid">
+      <div class="row ">
+        <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
+ 
+                  <!--Bouton menu petits écrans-->
+          <div class="menu d-flex justify-content-center">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+                    <!--Affichage logo-->              
+          <div class="brand  col-8 order-lg-1 col-lg-4 d-flex justify-content-center">
+            <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
+          </div>  
+
+                  <!--Bloc à droite: boutin connection/panier-->
+          <div class="right   col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
+                <!--Bouton Connexion-->
+            <div id="connectButton" class="connect-button text-center col">
+                    <!--Si pas connecté/inscrit-->
+              <a class="btn btn-connection" href="./login.html" role="button">S'inscrire/Se connecter</a>
+            </div>
+            <div id="userMsg" style="display:none">
+                    <!--Message si utilisateur Connecté-->
+              <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
+            </div>
+                    <!--Panier et bloc panier-->
+            <div class="basket d-flex border mb-1 justify-content-center align-items-center rounded border-dark mt-1">
+              <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
+                <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
+            </div>
+          </div>
+
+                    <!--Barre de recherche-->
+          <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+            <form>
+              <input class="rounded col-lg-8" type="text"  id="search" name="key_word"  placeholder="Recherche" />
+              <button class='btn-search'>RECHERCHE</button>
+            </form>
+          </div>
+
+
+                    <!--Menu-->
+
+          <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+            <ul class="navbar-nav col-md-12 justify-content-center">
+              <li class="nav-item active">
+                <a class="nav-link" href="#home">ACCUEIL</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#home">NOUVEAUTES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#home">PROMOTIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#home">CATALOGUE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#home">CONTACT</a>
+              </li>
+            </ul>
+
+            <hr>
+
+                    <!--Bouton menu deroulant pour inscription-->    
+            <div class="smally">
+                        <!--Bouton Connexion-->
+              <div id="connectButton" class="connect-button text-center col">
+                            <!--Si pas connecté/inscrit-->
+                <a class="btn btn-smally" href="./login.html" role="button">S'inscrire/Se connecter</a>
+              </div>
+              <div id="userMsg" style="display:none">
+                            <!--Message si utilisateur Connecté-->
+                <a class="btn btn-smally" href="./account.html" role="button">Mon Compte</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>  
+              <!--Fin de Header-->  
     
-    <div class="col">
+  <div class="container-fluid">   <!--myContainer??-->
+    <div class="row mt-3">
+      <div class="col">
                 
         <div class="bg-Categories bg-light mb-3">
+          <div class="categories">
+            <h2>Page catalogue OK - Tous nos produits</h2>
+            <button type="button" class="btn btn-outline-dark d-none">Découvrir toutes nos promotions</button>
+          </div><!--bouton caché d-none-->
 
-            <div class="categories">
-                <h2>Page catalogue - Tous nos produits</h2>
-                <button type="button" class="btn btn-outline-dark d-none">Découvrir toutes nos promotions</button>
-            </div><!--bouton caché d-none-->
+          <input class="form-control col-11 col-lg-6 my-3 mx-3" id="searchInput" type="text" placeholder="Rechercher un produit, une série, un auteur..."> <!--la barre de recherche-->
+        </div>
 
-            <input class="form-control col-11 col-lg-6 my-3 mx-3" id="searchInput" type="text" placeholder="Rechercher un produit, une série, un auteur..."> <!--la barre de recherche-->
-            
+        <div class="bg-Categories bg-light mb-3">    
                 <!--La barre de filtrage-->
-            <div id="myBtnContainer">
-                <button class="btnTri active" onclick="filterSelection('all')">Afficher tous les albums</button>
-                <button class="btnTri" onclick="filterSelection('Uderzo')"> Uderzo</button>
-                <button class="btnTri" onclick="filterSelection('Charlier')"> Charlier</button>
-            </div>
+          <div id="myBtnContainer">
+            <button class="btnTri active" onclick="filterSelection('all')">Afficher tous les albums</button>
+            <button class="btnTri" onclick="filterSelection('Uderzo')"> Uderzo</button>
+            <button class="btnTri" onclick="filterSelection('Charlier')"> Charlier</button>
+          </div>
+        </div>
 
+        <div class="bg-Categories bg-light mb-3">
+          <div class="row row-cols-2 row-cols-md-4 px-3" id="bdList"> <!--ID necessaire pour la recherche-->
+          </div>
 
-            <div class="row row-cols-2 row-cols-md-4 px-3" id="bdList"> <!--ID necessaire pour la recherche-->
+        </div>
 
-                
+      </div>
+    </div>        
+  </div>
 
-            </div>
-        </div>        
-          
-    </div>
-
-
-
+   <!--Footer-->
+  <div class="container-fluid bg-white footer d-flex justify-content-center mt-4">
+    <footer class="footer">
     
+      <div class="container-fluid">
+        <div class="row">
+          <div class="copyright col-12 col-md-6 text-center mt-1 align-self-center">
+          <p>© BD Place™ 2021</p>
+        </div>
 
-
-
-
+        <div class="social col-12 col-md-6 text-center mt-1">
+          <i class="fab fa-2x fa-facebook-square"></i>
+          <i class="fab fa-2x fa-twitter-square"></i>
+          <i class="fab fa-2x fa-instagram"></i>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="legal col text-center">
+          <a href="">Mentions Légales</a>
+          <a href="">Conditions Générales de Vente</a>
+          <a href="">Nous Contacter</a>
+        </div>
+      </div>
+        
+    </footer>
+  </div>
+ 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
