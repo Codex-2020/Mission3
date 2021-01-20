@@ -35,6 +35,10 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+function urldecode(url) {
+  return decodeURIComponent(url.replace(/\+/g, " "));
+}
+
 //fonction pour sauvegarder notre panier
 function saveCart(inCartItemsNum, cartArticles) {
   setCookie("inCartItemsNum", inCartItemsNum, 5);
@@ -70,7 +74,9 @@ function cartEmptyToggle() {
     $("#cart-dropdown .hidden").removeClass("hidden");
     $("#empty-cart-msg").hide();
   } else {
-    $("#cart-dropdown .go-to-cart").addClass("hidden");
+    $("#cart-dropdown .go-to-cart,#cart-dropdown .go-to-cart").addClass(
+      "hidden"
+    );
     $("#empty-cart-msg").show();
   }
 }
@@ -170,27 +176,22 @@ $(".add-to-cart").click(function () {
   cartEmptyToggle();
 });
 
-// Transition panier > page panier
-// $("#boutonQuiAjouteAuPanier").click(function () {
-//   let findPrice = $(".table").find("tr td:nth-child(2)");
-
-//   let totalPrice = null;
-
-//   findPrice.each(function (i) {
-//     let strPrice = $(this).text().replace("€", "");
-//     let valuePrice = parseFloat(strPrice);
-//     totalPrice += valuePrice;
-//   });
-
-//   $("#totalFrance").text(totalPrice.toFixed(2) + "€");
-// });
-
 //si on est sur la page ayant pour url cart.html
-if (window.location.pathname == "/cart.html/") {
-  let items = "";
+if (window.location.pathname.indexOf("../cart.html/") !== -1) {
   let subTotal = 0;
   let shippingFrance = 5;
   let total;
+  let items = "";
+
+  setCartFromUrl();
+
+  // test for adblocker
+  $.post("/test-ajax/").always(function (data, textStatus, jqXHR) {
+    // request must have been blocked by an add blocker
+    if (jqXHR.status === 200 && jqXHR.responseText == "") {
+      $("#add-blocker-alert").modal({ backdrop: "static" });
+    }
+  });
 
   /*on parcourt notre array et on crée les lignes du tableau pour nos articles :
    * - le nom de l'article (lien cliquable qui mène à la fiche produit)
@@ -207,17 +208,17 @@ if (window.location.pathname == "/cart.html/") {
       '<tr data-id="' +
       v.id +
       '">\
-      <td><a href="' +
+                   <td><a href="' +
       v.url +
       '">' +
       v.name +
       "</a></td><td>" +
       v.price +
       '€</td>\
-      <td><span class="qt">' +
+                   <td><span class="qt">' +
       v.qt +
       '</span> <span class="qt-minus">–</span> <span class="qt-plus">+</span> \
-    <a class="delete-item pull-right">Supprimer</a></td></tr>';
+                   <a class="delete-item pull-right">Supprimer</a></td></tr>';
     subTotal += itemPrice * v.qt;
   });
 
@@ -272,7 +273,7 @@ if (window.location.pathname == "/cart.html/") {
 
     if (qt > 1) {
       //maj qt
-      inCartItemsNum -= 1;
+      inCartItemsNum += 1;
       $this.prevAll(".qt").html(qt - 1);
       $("#in-cart-items-num").html(inCartItemsNum);
       $("#" + id + " .qt").html(qt - 1);
@@ -338,28 +339,52 @@ if (window.location.pathname == "/cart.html/") {
   });
 }
 
-const btn = document.querySelector("#btn");
-btn.addEventListener("click", () => {
-  const titre = "tintin";
-  const prix = 20;
-  const quantite = 2;
+function getUrlVars() {
+  var query_string = {};
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
 
-  //query parameters
-  const url = `../cart.html?titre=${titre}&prix=${prix}&quantite=${quantite}`;
-  location.replace(url);
-});
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
 
-const qparameters = location.href.split("?")[1];
+    // If first entry with this name
+    if (typeof query_string[pair[0]] === "undefined") {
+      query_string[pair[0]] = decodeURIComponent(pair[1]);
+      // If second entry with this name
+    } else if (typeof query_string[pair[0]] === "string") {
+      var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+      query_string[pair[0]] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[pair[0]].push(decodeURIComponent(pair[1]));
+    }
+  }
 
-// iterate - key value pairs
-for (let pair of qparameters.split("&")) {
-  const [key, value] = pair.split("=");
-  console.log(key); //titre
-  console.log(value); // tintin
-
-  const tbody = document.querySelector("#cart-tablebody");
-
-  const td = document.createElement("td");
-  td.textContent = value;
-  tbody.appendChild(td);
+  return query_string;
 }
+
+// const btn = document.querySelector("#btn");
+// btn.addEventListener("click", () => {
+//   const titre = "tintin";
+//   const prix = 20;
+//   const quantite = 2;
+
+//   //query parameters
+//   const url = `cart.html?titre=${titre}&prix=${prix}&quantite=${quantite}`;
+//   location.replace(url);
+// });
+
+// const qparameters = location.href.split("?")[1];
+
+// // iterate - key value pairs
+// for (let pair of qparameters.split("&")) {
+//   const [key, value] = pair.split("=");
+//   console.log(key); //titre
+//   console.log(value); // tintin
+
+//   const tbody = document.querySelector("#cart-tablebody");
+
+//   const td = document.createElement("td");
+//   td.textContent = value;
+//   tbody.appendChild(td);
+// }
