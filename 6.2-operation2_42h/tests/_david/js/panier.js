@@ -17,11 +17,10 @@ function getCookies(cname) {
     return false;
 }
 
-// console.log(getCookies("cartArticles"));
-// console.log(typeof getCookies("cartArticles"));
+// function AccesPanier() {
 test = getCookies('cartArticles');
 let recupBoucle = test.split('}')
-console.log(recupBoucle);
+
 
 let recupChaqueBd = [];
 let idBd = "";
@@ -48,11 +47,11 @@ for (let i = 0; i <= recupBoucle.length - 2; i++) {
         qtBd = recupChaqueBd[3].split(':');
         qtBdSlice1 = qtBd[1].slice(0, 1);
 
-        console.log(idBdSlice1, nameBdSlice1, prixBdSlice1, qtBdSlice1);
+        // console.log(idBdSlice1, nameBdSlice1, prixBdSlice1, qtBdSlice1);
 
         bd.set([["id", idBdSlice1], ["name", nameBdSlice1], ["prix", prixBdSlice1], ["qt", qtBdSlice1]]);
 
-        // PourFacture.push(bd);
+
 
 
 
@@ -87,12 +86,70 @@ for (let i = 0; i <= recupBoucle.length - 2; i++) {
 
 
     }
+
+
 }
 
 
 console.log(bd);
 
-console.log(bd.get(name));
+let totalTTC = [];
+let nomAlbumsAchetes = [];
+let infoCommande = [];
+
+// for (let i = 0; i <= recupBoucle.length - 2; i++) {
+let iterator1 = bd.entries(1);
+function Maboul() {
+    // console.log(iterator1.next().value);
+    let bdFacturable = iterator1.next().value;
+    // console.log(bdFacturable[0]);
+    let infoBdFacturable = bdFacturable[0];
+
+    // console.log(infoBdFacturable[1]);
+    let nameFacturableExtrait = infoBdFacturable[1];
+    console.log(nameFacturableExtrait[1]);
+    nomAlbumsAchetes.push(nameFacturableExtrait[1]);
+
+    // console.log(infoBdFacturable[2]);
+    let prixFacturableExtrait = infoBdFacturable[2];
+    console.log(prixFacturableExtrait[1]);
+
+
+    // console.log(infoBdFacturable[3]);
+    let qtFacturableExtrait = infoBdFacturable[3];
+    console.log(qtFacturableExtrait[1]);
+
+    let total = prixFacturableExtrait[1] * qtFacturableExtrait[1];
+    totalTTC.push(total);
+
+    let infoCmd = `${nameFacturableExtrait[1]}  ${prixFacturableExtrait[1]} €  Qté: qtFacturableExtrait[1].
+    Total: ${total}  `
+    infoCommande.push(infoCmd);
+}
+
+bd.forEach(Maboul);
+
+console.log(totalTTC);
+console.log(nomAlbumsAchetes);
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+TotalTTCFacture = totalTTC.reduce(reducer);
+console.log(TotalTTCFacture);
+
+console.log(infoCommande);
+
+const cmdFinale = document.getElementById('commande');
+
+for (let i = 0; i <= infoCommande.length; i++) {
+
+    // let recapCommande = document.createElement("p");
+    let recapCommande.innerHTML = `${infoCommande[i]}`
+    let test = recapCommande.innerHTML;
+    document.getElementById('commande').insertAdjacentHTML('beforebegin', test);
+    // cmdFinale.appendChild(recapCommande);
+}
+
+
+// }
 
 
 jQuery(function () {
