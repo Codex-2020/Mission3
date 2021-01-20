@@ -8,70 +8,103 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./index.css">
-    <title>Accueil BD Place</title>
+    <title>Page d'acueil ok</title>
 
 </head>
 <body>
 
     <!--Header-->
-    <div class="bg-white header">
+    <div class="bg-white header mb-3">
         <div class="container-fluid">
             <div class="row ">
-                
                 <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
-                    <div class="menu ">
+                        
+
+                    <!--Bouton menu petits écrans-->
+                    <div class="menu d-flex justify-content-center">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
                             <span class="navbar-toggler-icon"></span>
                         </button>
                     </div>
-                
-                    <div class="brand col-7 order-lg-1 col-lg-3">
-                        <a class="navbar-brand" href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
+
+                    <!--Affichage logo-->              
+                    <div class="brand  col-8 order-lg-1 col-lg-4 d-flex justify-content-center">
+                        <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
                     </div>
 
-                    <div class="right   d-flex  flex-column col-2 order-lg-3 col-lg-2 ">
-                        <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
-                        <div class="basket d-flex border  justify-content-center align-center rounded border-dark mt-1">
+                
+                    <!--Bloc à droite: boutin connection/panier-->
+                    <div class="right   col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
+                        <!--Bouton Connexion-->
+                        <div id="connectButton" class="connect-button text-center col">
+                        <!--Si pas connecté/inscrit-->
+                            <a class="btn btn-connection" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                        </div>
+                        <div id="userMsg" style="display:none">
+                        <!--Message si utilisateur Connecté-->
+                            <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
+                        </div>
+                        <!--Panier et bloc panier-->
+                        <div class="basket d-flex border mb-1 justify-content-center align-items-center rounded border-dark mt-1">
                             <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
                             <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
                         </div>
                     </div>
 
-                    <div class="search order-lg-2 col-lg-7 d-flex justify-content-center">
+                        <!--Barre de recherche-->
+                    <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
                         <form>
-                        <input class="rounded" type="text"  id="search" name="key_word"  placeholder="Recherche" />
-                        <button class='btn-search'>RECHERCHE</button>
+                            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+                            <button class="btn-search" onclick="Search()">RECHERCHE</button>
                         </form>
                     </div>
 
+
+                    
+
+                        <!--Menu-->
+
                     <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav col-md-12 justify-content-center">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#home">ACCUEIL</a>
+                                <a class="nav-link" href="./index.html">ACCUEIL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#home">NOUVEAUTES</a>
+                                <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#home">PROMOTIONS</a>
+                                <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#home">CATALOGUE</a>
+                                <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#home">CONTACT</a>
+                                <a class="nav-link" href="./contact.html">CONTACT</a>
                             </li>
                         </ul>
 
-                        <hr>
+                            <hr>
+
+                        <!--Bouton menu deroulant pour inscription-->    
                         <div class="smally">
-                            <button class="btn-smally" type="button">S'inscrire/Se connecter</button>
+                            <!--Bouton Connexion-->
+                            <div id="connectButton" class="connect-button text-center col">
+                                <!--Si pas connecté/inscrit-->
+                                <a class="btn btn-smally" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                            </div>
+                            <div id="userMsg" style="display:none">
+                                <!--Message si utilisateur Connecté-->
+                                <a class="btn btn-smally" href="./account.html" role="button">Mon Compte</a>
+                            </div>
                         </div>
                     </div>
                 </nav>
             </div>
-        </div>
+                
+        </div>    
     </div>
 
      <!--Fin header-->
@@ -158,8 +191,8 @@
                                 </form>
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Astérix et Cléopatre</h5>
-                                    <h6 class="card-subtitle auteur">Goscinny, Uderzo</h6>
-                                    <h6 class="card-subtitle serie mt-2">Astérix</h6>
+                                    <h6 class="card-subtitle font-auteur">Goscinny, Uderzo</h6>
+                                    <h6 class="card-subtitle mt-2 font-serie">Astérix</h6>
                                     <h6 class="card-title mt-2">14,23 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -174,8 +207,8 @@
                                 <img src="./pictures/bdHome/Blacksad-01-Quelque part entre les ombres.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Quelque part entre les ombres</h5>
-                                    <h6 class="card-subtitle auteur">Diaz canales, Guarnido</h6>
-                                    <h6 class="card-subtitle serie mt-2">Blacksad</h6>
+                                    <h6 class="card-subtitle font-auteur">Diaz canales, Guarnido</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Blacksad</h6>
                                     <h6 class="card-title mt-2">10,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -190,8 +223,8 @@
                                 <img src="./pictures/bdHome/Blueberry-02-Lhomme Ö lÇtoile dargent.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">L'homme à l'étoile d'argent</h5>
-                                    <h6 class="card-subtitle auteur">Charlier, Giraud</h6>
-                                    <h6 class="card-subtitle serie mt-2">Blueberry</h6>
+                                    <h6 class="card-subtitle font-auteur">Charlier, Giraud</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Blueberry</h6>
                                     <h6 class="card-title mt-2">9,99 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -206,8 +239,8 @@
                                 <img src="./pictures/bdHome/Cristal-01-Venu dailleurs.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Venu d'ailleurs</h5>
-                                    <h6 class="card-subtitle auteur">Marcello, Maric</h6>
-                                    <h6 class="card-subtitle serie mt-2">Cristal</h6>
+                                    <h6 class="card-subtitle font-auteur">Marcello, Maric</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Cristal</h6>
                                     <h6 class="card-title mt-2">11,28 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -235,8 +268,8 @@
                                 <img src="./pictures/bdHome/XIII-21-Lappat.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">L'appat</h5>
-                                    <h6 class="card-subtitle auteur">Jigounov, Sente</h6>
-                                    <h6 class="card-subtitle serie mt-2">XIII</h6>
+                                    <h6 class="card-subtitle font-auteur">Jigounov, Sente</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">XIII</h6>
                                     <h6 class="card-title mt-2">11,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -251,8 +284,8 @@
                                 <img src="./pictures/bdHome/Blake et Mortimer-22-londe septimus.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">L'onde septimus</h5>
-                                    <h6 class="card-subtitle auteur">Dufaux, Aubin, Schréder</h6>
-                                    <h6 class="card-subtitle serie mt-2">Blake et Mortimer</h6>
+                                    <h6 class="card-subtitle font-auteur">Dufaux, Aubin, Schréder</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Blake et Mortimer</h6>
                                     <h6 class="card-title mt-2">14,52 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -267,8 +300,8 @@
                                 <img src="./pictures/bdHome/Trolls de Troy-16-Poils de trolls (II).jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Poils de trolls (II)</h5>
-                                    <h6 class="card-subtitle auteur">Arleston, Mourier</h6>
-                                    <h6 class="card-subtitle serie mt-2">Trolls de Troy</h6>
+                                    <h6 class="card-subtitle font-auteur">Arleston, Mourier</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Trolls de Troy</h6>
                                     <h6 class="card-title mt-2">11,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -283,8 +316,8 @@
                                 <img src="./pictures/bdHome/Titeuf-14-Bienvenue en adolescence.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Bienvenue en adolescence</h5>
-                                    <h6 class="card-subtitle auteur">Zep</h6>
-                                    <h6 class="card-subtitle serie mt-2">Titeuf</h6>
+                                    <h6 class="card-subtitle font-auteur">Zep</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Titeuf</h6>
                                     <h6 class="card-title mt-2">12,65 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -308,8 +341,8 @@
                                 <img src="./pictures/bdHome/Peter Pan-05-Crochet.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Crochet</h5>
-                                    <h6 class="card-subtitle auteur">Loisel</h6>
-                                    <h6 class="card-subtitle serie mt-2">Peter Pan</h6>
+                                    <h6 class="card-subtitle font-auteur">Loisel</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Peter Pan</h6>
                                     <h6 class="card-title mt-2">10,50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -324,8 +357,8 @@
                                 <img src="./pictures/bdHome/Marlysa-15-La cité des Rinults.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">La cité des Rinults</h5>
-                                    <h6 class="card-subtitle auteur">Gaudin, Danard</h6>
-                                    <h6 class="card-subtitle serie mt-2">Marlysa</h6>
+                                    <h6 class="card-subtitle font-auteur">Gaudin, Danard</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Marlysa</h6>
                                     <h6 class="card-title mt-2">15,20 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -340,8 +373,8 @@
                                 <img src="./pictures/bdHome/Les légendaires-18-La fin de lhistoire.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">La fin de l'histoire</h5>
-                                    <h6 class="card-subtitle auteur">Sobral</h6>
-                                    <h6 class="card-subtitle serie mt-2">Les légendaires</h6>
+                                    <h6 class="card-subtitle font-auteur">Sobral</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Les légendaires</h6>
                                     <h6 class="card-title mt-2">10,26 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -356,8 +389,8 @@
                                 <img src="./pictures/bdHome/Spirou et Fantasio-20-Le faiseur dor.jpg" class="card-img-top" alt="...">
                                 <div class="card-body text-center">
                                     <h5 class="card-title">Le faiseur d'or</h5>
-                                    <h6 class="card-subtitle auteur">Fournier</h6>
-                                    <h6 class="card-subtitle serie mt-2">Spirou et Fantasio</h6>
+                                    <h6 class="card-subtitle font-auteur">Fournier</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Spirou et Fantasio</h6>
                                     <h6 class="card-title mt-2">11.50 €</h6>
                                     <a href="#" class="btn btn-dark">Ajouter au panier</a>
                                 </div>
@@ -409,6 +442,41 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="./main.js"></script>
+
+    <script>
+
+        transfertSearchInput = document.getElementById('searchInput').textContent; 
+        console.log(transfertSearchInput)
+        ;
+        
+        document.getElementById('searchInput').insertAdjacentHTML('afterbegin', transfertSearchInput);
+        
+         function  Search() {
+             console.log(searchInput);
+            window.event.returnValue = false;
+            location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
+            // window.location = "./catalogue.html";
+        
+        }
+        
+        function  Search1() {
+        
+            enterSearch.forEach(function (a) {
+                a.addEventListener('keypress', function (e) {
+                    let key = e.which || e.keyCode;
+                    if (key === 13) {
+        
+                        window.event.returnValue = false;
+                        window.location = "./catalogue.html";
+                    }
+                })
+            })
+                        
+        }
+        
+        </script>
+
+
 
 </body>
 </html>
