@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto Slab', serif;
-  background-color: #313030;;
+  background-color: #313030;
 }
 
 /*Header from index.css de David - ligne 13 à 193 sur son fichier */
@@ -221,6 +221,14 @@ body {
   margin-right: 0px;
   }
 
+.font-auteur {
+  font-weight: 200;
+}
+
+.font-serie {
+  font-weight: 400;
+}
+
 .container {
   overflow: hidden;
 }
@@ -271,6 +279,9 @@ body {
   color: white;
 }
 
+p {
+  margin-bottom: 0px;
+}
 
 
 /*Footer*/

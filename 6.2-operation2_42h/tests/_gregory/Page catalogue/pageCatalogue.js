@@ -22,6 +22,8 @@ let tableau = [];
 let preTable = "";
 const srcImageAlbum = "albums/";
 let cheminImageAlbum = "";
+let tabAuteur = []; // création de bouton auteur sans doublons
+let tabSerie = []; // création de bouton serie sans doublons
 
 class Albumss {
   constructor(id, titre, numéro, idSerie, idAuteur, prix, enStock) { // Comment intégrer l'image
@@ -117,7 +119,7 @@ for (let i = 0; i < tableau.length; i++) {
     divInter2.classList.add("card", "p-2"); //, auteur, serie
     
     let divInter1 = document.createElement("div");
-    divInter1.classList.add("col", "mb-4", "filterDiv", auteur, serie);
+    divInter1.classList.add("col", "card-deck", "mb-4", "filterDiv", auteur, serie);
 
 
     let newPicture = document.createElement("p");
@@ -139,11 +141,11 @@ for (let i = 0; i < tableau.length; i++) {
     newTitle.innerHTML = `${tableau[i].titre}`;
 
     let newAuteur = document.createElement("h6");
-    newAuteur.classList.add("card-subtitle", "auteur");
+    newAuteur.classList.add("card-subtitle", "auteur", "font-auteur");
     newAuteur.innerHTML = `${auteur}`;
 
     let newSerie = document.createElement("h6");
-    newSerie.classList.add("card-subtitle", "serie", "mt-2");
+    newSerie.classList.add("card-subtitle", "serie", "mt-2", "font-serie");
     newSerie.innerHTML = `${serie}`;
 
     let newPrix = document.createElement("h6");
@@ -173,28 +175,29 @@ for (let i = 0; i < tableau.length; i++) {
     divInter1.appendChild(divInter2);
     cardList.appendChild(divInter1);
 
-    const buttonSerie = document.createElement("button");
+   // filtre des auteurs et séries sans doublons
+   if (tabAuteur.indexOf(auteur) === -1) {
+    tabAuteur.push(auteur);
+    // créer le bouton auteur
     const buttonAuteur = document.createElement("button");
-
-    buttonSerie.textContent = serie;
-
-    buttonSerie.addEventListener("click", () => {
-      filterSelection(serie);
-    });
-
-    buttonSerie.classList.add("btnTri");
-
-    document.getElementById("myBtnContainer").appendChild(buttonSerie);
-
     buttonAuteur.textContent = auteur;
-
     buttonAuteur.addEventListener("click", () => {
       filterSelection(auteur);
     });
-
     buttonAuteur.classList.add("btnTri");
-
     document.getElementById("myBtnContainer").appendChild(buttonAuteur);
+  }
+  if (tabSerie.indexOf(serie) === -1) {
+    tabSerie.push(serie);
+    // créer le bouton serie
+    const buttonSerie = document.createElement("button");
+    buttonSerie.textContent = serie;
+    buttonSerie.addEventListener("click", () => {
+      filterSelection(serie);
+    });
+    buttonSerie.classList.add("btnTri");
+    document.getElementById("myBtnContainer").appendChild(buttonSerie);
+  }
 
   }
 }

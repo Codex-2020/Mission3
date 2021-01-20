@@ -296,14 +296,15 @@ body {
     padding-top: 10px;
   }
 
-  .auteur {
-    font-weight: 400;
-  }
-
-  .serie {
+  
+ 
+  .font-auteur {
     font-weight: 200;
   }
- 
+  
+  .font-serie {
+    font-weight: 400;
+  }
 
   .btn {
     line-height: 1rem;
