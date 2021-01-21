@@ -122,7 +122,7 @@ function Maboul() {
     let total = prixFacturableExtrait[1] * qtFacturableExtrait[1];
     totalTTC.push(total);
 
-    let infoCmd = `${nameFacturableExtrait[1]}  ${prixFacturableExtrait[1]} €  Qté: qtFacturableExtrait[1].
+    let infoCmd = `${nameFacturableExtrait[1]}  -   ${prixFacturableExtrait[1]} €   -    Qté: ${qtFacturableExtrait[1]}.
     Total: ${total}  `
     infoCommande.push(infoCmd);
 }
@@ -139,14 +139,18 @@ console.log(infoCommande);
 
 const cmdFinale = document.getElementById('commande');
 
-for (let i = 0; i <= infoCommande.length; i++) {
+for (let i = 0; i <= infoCommande.length - 1; i++) {
 
-    // let recapCommande = document.createElement("p");
-    let recapCommande.innerHTML = `${infoCommande[i]}`
-    let test = recapCommande.innerHTML;
-    document.getElementById('commande').insertAdjacentHTML('beforebegin', test);
-    // cmdFinale.appendChild(recapCommande);
+    let recapCommande = document.createElement("p");
+    recapCommande.innerHTML = `${infoCommande[i]}`;
+    cmdFinale.appendChild(recapCommande);
 }
+
+const totalFinale = document.getElementById('total');
+let totalCommande = document.createElement("p");
+totalCommande.innerHTML = `Soit un Total de : ${TotalTTCFacture} € TTC`;
+totalFinale.appendChild(totalCommande);
+
 
 
 // }

@@ -1,7 +1,9 @@
-
 import albums from "../data/albums.js";
 import series from "../data/series.js";
 import auteurs from "../data/auteurs.js";
+// console.log(auteurs);
+// console.log(albums.get("2").titre);
+// console.log(auteurs.get("8").nom);
 
 let id = "";
 let titre = "";
@@ -20,7 +22,6 @@ let tabSerie = []; // création de bouton serie sans doublons
 
 class Albumss {
   constructor(id, titre, numéro, idSerie, idAuteur, prix, enStock) { // Comment intégrer l'image
-
     this.id = id;
     this.titre = titre;
     this.numéro = numéro;
@@ -29,13 +30,11 @@ class Albumss {
     this.prix = prix;
     this.enStock = enStock;
   }
-
 };
 
 function getAuteursById(param) {
   return auteurs.get(param)
 };
-
 
 function getSeriesById(parama) {
   return series.get(parama)
@@ -47,7 +46,6 @@ for (let i = 1; i <= 50; i++) {
   let searchId = albums.has(j)
 
   if (searchId) {
-
     id = j;
     titre = albums.get(j).titre;
     numéro = albums.get(j).numero;
@@ -55,12 +53,16 @@ for (let i = 1; i <= 50; i++) {
     idAuteur = albums.get(j).idAuteur;
     prix = albums.get(j).prix;
     enStock = Math.random() >= 0.5;
+    // console.log(idSerie);
+    // console.log(idAuteur);
 
+    // albumArray = `"${id}","${titre}","${numéro}","${idSerie}","${idAuteur}","${prix}","${enStock}"`;
     preTable = new Albumss(id, titre, numéro, idSerie, idAuteur, prix, enStock);
     tableau.push(preTable);
-
   }
 }
+// console.log(albumArray);
+// console.log(tableau);
 
 const cardList = document.getElementById('bdList');
 cardList.classList.add("row", "row-col-2", "row-cols-md-4", "px-3");
@@ -72,8 +74,6 @@ for (let i = 0; i < tableau.length; i++) {
   let searchId = albums.has(j);
 
   if (searchId) {
-
-
     let divInter1 = document.createElement("div");
     divInter1.classList.add("col", "mb-4");
 
@@ -83,13 +83,17 @@ for (let i = 0; i < tableau.length; i++) {
 
     let nomAlbum = serie + "-" + tableau[i].numéro + "-" + tableau[i].titre; // Concaténation du nom de l'image
     nomAlbum = nomAlbum.replace(/'|!|\?|\.|"|:|\$/g, "");
-
+    console.log(nomAlbum);
     cheminImageAlbum = "./" + srcImageAlbum + nomAlbum + ".jpg";
+    console.log(cheminImageAlbum);
+
+    console.log(auteur);
+    console.log(serie);
 
     if (auteur.includes(" ")) {
       auteur = auteur.replaceAll(" ", "-");
       auteur = auteur.replaceAll(",", "");
-
+      //  console.log("auteur sans espace = ", auteur);
     }
 
     if (serie.includes(" ")) {
@@ -107,12 +111,9 @@ for (let i = 0; i < tableau.length; i++) {
     newPicture.innerHTML = `<div class="col mb-4">
      
     <form class=" d-flex justify-content-center" method="get" action="./description.html">
-    <input type="hidden" name="id" value="${tableau[i].id}"/>
-    <input class="card  p-2 filterDiv" type="image" src="${cheminImageAlbum}" width="200px" height="300px">
-</form>
-</div>
-
-`;
+      <input type="hidden" name="id" value="${tableau[i].id}"/>
+      <input class="card  p-2 filterDiv" type="image" src="${cheminImageAlbum}" width="200px" height="300px">
+    </form></div>`;
 
     let newTitle = document.createElement("h5");
     newTitle.classList.add("card-title");
@@ -131,10 +132,7 @@ for (let i = 0; i < tableau.length; i++) {
     newPrix.innerHTML = `${tableau[i].prix} €`;
 
     let newParagraphe = document.createElement("p");
-    newParagraphe.innerHTML = ` <button type="button" id="boutonQuiAjouteAuPanier" class="add-to-cart btn btn-default center-block" data-id="${tableau[i].id}" data-name="${tableau[i].titre}" data-price="${tableau[i].prix}"  >Ajouter au panier</button>
-
-
-      `;
+    newParagraphe.innerHTML = "<a href=#>Ajouter au panier";
     newParagraphe.classList.add("btn", "btn-dark");
 
     let newEnStock = document.createElement("div");
@@ -155,7 +153,8 @@ for (let i = 0; i < tableau.length; i++) {
     divInter1.appendChild(divInter2);
     cardList.appendChild(divInter1);
 
-    // filtre des auteurs et séries sans doublons
+   // filtre des auteurs et séries sans doublons
+  
     if (tabAuteur.indexOf(auteur) === -1) {
       tabAuteur.push(auteur);
       // créer le bouton auteur
@@ -165,7 +164,7 @@ for (let i = 0; i < tableau.length; i++) {
         filterSelection(auteur);
       });
       buttonAuteur.classList.add("btnTri");
-      document.getElementById("myBtnContainer").appendChild(buttonAuteur);
+      document.getElementById("myBtnContainerAuteur").appendChild(buttonAuteur);
     }
     if (tabSerie.indexOf(serie) === -1) {
       tabSerie.push(serie);
@@ -176,13 +175,10 @@ for (let i = 0; i < tableau.length; i++) {
         filterSelection(serie);
       });
       buttonSerie.classList.add("btnTri");
-      document.getElementById("myBtnContainer").appendChild(buttonSerie);
+      document.getElementById("myBtnContainerSerie").appendChild(buttonSerie);
     }
-
   }
 }
-
-
 
 // Concerne les outils de filtrage
 

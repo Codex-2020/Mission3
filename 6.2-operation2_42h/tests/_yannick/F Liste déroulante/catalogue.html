@@ -1,20 +1,23 @@
-<!doctype html>
-<html lang="fr-FR">
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <title>PD Place - Panier</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="./css/stylepanier.css"> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="./css/pageCatalogue.css">
     <link rel="stylesheet" href="./css/index.css">
-
-    <script defer src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    
+    <title>Les BDS</title>
 </head>
-<body>
 
+<body>
+    
     <!--Header-->
     <div class="bg-white header mb-3">
       <div class="container-fluid">
@@ -53,35 +56,38 @@
                       </div>
                   </div>
 
-                    <!--Barre de recherche-->
-                    <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+                      <!--Barre de recherche-->
+                  <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
                       <form>
-                          <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
-                          <button class="btn-search" onclick="Search()">RECHERCHE</button>
+                          <input class="rounded col-lg-8" type="text"  id="search" name="key_word"  placeholder="Recherche" />
+                          <button class='btn-search'>RECHERCHE</button>
                       </form>
                   </div>
 
-                  
-<!--Menu-->
 
-<div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
-  <ul class="navbar-nav col-md-12 justify-content-center">
-      <li class="nav-item active">
-          <a class="nav-link" href="./index.html">ACCUEIL</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" href="./contact.html">CONTACT</a>
-      </li>
-  </ul>
+                  
+
+                      <!--Menu-->
+
+                  <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+                          <ul class="navbar-nav col-md-12 justify-content-center">
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="#home">ACCUEIL</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#home">NOUVEAUTES</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#home">PROMOTIONS</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#home">CATALOGUE</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#home">CONTACT</a>
+                              </li>
+                          </ul>
+
                           <hr>
 
                       <!--Bouton menu deroulant pour inscription-->    
@@ -106,30 +112,63 @@
               
           </div>
       </div>
- 
 
 
-<!--Corps-->
+  <!--Corps-->
+    <div class="col">
+                
+        <div class="bg-Categories bg-light mb-3">
 
-<div class=" container-fluid bg-white  d-flex justify-content-center">
-  <div class="row withdrawal-container ">
-      <div class="col">
+            <div class="categories">
+                <h2>Page catalogue - Tous nos produits</h2>
+                <button type="button" class="btn btn-outline-dark d-none">Découvrir toutes nos promotions</button>
+            </div><!--bouton caché d-none-->
 
-          <div class="user_connect mb-5 ">
-              <p class="text-center">Bienvenue <span id="user_firstname"></span> <span id="user_name"></span>!</p>
-          </div>
+            <input class="form-control col-11 col-lg-6 my-3 mx-3" id="searchInput" type="text" placeholder="Rechercher un produit, une série, un auteur..."> <!--la barre de recherche-->
+            
+                <!--La barre de filtrage
+            <div id="myBtnContainer">
+                <button class="btnTri active" onclick="filterSelection('all')">Afficher tous les albums</button>
+                <button class="btnTri" onclick="filterSelection('Uderzo')"> Uderzo</button>
+                <button class="btnTri" onclick="filterSelection('Charlier')"> Charlier</button>
+            </div>-->
+            <!--Liste deroulante filtrage-->
+            <div class="Filtres">
+              <div class="dropdown Auteur">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Trier par Auteur
+                  </button>
+                  <div id="myBtnContainerAuteur" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item btnTri active" type="button" onclick="filterSelection('all')">Tout Afficher</button>
+                  </div>
+              </div>
+              <div class="dropdown Serie">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Trier par Série
+                  </button>
+                  <div id="myBtnContainerSerie" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item btnTri active" type="button" onclick="filterSelection('all')">Tout Afficher</button>
+                  </div>
+              </div>
+            </div>
+            <!--Fin Liste deroulante filtrage-->
 
-          <div id='commande'></div>
-          <div id='total'></div>
-          <button class="payment-submit align-self-center w-0" type="button" onclick="Validation()"></a>VALIDER</button>
-  </div>
-</div>
-</div>
+            <div class="row row-cols-2 row-cols-md-4 px-3" id="bdList"> <!--ID necessaire pour la recherche-->
+
+               
+
+                
+
+                
+
+            </div>
+        </div>        
+          
+    </div>
 
 
-
- <!--Footer-->
- <div class="bg-white footer">
+<!--Footer-->
+<div class="bg-white footer">
   <div class="container-fluid d-flex  justify-content-center mt-4">
 
       <div class="container-fluid">
@@ -156,19 +195,27 @@
  
   </div>
 </div>
-      
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script defer src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- <script defer src="./js/panier.js"></script> -->
-        <script defer src="./js/pan.js"></script>
-<script src="./data/albums.js" type="module"></script>
+    
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+
+    <script src="./data/albums.js" type="module"></script>
     <script src="./data/series.js" type="module"></script>
     <script src="./data/auteurs.js" type="module"></script>
-   
+    <script src="./js/pageCatalogue.js" type="module"></script>
 
-     <!--Concerne la recherche-->
-     <script>
+
+  <!--Concerne la recherche-->
+    <script>
         $(document).ready(function(){
         $("#searchInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
@@ -219,15 +266,15 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current control button (highlight it)
-// var btnContainer = document.getElementById("myBtnContainer");
-// var btns = btnContainer.getElementsByClassName("btn");
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
     
     
     
@@ -235,5 +282,6 @@ function w3RemoveClass(element, name) {
     
     
     </script>
-    </body>
+</body>
+
 </html>
