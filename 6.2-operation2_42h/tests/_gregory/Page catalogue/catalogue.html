@@ -113,25 +113,38 @@
                 
         <div class="bg-Categories bg-light mb-3">
           <div class="categories">
-            <h2>Page catalogue OK - Tous nos produits</h2>
-            <button type="button" class="btn btn-outline-dark d-none">Découvrir toutes nos promotions</button>
-          </div><!--bouton caché d-none-->
-
-          <input class="form-control col-11 col-lg-6 my-3 mx-3" id="searchInput" type="text" placeholder="Rechercher un produit, une série, un auteur..."> <!--la barre de recherche-->
-        </div>
-
-        <div class="bg-Categories bg-light mb-3">    
-                <!--La barre de filtrage-->
-          <div id="myBtnContainer">
-            <button class="btnTri active" onclick="filterSelection('all')">Afficher tous les albums</button>
+            <h1>TOUTES NOS BANDES DESSINÉES</h1>
           </div>
-        </div>
 
-        <div class="bg-Categories bg-light mb-3">
+          <input class="form-control col-11 col-lg-6 my-3 mx-3 d-none" id="searchInput" type="text" placeholder="Rechercher un produit, une série, un auteur..."> <!--la barre de recherche cachée-->
+            
+                <!--La barre de filtrage-->
+                <div class="Filtres">
+                  <div class="dropdown Auteur">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Trier par Auteur
+                      </button>
+                      <div id="myBtnContainerAuteur" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item btnTri active" type="button" onclick="filterSelection('all')">Tout Afficher</button>
+                      </div>
+                  </div>
+                  <div class="dropdown Serie">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Trier par Série
+                      </button>
+                      <div id="myBtnContainerSerie" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item btnTri active" type="button" onclick="filterSelection('all')">Tout Afficher</button>
+                      </div>
+                  </div>
+                </div>
+        
+
+        
           <div class="row justify-content-around row-cols-2 row-cols-md-4 px-3 card-deck" id="bdList"> <!--ID necessaire pour la recherche-->
           </div>
 
         </div>
+        
 
       </div>
     </div>        

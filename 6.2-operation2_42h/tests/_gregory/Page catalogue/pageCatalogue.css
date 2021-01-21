@@ -190,6 +190,40 @@ body {
 /* Main CODE DE GREG*/
 
 
+/*Lister les filtres en liste deroulante*/
+button.btnTri {
+  border: none;
+  background: none;
+  display: flex;
+}
+.Filtres {
+  display: flex;
+  margin-left:30px;
+  margin-bottom:30px;
+}
+.dropdown-menu {
+  height: 600px;
+  overflow-y: auto;
+  
+  width: fit-content;
+}
+button.dropdown-item.btnTri.active {
+  color: #343a40;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+button.btnTri:hover {
+  background: #343a40;
+  color: white;
+}
+.dropdown {
+  position: relative;
+  margin: 0.2em;
+  width: max-content;
+}
+
+/*Lister les filtres en liste deroulante*/
 
 .categories {
   padding-left: 5%;
@@ -288,6 +322,10 @@ p {
   padding-right: 0.3rem;
   padding-left: 0.3rem;
 }
+
+
+
+
 
 /*Footer*/
 .footer {

@@ -185,7 +185,7 @@ for (let i = 0; i < tableau.length; i++) {
       filterSelection(auteur);
     });
     buttonAuteur.classList.add("btnTri");
-    document.getElementById("myBtnContainer").appendChild(buttonAuteur);
+    document.getElementById("myBtnContainerAuteur").appendChild(buttonAuteur);
   }
   if (tabSerie.indexOf(serie) === -1) {
     tabSerie.push(serie);
@@ -196,7 +196,7 @@ for (let i = 0; i < tableau.length; i++) {
       filterSelection(serie);
     });
     buttonSerie.classList.add("btnTri");
-    document.getElementById("myBtnContainer").appendChild(buttonSerie);
+    document.getElementById("myBtnContainerSerie").appendChild(buttonSerie);
   }
 
   }
