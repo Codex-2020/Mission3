@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <title>Page promotion ok</title>
+
+</head>
+<body>
+
+    <!--Header-->
+    <div class="bg-white header mb-3">
+        <div class="container-fluid">
+            <div class="row ">
+                <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
+                        
+
+                    <!--Bouton menu petits écrans-->
+                    <div class="menu d-flex justify-content-center">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
+                    <!--Affichage logo-->              
+                    <div class="brand  col-8 order-lg-1 col-lg-4 d-flex justify-content-center">
+                        <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
+                    </div>
+
+                
+                    <!--Bloc à droite: boutin connection/panier-->
+                    <div class="right   col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
+                        <!--Bouton Connexion-->
+                        <div id="connectButton" class="connect-button text-center col">
+                        <!--Si pas connecté/inscrit-->
+                            <a class="btn btn-connection" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                        </div>
+                        <div id="userMsg" style="display:none">
+                        <!--Message si utilisateur Connecté-->
+                            <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
+                        </div>
+                        <!--Panier et bloc panier-->
+                        <div class="basket d-flex border mb-1 justify-content-center align-items-center rounded border-dark mt-1">
+                            <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
+                            <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
+                        </div>
+                    </div>
+
+                        <!--Barre de recherche-->
+                    <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+                        <form>
+                            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+                            <button class="btn-search" onclick="Search()">RECHERCHE</button>
+                        </form>
+                    </div>
+
+
+                    
+
+                        <!--Menu-->
+
+                    <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+                        <ul class="navbar-nav col-md-12 justify-content-center">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./index.html">ACCUEIL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact.html">CONTACT</a>
+                            </li>
+                        </ul>
+
+                            <hr>
+
+                        <!--Bouton menu deroulant pour inscription-->    
+                        <div class="smally">
+                            <!--Bouton Connexion-->
+                            <div id="connectButton" class="connect-button text-center col">
+                                <!--Si pas connecté/inscrit-->
+                                <a class="btn btn-smally" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                            </div>
+                            <div id="userMsg" style="display:none">
+                                <!--Message si utilisateur Connecté-->
+                                <a class="btn btn-smally" href="./account.html" role="button">Mon Compte</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+                
+        </div>    
+    </div>
+
+     <!--Fin header-->
+
+     <!--Main-->
+
+    
+    <!--Ensemble Promotions / nouveautés / sélection -->
+
+    <div class="container-fluid"> <!--Fluid / not fluid ?-->
+        <div class="row mt-3">
+            
+            
+            
+                            <!--Promotions / Nouveautés-->
+
+            <div class="col">
+                
+                <div class="bg-Categories bg-light mb-3">
+
+                    <div class="categories">
+                        <h1>PROMOTIONS</h1>
+                        <p>Tous les jours, une sélection de BD à prix cassés !</p>
+                    </div>
+     
+                    <div class="row justify-content-around row-cols-2 row-cols-md-4 px-3 card-deck">
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2 d-flex">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="560"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Elfes-01-Le crystal des Elfes bleus.jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Le crystal des Elfes bleus</h5>
+                                    <h6 class="card-subtitle font-auteur">Istin, Duarte, Saito</h6>
+                                    <h6 class="card-subtitle mt-2 font-serie">Elfes</h6>
+                                    <h6 class="card-title mt-2" style="color:red">9 € au lieu de 13.64 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="458"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Les blondes-02-Tome 2.jpg">
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Tome 2</h5>
+                                    <h6 class="card-subtitle font-auteur">Gaby, Dzack</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Les blondes</h6>
+                                    <h6 class="card-title mt-2" style="color:red">9 € au lieu de 12.64 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="275"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Les écluses du ciel-05-Le pays blanc.jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Le pays blanc</h5>
+                                    <h6 class="card-subtitle font-auteur">Rodolphe, Allot</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Les écluses du ciel</h6>
+                                    <h6 class="card-title mt-2" style="color:red">8 € au lieu de 10.46 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="88"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Lucky Luke-46-Le fil qui chante.jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Le fil qui chante</h5>
+                                    <h6 class="card-subtitle font-auteur">Morris, Goscinny</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Lucky Luke</h6>
+                                    <h6 class="card-title mt-2" style="color:red">7 € au lieu de 10.50 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="299"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Luuna-01-La nuit des totems.jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">La nuit des totems</h5>
+                                    <h6 class="card-subtitle font-auteur">Crisse, Keramidas</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Luuna</h6>
+                                    <h6 class="card-title mt-2" style="color:red">7 € au lieu de 9.99 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="416"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Lélève ducobu-14-Premier de la classe (en commençant par la fin ).jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Premier de la classe (en commençant par la fin)</h5>
+                                    <h6 class="card-subtitle font-auteur">Godi, Fidrou</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">L'élève Ducobu</h6>
+                                    <h6 class="card-title mt-2" style="color:red">5 € au lieu de 10,46 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="270"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Léonard-00-Compile de génie.jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Compile de génie</h5>
+                                    <h6 class="card-subtitle font-auteur">De Groot, Turk</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Léonard</h6>
+                                    <h6 class="card-title mt-2" style="color:red">7 € au lieu de 11,24 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col mb-4 card-deck">
+                            <div class="card p-2">
+                                <form method="get" action="./description.html">
+                                <input type="hidden" name="id" value="30"></input>
+                                <input class="card-img-top" alt="description" type="image" src="./pictures/bdPromotion/Marsupilami-00-Capturez un Marsupilami .jpg"></input>
+                                </form>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Capturez un Marsupilami</h5>
+                                    <h6 class="card-subtitle font-auteur">Franquin</h6>
+                                    <h6 class="card-subtitle font-serie mt-2">Marsupilami</h6>
+                                    <h6 class="card-title mt-2" style="color:red">6 € au lieu de 10.54 €</h6>
+                                    <a href="#" class="btn btn-dark">Ajouter au panier</a>
+                                </div>
+                                <div class="card-footer bg-success text-white text-center">
+                                    En stock
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                </div>
+            </div>       
+
+        </div>
+    </div>
+
+
+
+
+     <!--Footer-->
+    <div class="container-fluid bg-white footer d-flex justify-content-center mt-4">
+        <footer class="footer">
+        
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="copyright col-12 col-md-6 text-center mt-1 align-self-center">
+                    <p>© BD Place™ 2021</p>
+                </div>
+
+                <div class="social col-12 col-md-6 text-center mt-1">
+                    <i class="fab fa-2x fa-facebook-square"></i>
+                    <i class="fab fa-2x fa-twitter-square"></i>
+                    <i class="fab fa-2x fa-instagram"></i>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="legal col text-center">
+                    <a href="">Mentions Légales</a>
+                    <a href="">Conditions Générales de Vente</a>
+                    <a href="">Nous Contacter</a>
+                </div>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+
+    <script>
+
+        transfertSearchInput = document.getElementById('searchInput').textContent; 
+        console.log(transfertSearchInput)
+        ;
+        
+        document.getElementById('searchInput').insertAdjacentHTML('afterbegin', transfertSearchInput);
+        
+         function  Search() {
+             console.log(searchInput);
+            window.event.returnValue = false;
+            location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
+            // window.location = "./catalogue.html";
+        
+        }
+        
+        function  Search1() {
+        
+            enterSearch.forEach(function (a) {
+                a.addEventListener('keypress', function (e) {
+                    let key = e.which || e.keyCode;
+                    if (key === 13) {
+        
+                        window.event.returnValue = false;
+                        window.location = "./catalogue.html";
+                    }
+                })
+            })
+                        
+        }
+        
+        </script>
+
+
+
+</body>
+</html>

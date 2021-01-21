@@ -1,0 +1,238 @@
+/*font-family: 'Roboto', sans-serif;*/
+body {
+    background-color: #313030;
+    font-family: 'Roboto', sans-serif;
+    margin: 0.2em;
+}
+
+/******************************* HEADER DAVID *******************************/
+/*Header*/
+
+.header {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.search input {
+    font-style: italic;
+    width: 40vw;
+}
+
+.search {
+    z-index: 2;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.btn-search,
+.btn-connection,
+.btn-smally,
+.filtre {
+    background-color: #313030;
+    color: white;
+    border-radius: 5px;
+}
+
+.filtre {
+    font-size: 1em;
+}
+
+.legal a {
+    color: black;
+}
+
+.navbar-brand {
+    margin-right: 0 !important;
+}
+
+/*Carousel*/
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.addres {
+    width: 300px;
+    height: 100%;
+}
+
+.user-addres {
+    border: none;
+}
+
+.user-addres:focus {
+    outline: none;
+}
+
+.edit {
+    cursor: pointer;
+}
+
+/*Transition menu*/
+.navbar-collapse {
+    position: fixed;
+    top: 70px;
+    z-index: 10;
+    width: 250px;
+}
+
+.navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+}
+
+.navbar-collapse.show {
+    left: 0;
+    transition: left 300ms ease-in-out;
+    background-color: rgba(49, 48, 48, 0.9);
+    margin: 0.2em;
+    padding: 2em;
+}
+
+.navbar-toggler.collapsed~.navbar-collapse {
+    transition: left 500ms ease-in-out;
+}
+
+/*Fin transition Menu*/
+
+@media (min-width: 992px) {
+    ul li {
+        background-color: #313030;
+        margin-left: 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .navbar-collapse {
+        position: static;
+        margin-bottom: -20px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .smally {
+        display: none;
+    }
+
+    .search input {
+        width: 40vw;
+    }
+
+    .time-withdrawal,
+    .withdrawal-date,
+    .info-wd {
+        border: solid 1px;
+        border-color: black;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .btn-connection,
+    .basket-p {
+        display: none;
+    }
+
+    .basket {
+        border: none !important;
+    }
+
+    .navbar-brand img {
+        width: 150px;
+        height: 50px;
+    }
+
+    .navbar-basket img {
+        margin-top: -15px;
+    }
+
+    .payment img {
+        width: 182px;
+        height: 92px;
+    }
+
+    .am-time li,
+    .pm-time li {
+        text-decoration: none;
+        background-color: #313030;
+        border-radius: 5px;
+        color: white;
+        margin-top: 10px;
+        font-size: 0.7em;
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .end img {
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media (max-width: 360px) {
+    .search {
+        display: none !important;
+    }
+}
+/******************************* CONTENT ALAIN *******************************/
+ @media all and (min-width: 576px){
+    #contentTitre {
+        display: flex;
+        justify-content: center;
+    }
+    #achat {
+       margin-top: 10%;
+        
+    } 
+}
+
+/******************************* FOOTER YANNICK *******************************/
+.footer {
+    margin-top: 0.3em;
+    position: sticky;
+    height: auto;
+}
+
+hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+    .legal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .legal a {
+        padding: 0.1em;
+    }
+}
+
+@media (min-width: 992px) {
+    .copyright {
+        font-size: 1em;
+    }
+
+    .legal a {
+        padding: 1em;
+    }
+}

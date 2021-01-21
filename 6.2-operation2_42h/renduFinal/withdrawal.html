@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./css/payment.css">
+    <title>Page d'accueil BD Place</title>
+
+</head>
+<body>
+
+       <!--Header-->
+       <div class="bg-white header mb-3">
+        <div class="container-fluid">
+            <div class="row ">
+                <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
+                        
+
+                    <!--Bouton menu petits écrans-->
+                    <div class="menu d-flex justify-content-center">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                    </div>
+
+                    <!--Affichage logo-->              
+                    <div class="brand  col-8 order-lg-1 col-lg-4 d-flex justify-content-center">
+                        <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
+                    </div>
+
+                
+                    <!--Bloc à droite: boutin connection/panier-->
+                    <div class="right   col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
+                        <!--Bouton Connexion-->
+                        <div id="connectButton" class="connect-button text-center col">
+                        <!--Si pas connecté/inscrit-->
+                            <a class="btn btn-connection" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                        </div>
+                        <div id="userMsg" style="display:none">
+                        <!--Message si utilisateur Connecté-->
+                            <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
+                        </div>
+                        <!--Panier et bloc panier-->
+                        <div class="basket d-flex border mb-1 justify-content-center align-items-center rounded border-dark mt-1">
+                            <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
+                            <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
+                        </div>
+                    </div>
+   <!--Barre de recherche-->
+   <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+    <form>
+        <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+        <button class="btn-search" onclick="Search()">RECHERCHE</button>
+    </form>
+</div>
+
+                    
+  <!--Menu-->
+
+  <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+    <ul class="navbar-nav col-md-12 justify-content-center">
+        <li class="nav-item active">
+            <a class="nav-link" href="./index.html">ACCUEIL</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./promotions.html">PROMOTIONS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./contact.html">CONTACT</a>
+        </li>
+    </ul>
+                            <hr>
+
+                        <!--Bouton menu deroulant pour inscription-->    
+                        <div class="smally">
+                            <!--Bouton Connexion-->
+                            <div id="connectButton" class="connect-button text-center col">
+                                <!--Si pas connecté/inscrit-->
+                                <a class="btn btn-smally" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                            </div>
+                            <div id="userMsg" style="display:none">
+                                <!--Message si utilisateur Connecté-->
+                                <a class="btn btn-smally" href="./account.html" role="button">Mon Compte</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+                    
+                    
+
+                
+            </div>
+        </div>
+
+
+<!--Corps-->
+
+<div class="container-fluid bg-white mt-5 d-flex justify-content-center">
+    <div class="row withdrawal-container ">
+        <div class="col">
+
+            <div class="user_connect mb-5 ">
+                <p class="text-center">Bienvenue <span id="user_firstname"></span> <span id="user_name"></span>!</p>
+            </div>
+
+            <div class="control border-dark">
+                <div class="control-title  mb-5">
+                    <p class="text-center text-uppercase">Choisir mon horaire de retrait
+                        
+                        </p>
+                </div>
+
+                <div class="withdrawal-info ">
+
+                    <div class="info-wd  mb-5 d-flex flex-wrap justify-content-around">
+                        <p class="text-center p-4">Choisissez une date et une heure de retrait: nous vous garantissons la préparation de votre commande pour l’horaire choisi.</p>
+                        
+                    </div>
+
+                    <div class="withdrawal-date  mb-5 mt-5 pt-3 pb-3 d-flex flex-wrap justify-content-center">
+                        <form>
+                            <label for="search-date">Choisir votre jour de retrait <img src="./pictures/calendar.png" width="30px" height="30px" alt=""></label>
+                            <input type="date" id="search-date" class="delivery-date" autofocus>
+                            </form>
+                       
+                    </div>
+
+                <div class="time-withdrawal  d-flex justify-content-center">
+                    <div class="timetable  pl-3 d-flex justify-content-center">
+                        <ul class="delivery-time am-time">
+                            <li class="time" onclick="timeSwitch('0')">8h-9h</li>
+                            <li class="time" onclick="timeSwitch('1')">9h-10h</li>
+                            <li class="time" onclick="timeSwitch('2')">10h-11h</li>
+                            <li class="time" onclick="timeSwitch('3')">11h-12h</li>
+                        </ul>
+                           
+                    </div>
+
+                    <div class="timetable  pl-3 d-flex justify-content-center">
+                        <ul class="delivery-time pm-time">
+                            <li class="time" onclick="timeSwitch('4')">14h-15h</li>
+                            <li class="time" onclick="timeSwitch('5')">15h-16h</li>
+                            <li class="time" onclick="timeSwitch('6')">16h-17h</li>
+                            <li class="time" onclick="timeSwitch('7')">17h-18h</li>
+                            <li class="time" onclick="timeSwitch('8')">18h-19h</li>
+                        </ul>
+                           
+                    </div>
+
+                </div>
+
+                <div class="d-flex  mb-5 justify-content-center">
+                    <button class="payment-submit align-self-center w-0 mt-5" type="button" onclick=Appointement()>VALIDER</button>
+                </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+ 
+
+                 
+
+ 
+    <!--Footer-->
+    <div class="bg-white footer">
+        <div class="container-fluid d-flex  justify-content-center mt-4">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="copyright col-12 col-md-6 text-center mt-1 align-self-center">
+                    <p>© BD Place™ 2021</p>
+                    </div>
+
+                <div class="social col-12 col-md-6 text-center mt-1">
+                    <i class="fab fa-2x fa-facebook-square"></i>
+                    <i class="fab fa-2x fa-twitter-square"></i>
+                    <i class="fab fa-2x fa-instagram"></i>
+                </div>
+                </div>
+            <hr>
+                <div class="row">
+                    <div class="legal col text-center">
+                        <a href="">Mentions Légales</a>
+                        <a href="">Conditions Générales de Vente</a>
+                        <a href="">Nous Contacter</a>
+                    </div>
+                </div>
+            </div>
+       
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/withdrawal.js"></script>
+    <script>
+         user_firstname = localStorage.getItem('user_firstname');
+        document.getElementById("user_firstname").innerHTML = user_firstname;
+
+        user_name = localStorage.getItem('user_name');
+        document.getElementById("user_name").innerHTML = user_name;
+
+    </script>
+    <script>
+
+
+
+        function  Search() {
+            console.log(searchInput);
+           window.event.returnValue = false;
+           location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
+           // window.location = "./catalogue.html";
+       
+       }
+       
+       function  Search1() {
+       
+           enterSearch.forEach(function (a) {
+               a.addEventListener('keypress', function (e) {
+                   let key = e.which || e.keyCode;
+                   if (key === 13) {
+       
+                       window.event.returnValue = false;
+                       window.location = "./catalogue.html";
+                   }
+               })
+           })
+           
+           
+       }
+       
+         
+       </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./css/payment.css">
+    <title>Page d'accueil BD Place</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+    <!--Header-->
+    <div class="bg-white header">
+        <div class="container-fluid">
+            <div class="row ">
+                    <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
+                        
+                        <div class="menu ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+    
+                                        
+                        <div class="brand  col-7 order-lg-1 col-lg-3 d-flex justify-content-center">
+                        <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
+                    </div>
+    
+                   
+    
+                    <div class="right   d-flex  flex-column col-2 order-lg-3 col-lg-2 ">
+                        <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
+                        <div class="basket d-flex border  justify-content-center align-items-center rounded border-dark mt-1">
+                        <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
+                        <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
+                        </div>
+                    </div>
+    
+       <!--Barre de recherche-->
+       <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+        <form>
+            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+            <button class="btn-search" onclick="Search()">RECHERCHE</button>
+        </form>
+    </div>
+
+
+                
+
+                    
+  <!--Menu-->
+
+  <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+    <ul class="navbar-nav col-md-12 justify-content-center">
+        <li class="nav-item active">
+            <a class="nav-link" href="./index.html">ACCUEIL</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./promotions.html">PROMOTIONS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./contact.html">CONTACT</a>
+        </li>
+    </ul>
+
+                        <hr>
+                        <div class="smally">
+                    <button class="btn-smally" type="button">S'inscrire/Se connecter</button>
+                        </div>
+                </div>
+
+                    </div>
+
+                   
+                </nav>
+
+            
+        </div>
+    </div>
+</div>
+
+
+<!--Corps-->
+
+<div class="page container-fluid bg-white mt-5 d-flex justify-content-center">
+    <div class="row payment-container">
+        <div class="col">
+
+            <div class="user_connect mb-5 ">
+                <p class="text-center">Bienvenue <span id="user_firstname"></span> <span id="user_name"></span>!</p>
+            </div>
+
+            <div class="control border-dark">
+                <div class="control-title border border-dark mb-5">
+                    <p class="text-center text-uppercase">Vérification des coordonnées  ET
+                        PAIEMENT 
+                        
+                        </p>
+                </div>
+
+                <div class="payment-control border border-dark m-5 p-5">
+
+                    <div class="billing-addres border border-dark mb-5 d-flex flex-wrap justify-content-around">
+                        <p class="col-8">ADRESSE DE FACTURATION:</p>
+                        <p class="edit billingEdit col-4" onclick="edit(billingEdit)">EDIT</p>
+                        <div class="addres d-flex flex-column "id="b-addres">
+                            <input type="text" id="user_addres" class="user-addres col-8"
+                             readonly >
+                            <input type="text" id="user_city" class="user-addres col-8"
+                            aria-required="true" readonly >
+                            <span class='error' id='errorAddres'></span> 
+                        </div>
+                            
+                        <div class="col-4">
+                            <label for="addres_chk">Case à cocher</label>
+                            <input type="checkbox" id="addres_chk"><p>L’ ADRESSE DE FACTURATION EST L’ ADRESSE DE LIVRAISON</p>
+                        </div>
+                    </div>
+
+                    <div class="delivery-addres border border-dark mb-5 d-flex flex-wrap justify-content-around ">
+                        <p class="col-8">ADRESSE DE LIVRAISON:</p>
+                        <p class=" edit deliveryEdit col-4" onclick="edit(deliveryEdit)">EDIT</p>
+                        <span class='error' id='cantAddres'></span> 
+                        <div class="addres  d-flex flex-wrap "id="d-addres">
+                            <span id='noDeliveryAddres'>Editer pour saisir votre adresse de Livraison</span>
+                            <input type="text" id="user_addresd" class="user-addres col-8"
+                            value="user_addres" readonly >
+                            <input type="text" id="user_cityd" class="user-addres col-8"
+                            value="user_addres" aria-required="true" readonly >
+                            
+                            <span class='error' id='errorAddress'></span>
+                         </div>
+                    </div>
+
+                    <div class="payment border border-dark pl-3">
+                        <img src="./pictures/cb.png" alt="">
+                        <form class="form-payment d-flex flex-column mt-2 mb-2">
+
+                            <label for="form-number">Numéro de la carte</label>
+                            <input type="number" id="form-number" class="card-number col-md-4 "  aria_describedby="card-help" placeholder="5245124587954587">
+                            <small id="card-help" class="form-text text-muted mb-3">Veuillez saisir le numéro de votre carte sans tenir compte des espaces</small>
+
+                            <label for="form-name">Nom, Prénom</label>
+                            <input type="text" id="form-name" class="card-name mb-3 col-md-4"   placeholder="Nom  Prénom">
+                            
+                            <div class="control-dat mt-3 mb-3 ">
+                               
+                                  
+                                <label for="form-date">Date d'expiration</label>
+                                <input type="date" id="form-date" class="card-date"  placeholder="JJ/MM/YY">
+
+                                <label for="form-cvv">CVV</label>
+                                <input type="number" id="form-cvv" class="card-cvv mb-3"   placeholder="***">
+                            </div>
+
+                           
+                            <button class="payment-submit align-self-center w-0" type="button" onclick="orderValidation()"></a>VALIDER</button>
+                           
+
+                        </form>
+
+                    </div>
+
+                    <div class="payment-resume border border-dark pt-3 mt-2 pl-3">
+                        <p class="font-weight-bold">TOTAL TTC: &nbsp&nbsp <span id="cartTtc"></span> €</p>
+                        <p class="font-weight-bold">DONT TVA  5,5%: &nbsp&nbsp <span id="cartHt"></span> €</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+ 
+
+                 
+
+ 
+     <!--Footer-->
+     <div class="container-fluid bg-white footer d-flex  justify-content-center mt-4">
+        <div class="row ">
+            <div class="col">
+                <div class="copyright">
+                    <div class="footer-one d-flex justify-content-between ">
+                    <p class="text-center">BD Place - Tous droits réservés</p>
+                    <div class="social">
+          
+                        <i class="fab fa-2x fa-facebook-square"></i>
+                        <i class="fab fa-2x fa-twitter-square"></i>
+                        <i class="fab fa-2x fa-instagram"></i>
+                      </div>
+                    </div>
+                    <hr>
+                    <p>Mentions Légales  - Conditions générales de Vente</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/payment.js"></script>
+    <script>
+        user_firstname = localStorage.getItem('user_firstname');
+        user_name = localStorage.getItem('user_name');
+       
+        user_address = localStorage.getItem('user_addres');
+        user_citys= localStorage.getItem('user_city');
+
+        if(user_citys == null || user_address == null){
+            console.log('arrivons nous ici?');
+            user_addres = "Editer pour saisir";
+            user_city = " votre adresse ";
+         
+        }
+        else if(user_citys && user_address){
+            console.log('arrivon nous ici?');
+            user_addres = user_address;
+            user_city = user_citys;
+        }
+
+
+        user_addresd =user_addres;
+        user_cityd=user_city;
+        console.log(user_addresd);
+
+       document.getElementById("user_firstname").innerHTML = user_firstname;
+       document.getElementById("user_name").innerHTML = user_name;  
+       document.getElementById("user_addres").value = user_addres;
+       document.getElementById("user_city").value = user_city;
+     
+
+        
+       
+
+        sessionStorage.setItem('user_cityd',user_cityd);
+        sessionStorage.setItem('user_addresd',user_addresd);
+
+        document.getElementById("user_cityd").value = user_cityd;
+        document.getElementById('user_addresd').value = user_addresd;
+
+    
+        cartTtc = sessionStorage.getItem('user_cart');
+        cartHt = Number(cartTtc - cartTtc/1.055).toFixed(2);
+        document.getElementById("cartTtc").innerHTML = cartTtc;
+        document.getElementById('cartHt').innerHTML = cartHt;
+
+    </script>
+    <script>
+
+
+
+        function  Search() {
+            console.log(searchInput);
+           window.event.returnValue = false;
+           location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
+           // window.location = "./catalogue.html";
+       
+       }
+       
+       function  Search1() {
+       
+           enterSearch.forEach(function (a) {
+               a.addEventListener('keypress', function (e) {
+                   let key = e.which || e.keyCode;
+                   if (key === 13) {
+       
+                       window.event.returnValue = false;
+                       window.location = "./catalogue.html";
+                   }
+               })
+           })
+           
+           
+       }
+       
+         
+       </script>
+  
+</body>
+</html>

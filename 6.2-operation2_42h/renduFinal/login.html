@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="./css/login.css" type="text/css"/>
+    <title>BD Place</title>
+</head>
+<body>
+  <!--header-->
+  <div class="container-fluid">
+    <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-wrap">
+      <!--Bouton Menu Mini-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <h5 class="menu-text">Menu</h5>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Logo-->
+      <a class="navbar-brand col col-sm-2 col-lg-3 text-center" href="./index.html"><img src="./images/Logo.jpg"  class="img-fluid" alt=""></a>
+    <!--Menu-->
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto text-center col">
+          <li class="nav-item active">
+            <a class="nav-link" href="./index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./nouveautes.html">Nouveautés</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="./catalogue.html">Catalogue</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="./promotions.html">Promotions</a>
+          </li>
+        </ul>
+        <hr>
+
+        <!--Barre Recherche
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        -->
+
+        <!--Barre Recherche-->
+        <div class="input-group col">
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-search text-grey"
+                aria-hidden="true"></i></span>
+          </div>
+        </div>
+        <hr>
+        <!--Bouton Connexion-->
+        <div class="connect-button text-center col">
+          <button type="button" class="btn btn-connection">Se Connecter</button>
+        </div>
+      </div>
+      <!-- Panier-->
+      <div class="basket col">
+        <i class="fas fa-shopping-basket"></i>
+      </div>
+    </nav>
+  </div>
+  </div>
+  <!--Corps de Page-->
+  <main>
+      <!--Login-->
+      <div class="container-fluid">
+        <div class="row text-center">
+         <div class="login col col-md-6">         
+           <form name='form-login'>
+            <h1>Vous n'avez pas de compte?</h1>
+            <h5>Créer votre compte rapidement!</h5>
+            <label for="mail">Votre adresse mail</label>
+            <input type="email" id="user_mail" placeholder="Adresse mail" required>
+            <label for="password">Mot de Passe</label>
+            <input type="password"
+                   id= "user_password"
+                   placeholder="Mot de Passe" required> 
+                   <small id="passwordHelpBlock" class="form-text mb-2 mt-0 text-center text-muted">
+                    Votre mot de passe doit contenir au moins 8 caractères, une lettre majuscule,une lettre minuscule ET un chiffre.
+                  </small>
+            <input id="rgstr_btn" type="submit" value="Créer mon compte" onclick="store(); return false;">
+          </form>
+         </div>
+    
+    <div class="login col col-md-6">
+        <form name='form-login'>
+    
+            <h1>Vous avez un compte?</h1>
+            <h5>Connectez-vous!</h5>
+    
+            <label for="userMail">Adresse mail</label>
+            <input type="email" id="usermail" placeholder="Adresse Mail" required>
+    
+            <label for="userPassword">Votre mot de passe</label>
+            <input type="password" id= "userpassword" placeholder="Mot de Passe" required>
+    
+            <input id= "login_btn" type="submit" value="Me Connecter" onclick="check(); return false;">
+    
+        </form>
+    </div>
+  </div>
+  </div>
+</main>
+  
+<!--Footer-->
+  <footer class="footer">
+    
+    <div class="container-fluid">
+      <hr>
+      <div class="row">
+        <div class="copyright col-12 col-md-6 text-center">
+          <p>© BD Place™ 2021</p>
+        </div>
+        <div class="social col-12 col-md-6 text-center">
+          
+          <i class="fab fa-2x fa-facebook-square"></i>
+          <i class="fab fa-2x fa-twitter-square"></i>
+          <i class="fab fa-2x fa-instagram"></i>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="legal col text-center">
+        <a href="">Mentions Légales</a>
+        <a href="">Conditions Générales de Vente</a>
+        <a href="./contact.html">Nous Contacter</a>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script src="./js/login.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+body {
+  background-color: #313030;
+  margin: 0.2em;
+  font-family: "Oswald";
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+  border-radius: 1em 1em 0em 0em;
+  width: 100%;
+}
+
+a {
+  color: #313030;
+}
+a:hover {
+  color: red;
+}
+
+.content {
+  background: #ffffff;
+  margin-top: 0.3em;
+}
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  /* Menu Slide */
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    z-index: 100;
+  }
+
+  .navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    left: 0;
+    transition: left 300ms ease-in-out;
+    background-color: white;
+    margin: 0.2em;
+    padding: 2em;
+    top: 100%;
+    position: absolute;
+    border-color: black;
+    border-style: solid;
+    border-width: 0.1em;
+  }
+
+  .legal {
+    display: flex;
+    flex-direction: column;
+  }
+  .legal a {
+    padding: 0.1em;
+  }
+}
+@media (min-width: 992px) {
+  .copyright {
+    font-size: 1.5em;
+  }
+  .legal a {
+    padding: 1em;
+  }
+}
+
+.navbar-toggler.collapsed ~ .navbar-collapse {
+  transition: left 500ms ease-in-out;
+}
+
+/* Bouton Connection*/
+
+.btn {
+  color: #313030;
+  border: #313030;
+  border-radius: 0.2em;
+  border-style: solid;
+  border-width: 0.1em;
+  width: max-content;
+}
+.basket {
+  text-align: center;
+}
+.fa-shopping-basket {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: x-large;
+}
+
+.navbar-light .navbar-brand {
+  margin: 0;
+}
+
+h5.menu-text {
+  margin: 0;
+  font-size: smaller;
+}
+/* Slider */
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.carousel {
+  position: relative;
+  margin-top: 0.5em;
+}
+/* new product block*/
+.container-fluid.newproductblock {
+  background: #ffffff;
+  margin-top: 0.5em;
+}
+.title-block {
+  padding-top: 0.5em;
+}
+.newproduct-group {
+  margin: 0.1em;
+}
+.newproduct {
+  margin: 0.3em;
+  border: #313030;
+  border-style: solid;
+  border-width: 0.1em;
+}
+.newproduct-price {
+  font-size: 1.5em;
+}
+button.btn-addcart {
+  background: #313030;
+  color: #ffffff;
+  border-style: none;
+  width: 100%;
+}
+
+.footer {
+  background: #ffffff;
+  border-radius: 0em 0em 1em 1em;
+  margin-top: 0.3em;
+  position: sticky;
+  width: 100%;
+  height: auto;
+}
+
+/*LOGIN PAGE*/
+.panel-login {
+  border-color: #ccc;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.panel-login > .panel-heading {
+  color: #00415d;
+  background-color: #fff;
+  border-color: #fff;
+  text-align: center;
+}
+.panel-login > .panel-heading a {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login > .panel-heading a.active {
+  color: #029f5b;
+  font-size: 18px;
+}
+.panel-login > .panel-heading hr {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -moz-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -ms-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+}
+.panel-login input[type="text"],
+.panel-login input[type="email"],
+.panel-login input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+.btn-login {
+  background-color: #59b2e0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59b2e6;
+}
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #53a3cd;
+  border-color: #53a3cd;
+}
+.forgot-password {
+  text-decoration: underline;
+  color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-register {
+  background-color: #1cb94e;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #1cb94a;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #1ca347;
+  border-color: #1ca347;
+}
