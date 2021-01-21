@@ -4,11 +4,11 @@
 // let userB = ["Castaldon", "Philippe", "145 rue de la colombe", "18000 Bourges", "castaldon@afpa.fr", "mdp"];
 
 //en attendant que toutes les pages soient communes
-localStorage.setItem("user_firstname", "Nissim");
-localStorage.setItem("user_name", "Djerouri");
-localStorage.setItem("user_addres", "56 rue des daltoniens");
-localStorage.setItem("user_city", "75000 Silicon Valley");
-sessionStorage.setItem("user_cart", "120");
+// localStorage.setItem("user_firstname", "Nissim");
+// localStorage.setItem("user_name", "Djerouri");
+// localStorage.setItem("user_addres", "56 rue des daltoniens");
+// localStorage.setItem("user_city", "75000 Silicon Valley");
+// sessionStorage.setItem("user_cart", "120");
 
 
 let b = document.body;

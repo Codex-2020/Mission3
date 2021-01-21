@@ -346,9 +346,9 @@ a {
   color: #313030;
 }
 
-a:hover {
+/* a:hover {
   color: red;
-}
+} */
 
 @media (max-width: 992px) {
     
