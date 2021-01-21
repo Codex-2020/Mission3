@@ -139,6 +139,11 @@ let Vqt6 = qtArray[6];
 let Vqt7 = qtArray[7];
 let Vqt8 = qtArray[8];
 let Vqt9 = qtArray[9];
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ff74b59354e9b9b8652a1b58b2ad8ba6645040ec
 
 countEl = document.getElementById('count0');
 countEl1 = document.getElementById('count1');
