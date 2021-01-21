@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/payment.css">
     <title>Page d'accueil BD Place</title>
 
 </head>
@@ -48,38 +48,35 @@
                         </div>
                     </div>
 
-                        <!--Barre de recherche-->
-                    <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+                      <!--Barre de recherche-->
+                      <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
                         <form>
-                            <input class="rounded col-lg-8" type="text"  id="search" name="key_word"  placeholder="Recherche" />
-                            <button class='btn-search'>RECHERCHE</button>
+                            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+                            <button class="btn-search" onclick="Search()">RECHERCHE</button>
                         </form>
                     </div>
 
-
                     
+  <!--Menu-->
 
-                        <!--Menu-->
-
-                    <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
-                            <ul class="navbar-nav col-md-12 justify-content-center">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#home">ACCUEIL</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#home">NOUVEAUTES</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#home">PROMOTIONS</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#home">CATALOGUE</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#home">CONTACT</a>
-                                </li>
-                            </ul>
-
+  <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+    <ul class="navbar-nav col-md-12 justify-content-center">
+        <li class="nav-item active">
+            <a class="nav-link" href="./index.html">ACCUEIL</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./contact.html">CONTACT</a>
+        </li>
+    </ul>
                             <hr>
 
                         <!--Bouton menu deroulant pour inscription-->    
@@ -187,6 +184,36 @@
        user_name = localStorage.getItem('user_name');
        document.getElementById("user_name").innerHTML = user_name;
 
+   </script>
+   <script>
+
+
+
+    function  Search() {
+        console.log(searchInput);
+       window.event.returnValue = false;
+       location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
+       // window.location = "./catalogue.html";
+   
+   }
+   
+   function  Search1() {
+   
+       enterSearch.forEach(function (a) {
+           a.addEventListener('keypress', function (e) {
+               let key = e.which || e.keyCode;
+               if (key === 13) {
+   
+                   window.event.returnValue = false;
+                   window.location = "./catalogue.html";
+               }
+           })
+       })
+       
+       
+   }
+   
+     
    </script>
 </body>
 </html>

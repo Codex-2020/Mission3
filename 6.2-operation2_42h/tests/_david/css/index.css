@@ -359,145 +359,165 @@ hr {
   }
 }
 
-/*Page panier*/
-/* .purchase-infos {
-  text-align: center;
-}
-.purchase-infos a {
-  color: #000000;
-  display: inline-block;
-  margin: 5px 0 23px;
-}
-.purchase-infos a:hover {
-  text-decoration: none;
-}
-.purchase-infos .glyphicon {
-  font-size: 150%;
-}
-.purchase-infos .glyphicon-plane {
-  transform: rotate(45deg);
-} */
+/*MAIN Code CSS GREG*/
 
-/*LOGIN PAGE*/
-.panel-login {
-  border-color: #ccc;
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+@media (max-width: 00px) {
+  .categories {
+    margin-bottom: 20px;
+  }
 }
-.panel-login > .panel-heading {
-  color: #00415d;
-  background-color: #fff;
-  border-color: #fff;
-  text-align: center;
+
+@media (max-width: 500px) {
+  .carousel-indicators {
+    display: none;
+  }
 }
-.panel-login > .panel-heading a {
-  text-decoration: none;
-  color: #666;
-  font-weight: bold;
-  font-size: 15px;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  transition: all 0.1s linear;
+
+.carousel-caption {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.panel-login > .panel-heading a.active {
-  color: #029f5b;
-  font-size: 18px;
-}
-.panel-login > .panel-heading hr {
-  margin-top: 10px;
+
+.carousel-caption h4 {
+  font-size: small;
   margin-bottom: 0px;
-  clear: both;
-  border: 0;
-  height: 1px;
-  background-image: -webkit-linear-gradient(
-    left,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-  );
-  background-image: -moz-linear-gradient(
-    left,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-  );
-  background-image: -ms-linear-gradient(
-    left,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-  );
-  background-image: -o-linear-gradient(
-    left,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0)
-  );
-}
-.panel-login input[type="text"],
-.panel-login input[type="email"],
-.panel-login input[type="password"] {
-  height: 45px;
-  border: 1px solid #ddd;
-  font-size: 16px;
-  -webkit-transition: all 0.1s linear;
-  -moz-transition: all 0.1s linear;
-  transition: all 0.1s linear;
-}
-.panel-login input:hover,
-.panel-login input:focus {
-  outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  border-color: #ccc;
-}
-.btn-login {
-  background-color: #59b2e0;
-  outline: none;
-  color: #fff;
-  font-size: 14px;
-  height: auto;
-  font-weight: normal;
-  padding: 14px 0;
-  text-transform: uppercase;
-  border-color: #59b2e6;
-}
-.btn-login:hover,
-.btn-login:focus {
-  color: #fff;
-  background-color: #53a3cd;
-  border-color: #53a3cd;
-}
-.forgot-password {
-  text-decoration: underline;
-  color: #888;
-}
-.forgot-password:hover,
-.forgot-password:focus {
-  text-decoration: underline;
-  color: #666;
 }
 
-.btn-register {
-  background-color: #1cb94e;
-  outline: none;
-  color: #fff;
-  font-size: 14px;
-  height: auto;
-  font-weight: normal;
-  padding: 14px 0;
-  text-transform: uppercase;
-  border-color: #1cb94a;
-}
-.btn-register:hover,
-.btn-register:focus {
-  color: #fff;
-  background-color: #1ca347;
-  border-color: #1ca347;
+.carousel-caption p {
+  font-size: 10px;
 }
 
-.testcard {
+h4 {
+  margin-top: 0.5rem;
+}
+.carousel-indicators {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0%;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.carousel-caption p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.carousel-caption h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.sidenav {
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #000000;
+}
+
+.categories {
+  padding-left: 5%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.row {
+  right: 0%;
+}
+
+.sidenav {
   border-radius: 10px;
+  padding-top: 10px;
+}
+
+.bg-Categories {
+  padding-top: 10px;
+}
+
+.font-auteur {
+  font-weight: 200;
+}
+
+.font-serie {
+  font-weight: 400;
+}
+
+.btn {
+  line-height: 1rem;
+  font-size: 0.7rem;
+  bottom: 0;
+}
+
+.card-footer {
+  line-height: 0.3rem;
+  font-size: 0.7rem;
+}
+
+.card-body {
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/* Header avec bouton panier et autres modifs*/
+
+li {
+  list-style: none;
+}
+.search-n-cart {
+  background-color: white;
+}
+
+div {
+  border-radius: 2em;
+}
+
+#boutonQuiAjouteAuPanier {
+  color: white;
 }

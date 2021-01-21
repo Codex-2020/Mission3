@@ -1,0 +1,504 @@
+body {
+  background-color: #313030;
+  font-family: "Oswald";
+  margin: 0.7em;
+}
+
+/*Footer*/
+.footer {
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+/*Header*/
+
+.header {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.search input {
+  font-style: italic;
+  width: 40vw;
+}
+
+.search {
+  z-index: 2;
+}
+
+.nav-link {
+  color: white !important;
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.btn-search,
+.btn-connection,
+.btn-smally,
+.filtre,
+.btnTri {
+  background-color: #313030;
+  color: white;
+  border-radius: 5px;
+}
+
+.filtre {
+  font-size: 1em;
+}
+
+.legal a {
+  color: black;
+}
+
+.navbar-brand {
+  margin-right: 0 !important;
+}
+
+/*Carousel*/
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.addres {
+  width: 300px;
+  height: 100%;
+}
+.user-addres {
+  border: none;
+}
+
+.user-addres:focus {
+  outline: none;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+/*Transition menu*/
+.navbar-collapse {
+  position: fixed;
+  top: 70px;
+  z-index: 10;
+  width: 250px;
+}
+
+.navbar-collapse.collapsing {
+  left: -75%;
+  transition: height 0s ease;
+}
+
+.navbar-collapse.show {
+  left: 0;
+  transition: left 300ms ease-in-out;
+  background-color: rgba(49, 48, 48, 0.9);
+  margin: 0.2em;
+  padding: 2em;
+}
+
+.navbar-toggler.collapsed ~ .navbar-collapse {
+  transition: left 500ms ease-in-out;
+}
+
+/*Fin transition Menu*/
+
+@media (min-width: 992px) {
+  ul li {
+    background-color: #313030;
+    margin-left: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .navbar-collapse {
+    position: static;
+    margin-bottom: -20px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .smally {
+    display: none;
+  }
+
+  .search input {
+    width: 40vw;
+  }
+
+  .time-withdrawal,
+  .withdrawal-date,
+  .info-wd {
+    border: solid 1px;
+    border-color: black;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn-connection,
+  .basket-p {
+    display: none;
+  }
+
+  .basket {
+    border: none !important;
+  }
+
+  .navbar-brand img {
+    width: 150px;
+    height: 50px;
+  }
+
+  .navbar-basket img {
+    margin-top: -15px;
+  }
+
+  .payment img {
+    width: 182px;
+    height: 92px;
+  }
+  .am-time li,
+  .pm-time li {
+    text-decoration: none;
+    background-color: #313030;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    font-size: 0.7em;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .end img {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 360px) {
+  .search {
+    display: none !important;
+  }
+}
+
+/*Main*/
+
+/*Payment & Withdrawal*/
+.control-title,
+.payment-control,
+.billing-addres,
+.delivery-addres,
+.payment,
+.payment-resume,
+.withdrawal-date,
+.withdrawal-info,
+.info-wd {
+  border-radius: 2rem;
+}
+
+.payment-submit {
+  background-color: #313030;
+  color: white;
+}
+
+.am-time li,
+.pm-time li {
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.payment img {
+  border-radius: 2rem;
+}
+
+.error,
+.alert {
+  height: 15px !important;
+}
+
+.msgError {
+  font-size: 0.7em;
+  font-style: italic;
+  margin-top: -10px;
+}
+.alert-dismissible .close {
+  padding: 0;
+}
+
+#user_cityd,
+#user_addresd {
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .billing-addres,
+  .delivery-addres,
+  .payment,
+  .control-dat,
+  .time-withdrawal {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .payment img {
+    width: 91px;
+    height: 46px;
+  }
+
+  .card-number,
+  .card-name {
+    width: 150px;
+  }
+
+  .timetable {
+    margin-right: 60px;
+  }
+
+  .timetable ul li {
+    width: 100px;
+  }
+}
+
+@media (min-width: 340px) {
+  .withdrawal-info {
+    border: solid 1px;
+    border-color: black;
+  }
+}
+
+/*Withdrawal*/
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+/*Transition aside*/
+
+.filtre {
+  background-color: #313030;
+}
+
+#asideContent {
+  background-color: rgba(49, 48, 48, 0.9);
+}
+
+.navbar-collapse-aside {
+  position: fixed;
+  top: 175px;
+  left: 50px;
+  z-index: 20;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-collapse-aside.collapsing {
+  left: -75%;
+  transition: height 0s ease;
+}
+
+.navbar-collapse-aside.show {
+  left: 0;
+  transition: left 300ms ease-in-out;
+  background-color: white;
+  margin: 0.2em;
+  padding: 2em;
+}
+
+.navbar-toggler-aside.collapsed ~ .navbar-collapse-aside {
+  transition: left 500ms ease-in-out;
+}
+
+/*Footer*/
+.footer {
+  margin-top: 0.3em;
+  position: sticky;
+  height: auto;
+}
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .legal {
+    display: flex;
+    flex-direction: column;
+  }
+  .legal a {
+    padding: 0.1em;
+  }
+}
+
+@media (min-width: 992px) {
+  .copyright {
+    font-size: 1em;
+  }
+  .legal a {
+    padding: 1em;
+  }
+}
+
+/*Page panier*/
+/* .purchase-infos {
+  text-align: center;
+}
+.purchase-infos a {
+  color: #000000;
+  display: inline-block;
+  margin: 5px 0 23px;
+}
+.purchase-infos a:hover {
+  text-decoration: none;
+}
+.purchase-infos .glyphicon {
+  font-size: 150%;
+}
+.purchase-infos .glyphicon-plane {
+  transform: rotate(45deg);
+} */
+
+/*LOGIN PAGE*/
+.panel-login {
+  border-color: #ccc;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.panel-login > .panel-heading {
+  color: #00415d;
+  background-color: #fff;
+  border-color: #fff;
+  text-align: center;
+}
+.panel-login > .panel-heading a {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login > .panel-heading a.active {
+  color: #029f5b;
+  font-size: 18px;
+}
+.panel-login > .panel-heading hr {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -moz-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -ms-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+}
+.panel-login input[type="text"],
+.panel-login input[type="email"],
+.panel-login input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+.btn-login {
+  background-color: #59b2e0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59b2e6;
+}
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #53a3cd;
+  border-color: #53a3cd;
+}
+.forgot-password {
+  text-decoration: underline;
+  color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-register {
+  background-color: #1cb94e;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #1cb94a;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #1ca347;
+  border-color: #1ca347;
+}
+
+.testcard {
+  border-radius: 10px;
+}

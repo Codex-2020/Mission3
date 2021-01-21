@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">  
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/payment.css">
     <title>Page d'accueil BD Place</title>
     <script src="https://js.stripe.com/v3/"></script>
 </head>
@@ -38,37 +38,38 @@
                         </div>
                     </div>
     
-    
-                    <div class="search order-lg-2 col-lg-7 d-flex justify-content-center">
-                        <form>
-                            <input class="rounded" type="text"  id="search" name="key_word"  placeholder="Recherche" />
-                            <button class='btn-search'>RECHERCHE</button>
-                        </form>
-                    </div>
+       <!--Barre de recherche-->
+       <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+        <form>
+            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+            <button class="btn-search" onclick="Search()">RECHERCHE</button>
+        </form>
+    </div>
 
 
                 
 
                     
+  <!--Menu-->
 
-                    <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#home">ACCUEIL</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">NOUVEAUTES</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">PROMOTIONS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">CATALOGUE</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#home">CONTACT</a>
-                            </li>
-                        </ul>
+  <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+    <ul class="navbar-nav col-md-12 justify-content-center">
+        <li class="nav-item active">
+            <a class="nav-link" href="./index.html">ACCUEIL</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./contact.html">CONTACT</a>
+        </li>
+    </ul>
 
                         <hr>
                         <div class="smally">
@@ -217,13 +218,13 @@
         user_citys= localStorage.getItem('user_city');
 
         if(user_citys == null || user_address == null){
-            console.log('arrivons nous ici?');
+            
             user_addres = "Editer pour saisir";
             user_city = " votre adresse ";
          
         }
         else if(user_citys && user_address){
-            console.log('arrivon nous ici?');
+           
             user_addres = user_address;
             user_city = user_citys;
         }
@@ -231,7 +232,7 @@
 
         user_addresd =user_addres;
         user_cityd=user_city;
-        console.log(user_addresd);
+        
 
        document.getElementById("user_firstname").innerHTML = user_firstname;
        document.getElementById("user_name").innerHTML = user_name;  
@@ -255,6 +256,36 @@
         document.getElementById('cartHt').innerHTML = cartHt;
 
     </script>
+    <script>
+
+
+
+        function  Search() {
+            console.log(searchInput);
+           window.event.returnValue = false;
+           location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
+           // window.location = "./catalogue.html";
+       
+       }
+       
+       function  Search1() {
+       
+           enterSearch.forEach(function (a) {
+               a.addEventListener('keypress', function (e) {
+                   let key = e.which || e.keyCode;
+                   if (key === 13) {
+       
+                       window.event.returnValue = false;
+                       window.location = "./catalogue.html";
+                   }
+               })
+           })
+           
+           
+       }
+       
+         
+       </script>
   
 </body>
 </html>
