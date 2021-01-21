@@ -1,14 +1,11 @@
 
-//Création data clients [Nom,Prénom,Adresse,Mail]
-// let userA = ["Dupont", "Nicole", "3 rue des pivoines", "75000 Paris", "dupont@afpa.fr", "mdp"];
-// let userB = ["Castaldon", "Philippe", "145 rue de la colombe", "18000 Bourges", "castaldon@afpa.fr", "mdp"];
 
 //en attendant que toutes les pages soient communes
 localStorage.setItem("user_firstname", "Nissim");
 localStorage.setItem("user_name", "Djerouri");
 localStorage.setItem("user_addres", "56 rue des daltoniens");
 localStorage.setItem("user_city", "75000 Silicon Valley");
-sessionStorage.setItem("user_cart", "120");
+
 
 
 let b = document.body;
@@ -33,11 +30,7 @@ let regDate = new RegExp("^202[0-5]\-(0[0-9]|1[0-2])\-(0[0-9]|[1-2][0-9]|3[0-1])
 let regCVV = new RegExp("^[0-9]{3,4}$");
 
 
-// //Mise en Sessionstorage de l'userA
-// sessionStorage.setItem("user_firstname", userA[0]);
-// sessionStorage.setItem("user_name", userA[1]);
-// sessionStorage.setItem("user_addres", userA[2]);
-// sessionStorage.setItem("user_city", userA[3]);
+
 
 
 //Gestion Checkbox-Affichage adresse de livraison
@@ -230,9 +223,9 @@ function orderValidation() {
     let cardCVV = document.getElementsByClassName('card-cvv')[0].value;
 
 
-    // (regVisaCard.test(cardNumber) || regMasterCard.test(cardNumber)) && regString.test(cardName) && regDate.test(cardDate) && regCVV.test(cardCVV)
 
-    let cardControl = (regVisaCard.test(cardNumber) || regMasterCard.test(cardNumber)) && regString.test(cardName) && regDate.test(cardDate) && regCVV.test(cardCVV);
+
+    let cardControl = (regMasterCard.test(cardNumber)) && regString.test(cardName) && regDate.test(cardDate) && regCVV.test(cardCVV);
 
     if (cardControl) {
         console.log('Toutes les infos bancaires sont ok')
