@@ -132,8 +132,9 @@ for (let i = 0; i < tableau.length; i++) {
     newPrix.innerHTML = `${tableau[i].prix} €`;
 
     let newParagraphe = document.createElement("p");
-    newParagraphe.innerHTML = "<a href=#>Ajouter au panier";
-    newParagraphe.classList.add("btn", "btn-dark");
+    newParagraphe.innerHTML = `<button type="button" id="boutonQuiAjouteAuPanier" class="add-to-cart btn btn-default center-block" 
+    data-id="${tableau[i].id}" data-name="${tableau[i].titre}" data-price="${tableau[i].prix}">Ajouter au panier</button>`;
+
 
     let newEnStock = document.createElement("div");
     const isStock = tableau[i].enStock ? 'En stock' : 'Indisponible'
