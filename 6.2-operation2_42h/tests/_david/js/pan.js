@@ -191,7 +191,7 @@ let Vqt6 = qtArray[6];
 let Vqt7 = qtArray[7];
 let Vqt8 = qtArray[8];
 let Vqt9 = qtArray[9];
-console.log(Vtq9);
+
 
 
 countEl = document.getElementById('count0');
