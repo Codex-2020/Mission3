@@ -502,7 +502,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
     <script defer src="./js/panier.js"></script>
-    
+
     <script>
 
         transfertSearchInput = document.getElementById('searchInput').textContent; 
@@ -514,8 +514,7 @@
          function  Search() {
              console.log(searchInput);
             window.event.returnValue = false;
-            location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
-            // window.location = "./catalogue.html";
+            window.location = "./catalogue.html";
         
         }
         

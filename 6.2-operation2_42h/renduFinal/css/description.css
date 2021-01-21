@@ -191,6 +191,10 @@ body {
     }
 }
 /******************************* CONTENT ALAIN *******************************/
+#content{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
  @media all and (min-width: 576px){
     #contentTitre {
         display: flex;

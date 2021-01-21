@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>test bootstrap</title>
 </head>
 
@@ -34,7 +35,7 @@
 
                 
                     <!--Bloc à droite: boutin connection/panier-->
-                    <div class="right   col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
+                    <div class="right col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
                         <!--Bouton Connexion-->
                         <div id="connectButton" class="connect-button text-center col">
                         <!--Si pas connecté/inscrit-->
@@ -44,11 +45,25 @@
                         <!--Message si utilisateur Connecté-->
                             <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
                         </div>
-                        <!--Panier et bloc panier-->
-                        <div class="basket d-flex border mb-1 justify-content-center align-items-center rounded border-dark mt-1">
-                            <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
-                            <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
-                        </div>
+
+                        <!--Panier et bloc panier-->                     
+                        <form method="get" action="./panier.html">
+                            <li class="search-n-cart">
+                                <div class="dropdown">
+                                    <div id="cart" class="cart">
+                                      <p><span class="glyphicon glyphicon-shopping-cart"></span> 
+                                        <span id="in-cart-items-num">0</span> 
+                                        <span class="caret">Articles</span>
+                                      </p>
+                                    </div>
+                                    <ul id="cart-dropdown" class="cart-dropdown dropdown-menu pull-right">
+                                      <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
+                                      <li class="divider hidden"></li>
+                                      <li class="go-to-cart hidden"><button class="btn btn-primary center-block btnPanier">Voir le panier</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </form>                                                                                   
                     </div>
 
                         <!--Barre de recherche-->
@@ -58,7 +73,10 @@
                             <button class="btn-search" onclick="Search()">RECHERCHE</button>
                         </form>
                     </div>
-                  
+
+
+                    
+
                         <!--Menu-->
 
                     <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
@@ -70,7 +88,7 @@
                                 <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
+                                <a class="nav-link" href="./promotions.html">PROMOTIONS</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
@@ -96,9 +114,12 @@
                         </div>
                     </div>
                 </nav>
-            </div>   
+            </div>
+                
         </div>    
-    </div>    
+    </div>
+
+     <!--Fin header-->
 
 
 <!--Content-->
@@ -200,5 +221,25 @@
     <script src="data/albums.js"></script>
     <script src="data/series.js"></script>
     <script src="data/auteurs.js"></script>
+
+
+    <script>               
+    function  Search() {
+      console.log(searchInput);
+      window.event.returnValue = false;
+      window.location = "./catalogue.html";
+    }      
+    function  Search1() {
+      enterSearch.forEach(function (a) {
+        a.addEventListener('keypress', function (e) {
+            let key = e.which || e.keyCode;
+            if (key === 13) {
+              window.event.returnValue = false;
+              window.location = "./catalogue.html";
+            }
+        })
+      })                  
+    }
+    </script>
 </body>
 </html>

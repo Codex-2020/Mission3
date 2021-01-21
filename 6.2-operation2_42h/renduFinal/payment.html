@@ -12,85 +12,116 @@
 <body>
 
     <!--Header-->
-    <div class="bg-white header">
+    <div class="bg-white header mb-3">
         <div class="container-fluid">
             <div class="row ">
-                    <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
+                <nav class="col navbar navbar-expand-lg navbar-light d-flex flex-wrap justify-content-center" >
                         
-                        <div class="menu ">
+
+                    <!--Bouton menu petits écrans-->
+                    <div class="menu d-flex justify-content-center">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" >
                             <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-    
-                                        
-                        <div class="brand  col-7 order-lg-1 col-lg-3 d-flex justify-content-center">
+                        </button>
+                    </div>
+
+                    <!--Affichage logo-->              
+                    <div class="brand  col-8 order-lg-1 col-lg-4 d-flex justify-content-center">
                         <a class="navbar-brand " href="./index.html"><img src="./pictures/logo_m3.jpg" width="300px" height="100px" alt=""></a>
                     </div>
-    
-                   
-    
-                    <div class="right   d-flex  flex-column col-2 order-lg-3 col-lg-2 ">
-                        <button class="btn-connection" type="button">S'inscrire/Se connecter</button>
-                        <div class="basket d-flex border  justify-content-center align-items-center rounded border-dark mt-1">
-                        <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
-                        <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
-                        </div>
-                    </div>
-    
-       <!--Barre de recherche-->
-       <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
-        <form>
-            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
-            <button class="btn-search" onclick="Search()">RECHERCHE</button>
-        </form>
-    </div>
-
 
                 
-
-                    
-  <!--Menu-->
-
-  <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
-    <ul class="navbar-nav col-md-12 justify-content-center">
-        <li class="nav-item active">
-            <a class="nav-link" href="./index.html">ACCUEIL</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./promotions.html">PROMOTIONS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="./contact.html">CONTACT</a>
-        </li>
-    </ul>
-
-                        <hr>
-                        <div class="smally">
-                    <button class="btn-smally" type="button">S'inscrire/Se connecter</button>
+                    <!--Bloc à droite: boutin connection/panier-->
+                    <div class="right   col-2 d-flex  flex-column col-2 order-lg-3 col-lg-3 mb-2">
+                        <!--Bouton Connexion-->
+                        <div id="connectButton" class="connect-button text-center col">
+                        <!--Si pas connecté/inscrit-->
+                            <a class="btn btn-connection" href="./login.html" role="button">S'inscrire/Se connecter</a>
                         </div>
-                </div>
+                        <div id="userMsg" style="display:none">
+                        <!--Message si utilisateur Connecté-->
+                            <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
+                        </div>
 
+                        <!--Panier et bloc panier-->                     
+                        <form method="get" action="./panier.html">
+                            <li class="search-n-cart">
+                                <div class="dropdown">
+                                    <div id="cart" class="cart">
+                                      <p><span class="glyphicon glyphicon-shopping-cart"></span> 
+                                        <span id="in-cart-items-num">0</span> 
+                                        <span class="caret">Articles</span>
+                                      </p>
+                                    </div>
+                                    <ul id="cart-dropdown" class="cart-dropdown dropdown-menu pull-right">
+                                      <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
+                                      <li class="divider hidden"></li>
+                                      <li class="go-to-cart hidden"><button class="btn btn-primary center-block btnPanier">Voir le panier</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </form>                                                                                   
                     </div>
 
-                   
-                </nav>
+                        <!--Barre de recherche-->
+                    <div class="search order-lg-2 col-lg-5 d-flex justify-content-center">
+                        <form>
+                            <input class="rounded col-lg-8" type="text"  id="searchInput" name="key_word" onclick="Search1()"  placeholder="Rechercher un produit, une série, un auteur..." />
+                            <button class="btn-search" onclick="Search()">RECHERCHE</button>
+                        </form>
+                    </div>
 
-            
-        </div>
+
+                    
+
+                        <!--Menu-->
+
+                    <div id="navbarContent" class="collapse navbar-collapse order-lg-4 col-12" >
+                        <ul class="navbar-nav col-md-12 justify-content-center">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./index.html">ACCUEIL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./promotions.html">PROMOTIONS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./contact.html">CONTACT</a>
+                            </li>
+                        </ul>
+
+                            <hr>
+
+                        <!--Bouton menu deroulant pour inscription-->    
+                        <div class="smally">
+                            <!--Bouton Connexion-->
+                            <div id="connectButton" class="connect-button text-center col">
+                                <!--Si pas connecté/inscrit-->
+                                <a class="btn btn-smally" href="./login.html" role="button">S'inscrire/Se connecter</a>
+                            </div>
+                            <div id="userMsg" style="display:none">
+                                <!--Message si utilisateur Connecté-->
+                                <a class="btn btn-smally" href="./account.html" role="button">Mon Compte</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+                
+        </div>    
     </div>
-</div>
+
+     <!--Fin header-->
 
 
 <!--Corps-->
 
-<div class="page container-fluid bg-white mt-5 d-flex justify-content-center">
+<div class="page container-fluid bg-white mt-2 d-flex justify-content-center">
     <div class="row payment-container">
         <div class="col">
 
@@ -263,8 +294,7 @@
         function  Search() {
             console.log(searchInput);
            window.event.returnValue = false;
-           location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
-           // window.location = "./catalogue.html";
+           window.location = "./catalogue.html";
        
        }
        

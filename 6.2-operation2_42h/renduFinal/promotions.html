@@ -47,11 +47,25 @@
                         <!--Message si utilisateur Connecté-->
                             <a class="btn btn-connection" href="./account.html" role="button">Mon Compte</a>
                         </div>
-                        <!--Panier et bloc panier-->
-                        <div class="basket d-flex border mb-1 justify-content-center align-items-center rounded border-dark mt-1">
-                            <a class="navbar-basket " href="./index.html"><img src="./pictures/logo_panier.png" width="50px" height="50px" alt=""></a>
-                            <p class="basket-p align-middle p-1">Mon panier contient 3 produits</p>
-                        </div>
+
+                        <!--Panier et bloc panier-->                     
+                        <form method="get" action="./panier.html">
+                            <li class="search-n-cart">
+                                <div class="dropdown">
+                                    <div id="cart" class="cart">
+                                      <p><span class="glyphicon glyphicon-shopping-cart"></span> 
+                                        <span id="in-cart-items-num">0</span> 
+                                        <span class="caret">Articles</span>
+                                      </p>
+                                    </div>
+                                    <ul id="cart-dropdown" class="cart-dropdown dropdown-menu pull-right">
+                                      <li id="empty-cart-msg"><a>Votre panier est vide</a></li>
+                                      <li class="divider hidden"></li>
+                                      <li class="go-to-cart hidden"><button class="btn btn-primary center-block btnPanier">Voir le panier</button></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </form>                                                                                   
                     </div>
 
                         <!--Barre de recherche-->
@@ -76,7 +90,7 @@
                                 <a class="nav-link" href="./nouveautes.html">NOUVEAUTES</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./promotion.html">PROMOTIONS</a>
+                                <a class="nav-link" href="./promotions.html">PROMOTIONS</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./catalogue.html">CATALOGUE</a>
@@ -106,6 +120,8 @@
                 
         </div>    
     </div>
+
+     <!--Fin header-->
 
      <!--Fin header-->
 
@@ -328,18 +344,11 @@
     <script src="./js/main.js"></script>
 
     <script>
-
-        transfertSearchInput = document.getElementById('searchInput').textContent; 
-        console.log(transfertSearchInput)
-        ;
-        
-        document.getElementById('searchInput').insertAdjacentHTML('afterbegin', transfertSearchInput);
         
          function  Search() {
              console.log(searchInput);
             window.event.returnValue = false;
-            location.replace(encodeURI("./catalogue.html?l="+transfertSearchInput)); 
-            // window.location = "./catalogue.html";
+            window.location = "./catalogue.html";
         
         }
         
