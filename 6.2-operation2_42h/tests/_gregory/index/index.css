@@ -1,6 +1,7 @@
 body {
     background-color: #313030;
-    margin: 0.2m;
+    
+    font-family: 'Roboto Slab', serif;
   }
   
   /*Header*/
@@ -170,20 +171,26 @@ body {
 
   /*MAIN Code CSS GREG*/
 
-  @media (max-width: 500px) {
+  @media (max-width: 00px) {
     .categories {
     margin-bottom: 20px;
     }
 }
 
-  @media (max-width: 375px) {
+@media (max-width: 500px) {
+  .carousel-indicators {
+    display: none;
+      } 
+    }
+
+  @media (max-width: 500px) {
     .bg-Categories {
     border-bottom-right-radius: 100px;
     border-top-left-radius: 0px;
     }
 
     .carousel-caption {
-      
+      bottom:0;
       background-color: rgba(0, 0, 0, 0.5);
     }
 
@@ -196,9 +203,9 @@ body {
       font-size:10px
     }
 
-   .carousel-indicators {
+   /*.carousel-indicators {
   display: none;
-    } 
+    } */
 }
  
   h4 {
@@ -281,9 +288,7 @@ body {
     right:0%;
   }
 
-  body {
-    background-color: #313030;
-  }
+
 
   .sidenav {
     border-radius: 10px;
@@ -297,7 +302,6 @@ body {
   }
 
   
- 
   .font-auteur {
     font-weight: 200;
   }
@@ -315,6 +319,11 @@ body {
   .card-footer {
     line-height: 0.3rem;
     font-size: 0.7rem;
+  }
+
+  .card-body {
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
   }
 
   @media screen and (max-height: 450px) {
