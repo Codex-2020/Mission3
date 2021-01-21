@@ -1,3 +1,4 @@
+//Fonction pour récupérer et lire un cookie
 function getCookies(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -17,15 +18,21 @@ function getCookies(cname) {
     return false;
 }
 
-// function AccesPanier() {
-test = getCookies('cartArticles');
-let recupBoucle = test.split('}')
-
-
+//Récupération du coockie et recomposition des infos
+recupCookie = getCookies('cartArticles');
+let recupBoucle = recupCookie.split('}')
 let recupChaqueBd = [];
 let idBd = "";
 let bd = new Map();
 let PourFacture = [];
+let totalTTC = [];
+let qtArray = [];
+let prixArray = [];
+let titreArray = [];
+let iterator1 = bd.entries(1);
+let totalFinal = "";
+
+
 for (let i = 0; i <= recupBoucle.length - 2; i++) {
 
     if (i == 0) {
@@ -34,11 +41,8 @@ for (let i = 0; i <= recupBoucle.length - 2; i++) {
         idBd = recupChaqueBd[0].split(':');
         idBdSlice1 = idBd[1].slice(1, -1);
 
-
         nameBd = recupChaqueBd[1].split(':');
         nameBdSlice1 = nameBd[1].slice(1, -1);
-
-
 
         prixBd = recupChaqueBd[2].split(':');
         prixBdSlice1 = prixBd[1].slice(1, -1);
@@ -47,16 +51,10 @@ for (let i = 0; i <= recupBoucle.length - 2; i++) {
         qtBd = recupChaqueBd[3].split(':');
         qtBdSlice1 = qtBd[1].slice(0, 1);
 
-        // console.log(idBdSlice1, nameBdSlice1, prixBdSlice1, qtBdSlice1);
 
         bd.set([["id", idBdSlice1], ["name", nameBdSlice1], ["prix", prixBdSlice1], ["qt", qtBdSlice1]]);
 
-
-
-
-
     }
-
 
     else {
 
@@ -65,91 +63,42 @@ for (let i = 0; i <= recupBoucle.length - 2; i++) {
         idBd = recupChaqueBd[1].split(':');
         idBdSlice1 = idBd[1].slice(1, -1);
 
-
         nameBd = recupChaqueBd[2].split(':');
         nameBdSlice1 = nameBd[1].slice(1, -1);
-
-
 
         prixBd = recupChaqueBd[3].split(':');
         prixBdSlice1 = prixBd[1].slice(1, -1);
 
-
         qtBd = recupChaqueBd[4].split(':');
         qtBdSlice1 = qtBd[1].slice(0, 1);
 
-
-        console.log(idBdSlice1, nameBdSlice1, prixBdSlice1, qtBdSlice1);
-
-
         bd.set([["id", idBdSlice1], ["name", nameBdSlice1], ["prix", prixBdSlice1], ["qt", qtBdSlice1]]);
 
-
     }
-
-
 }
 
 
-console.log(bd);
-
-let totalTTC = [];
-// let nomAlbumsAchetes = [];
-// let infoCommande = [];
-let qtArray = [];
-let prixArray = [];
-let titreArray = [];
-
-
-
-// for (let i = 0; i <= recupBoucle.length - 2; i++) {
-let iterator1 = bd.entries(1);
 function Maboul() {
-    // console.log(iterator1.next().value);
+
     let bdFacturable = iterator1.next().value;
-    // console.log(bdFacturable[0]);
     let infoBdFacturable = bdFacturable[0];
-
-    // console.log(infoBdFacturable[1]);
     let nameFacturableExtrait = infoBdFacturable[1];
-    console.log(nameFacturableExtrait[1]);
-    // nomAlbumsAchetes.push(nameFacturableExtrait[1]);
-
-    // console.log(infoBdFacturable[2]);
     let prixFacturableExtrait = infoBdFacturable[2];
-    console.log(prixFacturableExtrait[1]);
-
-
-    // console.log(infoBdFacturable[3]);
     let qtFacturableExtrait = infoBdFacturable[3];
-
-
     let total = prixFacturableExtrait[1] * qtFacturableExtrait[1];
     totalTTC.push(total);
-
-    // let infoCmd = `${nameFacturableExtrait[1]}  -   ${prixFacturableExtrait[1]} €   -    Qté: ${qtFacturableExtrait[1]}.
-    // Total: ${total}  `
-
-
     qtArray.push(qtFacturableExtrait[1]);
     prixArray.push(prixFacturableExtrait[1]);
     titreArray.push(nameFacturableExtrait[1]);
-
-    // infoCommande.push(infoCmd);
-
-
 }
 
 bd.forEach(Maboul);
 
-// console.log(totalTTC);
-// console.log(nomAlbumsAchetes);
+
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 TotalTTCFacture = totalTTC.reduce(reducer);
-console.log(TotalTTCFacture);
 
-// console.log(infoCommande);
-
+//Affichage contenu du panier
 const cmdFinale = document.getElementById('commande');
 let iArray = [];
 
@@ -167,7 +116,7 @@ for (let i = 0; i <= qtArray.length - 1; i++) {
 }
 
 
-// }
+//Ajout ou retrait d'unité de livre
 let counter = "";
 let countEl = "";
 let count = qtArray[0];
@@ -180,7 +129,6 @@ let count6 = qtArray[6];
 let count7 = qtArray[7];
 let count8 = qtArray[8];
 let count9 = qtArray[9];
-let qt = count1;
 let Vqt = qtArray[0];
 let Vqt1 = qtArray[1];
 let Vqt2 = qtArray[2];
@@ -191,8 +139,6 @@ let Vqt6 = qtArray[6];
 let Vqt7 = qtArray[7];
 let Vqt8 = qtArray[8];
 let Vqt9 = qtArray[9];
-
-
 
 countEl = document.getElementById('count0');
 countEl1 = document.getElementById('count1');
@@ -205,14 +151,11 @@ countEl7 = document.getElementById('count7');
 countEl8 = document.getElementById('count8');
 countEl9 = document.getElementById('count9');
 
-
-
 function plus0() {
     count++;
     countEl.value = count;
     qt = document.getElementById('count0');
     Vqt = qt.value;
-    console.log(Vqt);
     NewTotalFinal()
 
 
@@ -223,7 +166,6 @@ function minus0() {
         countEl.value = count;
         qt = document.getElementById('count0');
         Vqt = qt.value;
-        console.log(Vqt);
         NewTotalFinal()
 
     }
@@ -376,10 +318,6 @@ function minus9() {
 
 
 
-
-
-let totalFinal = "";
-
 function NewTotalFinal() {
 
 
@@ -418,8 +356,8 @@ function NewTotalFinal() {
 
     totalCommande.innerHTML = `Total TTC : ${totalFinal} €`;
     TotalFinal.appendChild(totalCommande);
-    // document.getElementById('total').value = totalFinal;
-    // return totalFinal;
+
+
 
     //Suppression du panier à 0;
     if (Vqt == 0) {
@@ -437,7 +375,7 @@ function NewTotalFinal() {
     if (Vqt3 == 0) {
         document.getElementById('input_div3').style.display = 'none';
     }
-    if (Vqt4 == 0) {
+    if (Vqt4 === 0) {
         document.getElementById('input_div4').style.display = 'none';
     }
     if (Vqt5 == 0) {
@@ -456,25 +394,15 @@ function NewTotalFinal() {
         document.getElementById('input_div9').style.display = 'none';
     }
 
-
-
 }
 
-
-
-// console.log(totalFinal);
-
-
-
+//Total panier initial
 const TotalFinal = document.getElementById('total');
 let totalCommande = document.createElement("p");
 totalCommande.innerHTML = `Total TTC : ${TotalTTCFacture} €`;
 TotalFinal.appendChild(totalCommande);
 
-
-
-
-
+//Bouton Valider
 function Validation() {
 
     sessionStorage.setItem("user_cart", totalFinal);
