@@ -1,0 +1,452 @@
+function getCookies(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c[0] == ' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) {
+            if ('atob' in window) {
+                return atob(c.substring(name.length, c.length));
+            }
+            else {
+                return c.substring(name.length, c.length);
+
+            }
+        }
+    }
+    return false;
+}
+
+// function AccesPanier() {
+test = getCookies('cartArticles');
+let recupBoucle = test.split('}')
+
+
+let recupChaqueBd = [];
+let idBd = "";
+let bd = new Map();
+let PourFacture = [];
+for (let i = 0; i <= recupBoucle.length - 2; i++) {
+
+    if (i == 0) {
+        recupChaqueBd = recupBoucle[i].split(',');
+
+        idBd = recupChaqueBd[0].split(':');
+        idBdSlice1 = idBd[1].slice(1, -1);
+
+
+        nameBd = recupChaqueBd[1].split(':');
+        nameBdSlice1 = nameBd[1].slice(1, -1);
+
+
+
+        prixBd = recupChaqueBd[2].split(':');
+        prixBdSlice1 = prixBd[1].slice(1, -1);
+
+
+        qtBd = recupChaqueBd[3].split(':');
+        qtBdSlice1 = qtBd[1].slice(0, 1);
+
+        // console.log(idBdSlice1, nameBdSlice1, prixBdSlice1, qtBdSlice1);
+
+        bd.set([["id", idBdSlice1], ["name", nameBdSlice1], ["prix", prixBdSlice1], ["qt", qtBdSlice1]]);
+
+
+
+
+
+    }
+
+
+    else {
+
+        recupChaqueBd = recupBoucle[i].split(',');
+
+        idBd = recupChaqueBd[1].split(':');
+        idBdSlice1 = idBd[1].slice(1, -1);
+
+
+        nameBd = recupChaqueBd[2].split(':');
+        nameBdSlice1 = nameBd[1].slice(1, -1);
+
+
+
+        prixBd = recupChaqueBd[3].split(':');
+        prixBdSlice1 = prixBd[1].slice(1, -1);
+
+
+        qtBd = recupChaqueBd[4].split(':');
+        qtBdSlice1 = qtBd[1].slice(0, 1);
+
+
+        console.log(idBdSlice1, nameBdSlice1, prixBdSlice1, qtBdSlice1);
+
+
+        bd.set([["id", idBdSlice1], ["name", nameBdSlice1], ["prix", prixBdSlice1], ["qt", qtBdSlice1]]);
+
+
+    }
+
+
+}
+
+
+console.log(bd);
+
+let totalTTC = [];
+// let nomAlbumsAchetes = [];
+// let infoCommande = [];
+let qtArray = [];
+let prixArray = [];
+let titreArray = [];
+
+
+
+// for (let i = 0; i <= recupBoucle.length - 2; i++) {
+let iterator1 = bd.entries(1);
+function Maboul() {
+    // console.log(iterator1.next().value);
+    let bdFacturable = iterator1.next().value;
+    // console.log(bdFacturable[0]);
+    let infoBdFacturable = bdFacturable[0];
+
+    // console.log(infoBdFacturable[1]);
+    let nameFacturableExtrait = infoBdFacturable[1];
+    console.log(nameFacturableExtrait[1]);
+    // nomAlbumsAchetes.push(nameFacturableExtrait[1]);
+
+    // console.log(infoBdFacturable[2]);
+    let prixFacturableExtrait = infoBdFacturable[2];
+    console.log(prixFacturableExtrait[1]);
+
+
+    // console.log(infoBdFacturable[3]);
+    let qtFacturableExtrait = infoBdFacturable[3];
+
+
+    let total = prixFacturableExtrait[1] * qtFacturableExtrait[1];
+    totalTTC.push(total);
+
+    // let infoCmd = `${nameFacturableExtrait[1]}  -   ${prixFacturableExtrait[1]} €   -    Qté: ${qtFacturableExtrait[1]}.
+    // Total: ${total}  `
+
+
+    qtArray.push(qtFacturableExtrait[1]);
+    prixArray.push(prixFacturableExtrait[1]);
+    titreArray.push(nameFacturableExtrait[1]);
+
+    // infoCommande.push(infoCmd);
+
+
+}
+
+bd.forEach(Maboul);
+
+// console.log(totalTTC);
+// console.log(nomAlbumsAchetes);
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+TotalTTCFacture = totalTTC.reduce(reducer);
+console.log(TotalTTCFacture);
+
+// console.log(infoCommande);
+
+const cmdFinale = document.getElementById('commande');
+let iArray = [];
+
+for (let i = 0; i <= qtArray.length - 1; i++) {
+
+    let recapCommande = document.createElement("p");
+    recapCommande.innerHTML = `
+    <div id="input_div"> <span>${titreArray[i]}</span> - 
+    <input type="button" value="-" id="moins" onclick="minus${i}()">
+    <input type="text" size="8" value="${qtArray[i]}" id="count${i}">
+        <input type="button" value = "+" id = "plus" onclick = "plus${i}()" >
+     - PU :  ${prixArray[i]} € </div >`;
+    cmdFinale.appendChild(recapCommande);
+    iArray.push(i);
+}
+
+
+// }
+let counter = "";
+let countEl = "";
+let count = qtArray[0];
+console.log(qtArray[0]);
+let count1 = qtArray[1];
+let count2 = qtArray[2];
+let count3 = qtArray[3];
+let count4 = qtArray[4];
+let count5 = qtArray[5];
+let count6 = qtArray[6];
+let count7 = qtArray[7];
+let count8 = qtArray[8];
+let count9 = qtArray[9];
+let qt = qtArray[0];
+let Vqt = qtArray[1];
+let Vqt1 = qtArray[2];
+let Vqt2 = qtArray[3];
+let Vqt3 = qtArray[4];
+let Vqt4 = qtArray[5];
+let Vqt5 = qtArray[6];
+let Vqt6 = qtArray[7];
+let Vqt7 = qtArray[8];
+let Vqt8 = qtArray[9];
+let Vqt9 = qtArray[10];
+
+
+countEl = document.getElementById('count0');
+countEl1 = document.getElementById('count1');
+countEl2 = document.getElementById('count2');
+countEl3 = document.getElementById('count3');
+countEl4 = document.getElementById('count4');
+countEl5 = document.getElementById('count5');
+countEl6 = document.getElementById('count6');
+countEl7 = document.getElementById('count7');
+countEl8 = document.getElementById('count8');
+countEl9 = document.getElementById('count9');
+
+function plus0() {
+    count++;
+    countEl.value = count;
+    qt = document.getElementById('count0');
+    Vqt = qt.value;
+    console.log(Vqt);
+    NewTotalFinal()
+
+
+}
+function minus0() {
+    if (count > 1) {
+        count--;
+        countEl.value = count;
+        qt = document.getElementById('count0');
+        Vqt = qt.value;
+        console.log(Vqt);
+        NewTotalFinal()
+
+    }
+}
+function plus1() {
+    count1++;
+    countEl1.value = count1;
+    qt = document.getElementById('count1');
+    Vqt = qt.value;
+    NewTotalFinal()
+}
+function minus1() {
+    if (count1 > 1) {
+        count1--;
+        countEl1.value = count1;
+        qt1 = document.getElementById('count1');
+        Vqt1 = qt1.value;
+        console.log(Vqt1);
+        NewTotalFinal()
+    }
+}
+function plus2() {
+    count2++;
+    countEl2.value = count2;
+    qt2 = document.getElementById('count2');
+    Vqt2 = qt2.value;
+    NewTotalFinal()
+}
+function minus2() {
+    if (count2 > 1) {
+        count2--;
+        countEl2.value = count2;
+        qt2 = document.getElementById('count2');
+        Vqt2 = qt2.value;
+        NewTotalFinal()
+    }
+}
+function plus3() {
+    count3++;
+    countEl3.value = count3;
+    qt3 = document.getElementById('count3');
+    Vqt3 = qt3.value;
+    NewTotalFinal()
+}
+function minus3() {
+    if (count3 > 1) {
+        count3--;
+        countEl3.value = count3;
+        qt3 = document.getElementById('count3');
+        Vqt3 = qt3.value;
+        NewTotalFinal()
+    }
+}
+function plus4() {
+    count4++;
+    countEl4.value = count4;
+    qt4 = document.getElementById('count4');
+    Vqt4 = qt4.value;
+    NewTotalFinal()
+}
+function minus4() {
+    if (count4 > 1) {
+        count4--;
+        countEl4.value = count4;
+        qt4 = document.getElementById('count4');
+        Vqt4 = qt4.value;
+        NewTotalFinal()
+    }
+}
+function plus5() {
+    count5++;
+    countEl5.value = count5;
+    qt5 = document.getElementById('count5');
+    Vqt5 = qt5.value;
+    NewTotalFinal()
+}
+function minus5() {
+    if (count5 > 1) {
+        count5--;
+        countEl5.value = count5;
+        qt5 = document.getElementById('count5');
+        Vqt5 = qt5.value;
+        NewTotalFinal()
+    }
+}
+function plus6() {
+    count6++;
+    countEl6.value = count6;
+    qt6 = document.getElementById('count6');
+    Vqt6 = qt6.value;
+    NewTotalFinal()
+}
+function minus6() {
+    if (count6 > 1) {
+        count6--;
+        countEl6.value = count6;
+        qt6 = document.getElementById('count6');
+        Vqt6 = qt6.value;
+        NewTotalFinal()
+    }
+}
+function plus7() {
+    count7++;
+    countEl7.value = count7;
+    qt7 = document.getElementById('count7');
+    Vqt7 = qt7.value;
+    NewTotalFinal()
+}
+function minus7() {
+    if (count7 > 1) {
+        count7--;
+        countEl7.value = count7;
+        qt7 = document.getElementById('count7');
+        Vqt7 = qt7.value;
+        NewTotalFinal()
+    }
+}
+function plus8() {
+    count8++;
+    countEl8.value = count8;
+    qt8 = document.getElementById('count8');
+    Vqt8 = qt8.value;
+    NewTotalFinal()
+}
+function minus8() {
+    if (count8 > 1) {
+        count8--;
+        countEl8.value = count8;
+        qt8 = document.getElementById('count8');
+        Vqt8 = qt8.value;
+        NewTotalFinal()
+    }
+}
+function plus9() {
+    count9++;
+    countEl9.value = count9;
+    qt9 = document.getElementById('count9');
+    Vqt9 = qt9.value;
+    NewTotalFinal()
+}
+function minus9() {
+    if (count9 > 1) {
+        count9--;
+        countEl9.value = count9;
+        qt9 = document.getElementById('count9');
+        Vqt9 = qt9.value;
+        NewTotalFinal()
+    }
+}
+
+
+
+
+
+let totalFinal = "";
+
+function NewTotalFinal() {
+
+
+    if (prixArray.length == 1) {
+        totalFinal = Vqt * prixArray[0];
+
+    }
+    if (prixArray.length == 2) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1];
+    }
+    if (prixArray.length == 3) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2];
+    }
+    if (prixArray.length == 4) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3];
+    }
+    if (prixArray.length == 5) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3] + Vqt4 * prixArray[4];
+        console.log(totalFinal);
+    }
+    if (prixArray.length == 6) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3] + Vqt4 * prixArray[4] + Vqt5 * prixArray[5];
+    }
+    if (prixArray.length == 7) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3] + Vqt4 * prixArray[4] + Vqt5 * prixArray[5] + Vqt6 * prixArray[6];
+    }
+    if (prixArray.length == 8) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3] + Vqt4 * prixArray[4] + Vqt5 * prixArray[5] + Vqt6 * prixArray[6] + Vqt7 * prixArray[7];
+    }
+    if (prixArray.length == 9) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3] + Vqt4 * prixArray[4] + Vqt5 * prixArray[5] + Vqt6 * prixArray[6] + Vqt7 * prixArray[7] + Vqt8 * prixArray[8];
+    }
+    if (prixArray.length == 10) {
+        totalFinal = Vqt * prixArray[0] + Vqt1 * prixArray[1] + Vqt2 * prixArray[2] + Vqt3 * prixArray[3] + Vqt4 * prixArray[4] + Vqt5 * prixArray[5] + Vqt6 * prixArray[6] + Vqt7 * prixArray[7] + Vqt8 * prixArray[8] + Vqt9 * prixArray[9];
+    }
+
+    totalCommande.innerHTML = `Total TTC : ${totalFinal} €`;
+    TotalFinal.appendChild(totalCommande);
+    // document.getElementById('total').value = totalFinal;
+    // return totalFinal;
+
+}
+
+// console.log(totalFinal);
+
+
+
+const TotalFinal = document.getElementById('total');
+let totalCommande = document.createElement("p");
+totalCommande.innerHTML = `Total TTC : ${TotalTTCFacture} €`;
+TotalFinal.appendChild(totalCommande);
+
+
+
+
+
+function Validation() {
+
+    sessionStorage.setItem("user_cart", totalFinal);
+    window.event.returnValue = false;
+    window.location = './payment.html';
+
+}
+
+
+
+
+
+
+
+
+
