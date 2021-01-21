@@ -38,7 +38,8 @@ body {
 .btn-search,
 .btn-connection,
 .btn-smally,
-.filtre {
+.filtre,
+.btnTri {
   background-color: #313030;
   color: white;
   border-radius: 5px;
