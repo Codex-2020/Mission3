@@ -98,7 +98,7 @@ for (let i = 0; i < tableau.length; i++) {
     let nomAlbum = serie + "-" + tableau[i].numéro + "-" + tableau[i].titre; // Concaténation du nom de l'image
     nomAlbum = nomAlbum.replace(/'|!|\?|\.|"|:|\$/g, "");
     console.log(nomAlbum);
-    cheminImageAlbum = "../" + srcImageAlbum + nomAlbum + ".jpg";
+    cheminImageAlbum = "./" + srcImageAlbum + nomAlbum + ".jpg";
     console.log(cheminImageAlbum);
 
     //console.log(auteur);
