@@ -1,0 +1,523 @@
+body {
+  background-color: #313030;
+  font-family: "Oswald";
+  margin: 0.7em;
+}
+
+/*Footer*/
+.footer {
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+/*Header*/
+
+.header {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.search input {
+  font-style: italic;
+  width: 40vw;
+}
+
+.search {
+  z-index: 2;
+}
+
+.nav-link {
+  color: white !important;
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.btn-search,
+.btn-connection,
+.btn-smally,
+.filtre {
+  background-color: #313030;
+  color: white;
+  border-radius: 5px;
+}
+
+.filtre {
+  font-size: 1em;
+}
+
+.legal a {
+  color: black;
+}
+
+.navbar-brand {
+  margin-right: 0 !important;
+}
+
+/*Carousel*/
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.addres {
+  width: 300px;
+  height: 100%;
+}
+.user-addres {
+  border: none;
+}
+
+.user-addres:focus {
+  outline: none;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+/*Transition menu*/
+.navbar-collapse {
+  position: fixed;
+  top: 70px;
+  z-index: 10;
+  width: 250px;
+}
+
+.navbar-collapse.collapsing {
+  left: -75%;
+  transition: height 0s ease;
+}
+
+.navbar-collapse.show {
+  left: 0;
+  transition: left 300ms ease-in-out;
+  background-color: rgba(49, 48, 48, 0.9);
+  margin: 0.2em;
+  padding: 2em;
+}
+
+.navbar-toggler.collapsed ~ .navbar-collapse {
+  transition: left 500ms ease-in-out;
+}
+
+/*Fin transition Menu*/
+
+@media (min-width: 992px) {
+  ul li {
+    background-color: #313030;
+    margin-left: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .navbar-collapse {
+    position: static;
+    margin-bottom: -20px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .smally {
+    display: none;
+  }
+
+  .search input {
+    width: 40vw;
+  }
+
+  .time-withdrawal,
+  .withdrawal-date,
+  .info-wd {
+    border: solid 1px;
+    border-color: black;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn-connection,
+  .basket-p {
+    display: none;
+  }
+
+  .basket {
+    border: none !important;
+  }
+
+  .navbar-brand img {
+    width: 150px;
+    height: 50px;
+  }
+
+  .navbar-basket img {
+    margin-top: -15px;
+  }
+
+  .payment img {
+    width: 182px;
+    height: 92px;
+  }
+  .am-time li,
+  .pm-time li {
+    text-decoration: none;
+    background-color: #313030;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    font-size: 0.7em;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .end img {
+    width: 70%;
+    height: 70%;
+  }
+}
+
+@media (max-width: 360px) {
+  .search {
+    display: none !important;
+  }
+}
+
+/*Main*/
+
+/*Payment & Withdrawal*/
+.control-title,
+.payment-control,
+.billing-addres,
+.delivery-addres,
+.payment,
+.payment-resume,
+.withdrawal-date,
+.withdrawal-info,
+.info-wd {
+  border-radius: 2rem;
+}
+
+.payment-submit {
+  background-color: #313030;
+  color: white;
+}
+
+.am-time li,
+.pm-time li {
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.payment img {
+  border-radius: 2rem;
+}
+
+.error,
+.alert {
+  height: 15px !important;
+}
+
+.msgError {
+  font-size: 0.7em;
+  font-style: italic;
+  margin-top: -10px;
+}
+.alert-dismissible .close {
+  padding: 0;
+}
+
+#user_cityd,
+#user_addresd {
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .billing-addres,
+  .delivery-addres,
+  .payment,
+  .control-dat,
+  .time-withdrawal {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .payment img {
+    width: 91px;
+    height: 46px;
+  }
+
+  .card-number,
+  .card-name {
+    width: 150px;
+  }
+
+  .timetable {
+    margin-right: 60px;
+  }
+
+  .timetable ul li {
+    width: 100px;
+  }
+}
+
+@media (min-width: 340px) {
+  .withdrawal-info {
+    border: solid 1px;
+    border-color: black;
+  }
+}
+
+/*Withdrawal*/
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+/*Transition aside*/
+
+.filtre {
+  background-color: #313030;
+}
+
+#asideContent {
+  background-color: rgba(49, 48, 48, 0.9);
+}
+
+.navbar-collapse-aside {
+  position: fixed;
+  top: 175px;
+  left: 50px;
+  z-index: 20;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-collapse-aside.collapsing {
+  left: -75%;
+  transition: height 0s ease;
+}
+
+.navbar-collapse-aside.show {
+  left: 0;
+  transition: left 300ms ease-in-out;
+  background-color: white;
+  margin: 0.2em;
+  padding: 2em;
+}
+
+.navbar-toggler-aside.collapsed ~ .navbar-collapse-aside {
+  transition: left 500ms ease-in-out;
+}
+
+/*Footer*/
+.footer {
+  margin-top: 0.3em;
+  position: sticky;
+  height: auto;
+}
+
+hr {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 992px) {
+  .legal {
+    display: flex;
+    flex-direction: column;
+  }
+  .legal a {
+    padding: 0.1em;
+  }
+}
+
+@media (min-width: 992px) {
+  .copyright {
+    font-size: 1em;
+  }
+  .legal a {
+    padding: 1em;
+  }
+}
+
+/*MAIN Code CSS GREG*/
+
+@media (max-width: 00px) {
+  .categories {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel-indicators {
+    display: none;
+  }
+}
+
+.carousel-caption {
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption h4 {
+  font-size: small;
+  margin-bottom: 0px;
+}
+
+.carousel-caption p {
+  font-size: 10px;
+}
+
+h4 {
+  margin-top: 0.5rem;
+}
+.carousel-indicators {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  left: 0%;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.carousel-caption p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.carousel-caption h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.sidenav {
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #000000;
+}
+
+.categories {
+  padding-left: 5%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.row {
+  right: 0%;
+}
+
+.sidenav {
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+.bg-Categories {
+  padding-top: 10px;
+}
+
+.font-auteur {
+  font-weight: 200;
+}
+
+.font-serie {
+  font-weight: 400;
+}
+
+.btn {
+  line-height: 1rem;
+  font-size: 0.7rem;
+  bottom: 0;
+}
+
+.card-footer {
+  line-height: 0.3rem;
+  font-size: 0.7rem;
+}
+
+.card-body {
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+/* Header avec bouton panier et autres modifs*/
+
+li {
+  list-style: none;
+}
+.search-n-cart {
+  background-color: white;
+}
+
+div {
+  border-radius: 2em;
+}
+
+#boutonQuiAjouteAuPanier {
+  color: white;
+}
