@@ -70,6 +70,7 @@ button.btnTri {
   overflow-y: auto;
   width: max-content;
 }
+
 button.dropdown-item.btnTri.active {
   color: #343a40;
   font-weight: bold;
