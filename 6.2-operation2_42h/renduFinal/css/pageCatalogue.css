@@ -204,8 +204,8 @@ button.btnTri {
 .dropdown-menu {
   height: 600px;
   overflow-y: auto;
-  
   width: fit-content;
+  min-width: 15em;
 }
 button.dropdown-item.btnTri.active {
   color: #343a40;

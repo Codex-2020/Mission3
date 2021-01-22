@@ -23,6 +23,16 @@ body {
   .search {
     z-index: 12;
   }
+
+  .nav-link {
+    color: white !important;
+  }
+
+  .navbar-light .navbar-nav .active>.nav-link,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+    font-weight: bold;
+  }
   
   .btnPanier,
   .btn-search,
@@ -48,9 +58,11 @@ body {
   .navbar-collapse.show {
     left: 0;
     transition: left 300ms ease-in-out;
+    background-color: rgba(49, 48, 48, 0.9);
     /* background-color: white; */
     margin: 0.2em;
     padding: 2em;
+    z-index: 50;
   }
   
   .navbar-toggler.collapsed ~ .navbar-collapse {
@@ -75,15 +87,19 @@ body {
     }
   
     .navbar-light .navbar-nav .nav-link {
-      color: white;
+      color: white !important;
     }
-  
+
+    .nav-link {
+      color: white !important;
+    }
+
     .navbar-light .navbar-nav .active > .nav-link,
     .navbar-light .navbar-nav .nav-link:hover {
-      color: white;
+      color: white !important ;
       font-weight: bold;
     }
-  
+    
     .smally {
       display: none;
     }
